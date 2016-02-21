@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Prototypes</string>
+    <string name="intro">Sample project for testing different libraries and other stuff</string>
 </resources>
