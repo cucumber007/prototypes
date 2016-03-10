@@ -6,8 +6,10 @@ import android.widget.ListView;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities.butterknife.ButterknifeActivity;
+import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
 import com.cucumber007.prototypes.activities.mvc.MvcActivity;
 import com.cucumber007.prototypes.activities.recycler.RecyclerActivity;
+import com.cucumber007.prototypes.activities.rxjava.RxJavaActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,8 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("RecyclerView", RecyclerActivity.class));
         items.add(new MenuItem("ButterKnife", ButterknifeActivity.class));
         items.add(new MenuItem("MVC", MvcActivity.class));
+        items.add(new MenuItem("Lambda", LambdaActivity.class));
+        items.add(new MenuItem("RxJava", RxJavaActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 

@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".activities.mvc.MvcActivity">
         </activity>
+        <activity android:name=".activities.rxjava.RxJavaActivity">
+        </activity>
+        <activity android:name=".activities.lambda.LambdaActivity">
+        </activity>
     </application>
 
 </manifest>

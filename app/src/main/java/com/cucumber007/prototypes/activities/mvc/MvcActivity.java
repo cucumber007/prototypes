@@ -24,6 +24,7 @@ public class MvcActivity extends Activity {
     @Bind(R.id.button5) Button button5;
     @Bind(R.id.textView2) TextView textView2;
 
+    //todo remake
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
