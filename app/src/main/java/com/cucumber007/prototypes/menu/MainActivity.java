@@ -9,7 +9,10 @@ import com.cucumber007.prototypes.activities.butterknife.ButterknifeActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
 import com.cucumber007.prototypes.activities.mvc.MvcActivity;
 import com.cucumber007.prototypes.activities.recycler.RecyclerActivity;
+import com.cucumber007.prototypes.activities.retrofit.RetrofitActivity;
 import com.cucumber007.prototypes.activities.rxjava.RxJavaActivity;
+import com.cucumber007.prototypes.activities.views.ViewsActivity;
+import com.cucumber007.prototypes.activities.xml_drawables.XmlDrawableActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +37,9 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("MVC", MvcActivity.class));
         items.add(new MenuItem("Lambda", LambdaActivity.class));
         items.add(new MenuItem("RxJava", RxJavaActivity.class));
+        items.add(new MenuItem("Retrofit", RetrofitActivity.class));
+        items.add(new MenuItem("Views", ViewsActivity.class));
+        items.add(new MenuItem("XML Drawables", XmlDrawableActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 

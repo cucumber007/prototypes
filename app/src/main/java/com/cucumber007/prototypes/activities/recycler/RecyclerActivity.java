@@ -9,7 +9,8 @@ import android.support.v7.widget.RecyclerView;
 
 import com.cucumber007.prototypes.R;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,20 +28,32 @@ public class RecyclerActivity extends Activity {
     private boolean direction = true;
     private int lm = 0;
 
+    private List<String> list = new ArrayList<>();
+    private RecyclerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
         ButterKnife.bind(this);
 
-        String[] items = new String[10];
-        for (int i = 0; i < items.length; i++) {
-            items[i] = "Element " + i;
+        for (int i = 0; i < 10; i++) {
+            list.add("Element " + i);
         }
 
-        recycler.setAdapter(new RecyclerAdapter(this, Arrays.asList(items)));
+        adapter = new RecyclerAdapter(this, list);
+        recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
+        recycler.addOnScrollListener(new RecyclerEndlessScrollListener(new RecyclerEndlessScrollListener.OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                for (int i = 0; i < 10; i++) {
+                    list.add("New element "+i);
+                }
+                adapter.notifyDataSetChanged();
+            }
+        }));
 
     }
 

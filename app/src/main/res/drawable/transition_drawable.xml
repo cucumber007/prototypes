@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transition
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@drawable/icon_red"
+        android:id="@+id/layer_id"
+        />
+
+    <item
+        android:drawable="@drawable/icon_blue"
+        android:id="@+id/layer_id"
+        />
+</transition>

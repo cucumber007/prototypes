@@ -26,6 +26,12 @@
         </activity>
         <activity android:name=".activities.lambda.LambdaActivity">
         </activity>
+        <activity android:name=".activities.retrofit.RetrofitActivity">
+        </activity>
+        <activity android:name=".activities.views.ViewsActivity">
+        </activity>
+        <activity android:name=".activities.xml_drawables.XmlDrawableActivity">
+        </activity>
     </application>
 
 </manifest>
