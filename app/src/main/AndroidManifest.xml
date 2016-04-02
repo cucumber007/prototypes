@@ -38,6 +38,8 @@
         </activity>
         <activity android:name=".activities.files.FilesActivity">
         </activity>
+        <activity android:name=".activities.views.StylesActivity" android:theme="@style/TestStyle2">
+        </activity>
     </application>
 
 </manifest>

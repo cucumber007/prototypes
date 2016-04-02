@@ -8,20 +8,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cucumber007.prototypes.activities.views.ViewsActivity">
+    tools:context="com.cucumber007.prototypes.activities.views.StylesActivity">
 
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:id="@+id/imageView"
-        android:src="@color/red"/>
-
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Styles"
-        android:id="@+id/button8"
-        android:layout_alignTop="@+id/imageView"
+        android:text="New Text"
+        android:id="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        style="@style/TestStyle1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView4"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
 </RelativeLayout>

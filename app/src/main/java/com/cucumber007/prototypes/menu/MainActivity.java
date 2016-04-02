@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Lambda", LambdaActivity.class));
         items.add(new MenuItem("RxJava", RxJavaActivity.class));
         items.add(new MenuItem("Retrofit", RetrofitActivity.class));
-        items.add(new MenuItem("Views", ViewsActivity.class));
+        items.add(new MenuItem("Views / Styles", ViewsActivity.class));
         items.add(new MenuItem("XML Drawables", XmlDrawableActivity.class));
         items.add(new MenuItem("Files", FilesActivity.class));
 
