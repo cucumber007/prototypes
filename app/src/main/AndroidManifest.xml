@@ -2,6 +2,10 @@
 <manifest package="com.cucumber007.prototypes"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -31,6 +35,8 @@
         <activity android:name=".activities.views.ViewsActivity">
         </activity>
         <activity android:name=".activities.xml_drawables.XmlDrawableActivity">
+        </activity>
+        <activity android:name=".activities.files.FilesActivity">
         </activity>
     </application>
 
