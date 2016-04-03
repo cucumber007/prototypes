@@ -6,8 +6,10 @@ import android.widget.ListView;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities.butterknife.ButterknifeActivity;
+import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
 import com.cucumber007.prototypes.activities.files.FilesActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
+import com.cucumber007.prototypes.activities.loaders.LoadersActivity;
 import com.cucumber007.prototypes.activities.mvc.MvcActivity;
 import com.cucumber007.prototypes.activities.recycler.RecyclerActivity;
 import com.cucumber007.prototypes.activities.retrofit.RetrofitActivity;
@@ -42,6 +44,8 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Views / Styles", ViewsActivity.class));
         items.add(new MenuItem("XML Drawables", XmlDrawableActivity.class));
         items.add(new MenuItem("Files", FilesActivity.class));
+        items.add(new MenuItem("Content Provider", ContentProviderActivity.class));
+        items.add(new MenuItem("Loaders", LoadersActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
