@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.files;
+package com.cucumber007.prototypes.activities.files_and_loader;
 
 import android.app.Activity;
 import android.app.LoaderManager;
@@ -32,7 +32,7 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class FilesActivity extends Activity {
+public class FilesAndLoaderActivity extends Activity {
 
     //todo why the fuck we need to create a whole loader to get path from uri???
     private static final int REQUEST_CODE_PICTURE = 1;

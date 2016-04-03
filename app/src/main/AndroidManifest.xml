@@ -42,7 +42,7 @@
         </activity>
         <activity android:name=".activities.xml_drawables.XmlDrawableActivity">
         </activity>
-        <activity android:name=".activities.files.FilesActivity">
+        <activity android:name=".activities.files_and_loader.FilesAndLoaderActivity">
         </activity>
         <activity
             android:name=".activities.views.StylesActivity"
