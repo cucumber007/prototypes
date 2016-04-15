@@ -8,6 +8,7 @@ import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities.butterknife.ButterknifeActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
 import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActivity;
+import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
 import com.cucumber007.prototypes.activities.mvc.MvcActivity;
 import com.cucumber007.prototypes.activities.recycler.RecyclerActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("XML Drawables", XmlDrawableActivity.class));
         items.add(new MenuItem("Files and Loader", FilesAndLoaderActivity.class));
         items.add(new MenuItem("Content Provider", ContentProviderActivity.class));
+        items.add(new MenuItem("Java Core", JavaCoreActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
