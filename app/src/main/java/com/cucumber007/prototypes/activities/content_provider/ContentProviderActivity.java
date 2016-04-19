@@ -49,8 +49,4 @@ public class ContentProviderActivity extends Activity {
         contentResolver.insert(TestContentProvider.TEST_ENTRY_URI, cv);
     }
 
-    @OnClick(R.id.button10)
-    void click() {
-
-    }
 }
