@@ -55,6 +55,10 @@
         </activity>
         <activity android:name=".activities.java.JavaCoreActivity">
         </activity>
+        <activity android:name=".activities.sandbox.SandboxActivity">
+        </activity>
+        <activity android:name=".activities.sandbox.TestActivity">
+        </activity>
     </application>
 
 </manifest>
