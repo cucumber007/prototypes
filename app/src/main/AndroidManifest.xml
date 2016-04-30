@@ -59,6 +59,8 @@
         </activity>
         <activity android:name=".activities.sandbox.TestActivity">
         </activity>
+        <activity android:name=".activities.mvp.MvpActivity">
+        </activity>
     </application>
 
 </manifest>

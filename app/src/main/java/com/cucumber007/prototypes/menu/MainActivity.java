@@ -11,6 +11,7 @@ import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActi
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
 import com.cucumber007.prototypes.activities.mvc.MvcActivity;
+import com.cucumber007.prototypes.activities.mvp.MvpActivity;
 import com.cucumber007.prototypes.activities.recycler.RecyclerActivity;
 import com.cucumber007.prototypes.activities.retrofit.RetrofitActivity;
 import com.cucumber007.prototypes.activities.rxjava.RxJavaActivity;
@@ -48,6 +49,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Content Provider", ContentProviderActivity.class));
         items.add(new MenuItem("Java Core", JavaCoreActivity.class));
         items.add(new MenuItem("Sandbox", SandboxActivity.class));
+        items.add(new MenuItem("MVP", MvpActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
