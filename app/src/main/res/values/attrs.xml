@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomToggleView">
+        <attr name="tap_quantity" format="integer" />
+        <attr name="alt_drawable" format="reference" />
+    </declare-styleable>
+</resources>
