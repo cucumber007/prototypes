@@ -10,18 +10,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cucumber007.prototypes.activities.views.ViewsActivity">
 
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:id="@+id/imageView"
-        android:src="@color/red"/>
-
-    <Button
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Styles"
-        android:id="@+id/button8"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:id="@+id/frame">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test text field for mul isssuee ololo lol azazza  izaaa"
+            android:id="@+id/textView7"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="30dp"
+            android:maxLines="4"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:includeFontPadding="false"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout"
+        >
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/imageView"
+            android:src="@color/red"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Styles"
+            android:id="@+id/button8"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
 </RelativeLayout>
