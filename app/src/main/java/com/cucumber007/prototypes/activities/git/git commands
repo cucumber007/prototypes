@@ -1,0 +1,3 @@
+git rm              #remove file
+    --cached        #just from index
+     -r             #recursively
