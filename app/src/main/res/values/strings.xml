@@ -7,4 +7,8 @@
     <string name="navigation_drawer_close">Close</string>
     <string name="title_activity_main2">Navigation Drawer Activity</string>
     <string name="action_settings">Settings</string>
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas nisl ut fringilla pellentesque. Aliquam leo erat, vestibulum sit amet turpis non, tincidunt interdum lectus. Donec vehicula tellus in nisl elementum bibendum. Duis sed fringilla turpis. Duis lobortis lacus facilisis quam faucibus, sed scelerisque risus laoreet. Duis consequat sit amet ipsum id tempus. Duis vulputate bibendum tristique. Proin vulputate et nisi nec gravida. Suspendisse rhoncus nibh elit, ac suscipit urna porta id. Curabitur pellentesque diam arcu, sit amet aliquet urna mollis ut. In pharetra venenatis risus in tempus.
+
+Fusce et condimentum felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tincidunt eros at turpis dictum pretium. Aenean malesuada sem vel nunc rutrum, vitae dictum dolor efficitur. Pellentesque id odio malesuada, ultricies sapien nec, semper elit. Suspendisse rutrum, augue ac gravida facilisis, eros orci volutpat odio, sed tincidunt augue nibh in nisi. Aenean a laoreet leo. Aenean ut ornare libero. Sed tristique velit eget blandit sodales. Etiam tincidunt egestas tellus, eget pretium diam aliquam sed. Vivamus ullamcorper nulla malesuada dignissim varius. Mauris risus quam, varius non purus in, lobortis posuere eros. Aliquam semper turpis venenatis bibendum tristique. Donec placerat odio sit amet augue dignissim, et.</string>
 </resources>

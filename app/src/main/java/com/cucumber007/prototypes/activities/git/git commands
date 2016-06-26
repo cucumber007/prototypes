@@ -1,3 +1,5 @@
 git rm              #remove file
     --cached        #just from index
      -r             #recursively
+
+git ls-files        #show files in index
