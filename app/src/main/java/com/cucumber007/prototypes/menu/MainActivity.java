@@ -7,6 +7,7 @@ import android.widget.ListView;
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities.butterknife.ButterknifeActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
+import com.cucumber007.prototypes.activities.coordinator.CoordinatorLayoutActivity;
 import com.cucumber007.prototypes.activities.custom_view.CustomViewActivity;
 import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
@@ -54,6 +55,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("MVP", MvpActivity.class));
         items.add(new MenuItem("Custom Views", CustomViewActivity.class));
         items.add(new MenuItem("Navigation Drawer", NavigationDrawerActivity.class));
+        items.add(new MenuItem("Coordinator Layout", CoordinatorLayoutActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 

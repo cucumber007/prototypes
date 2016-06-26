@@ -1,0 +1,9 @@
+SCROLL_FLAG_ENTER_ALWAYS: При использовании флага, view будет прокручиваться вниз не зависимо от других прокручиваемых view.
+SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED: Дополнительный флаг для 'enterAlways', который изменяет возвращаемый view к изначально прокручиваемому, при исчезновении высоты.
+SCROLL_FLAG_EXIT_UNTIL_COLLAPSED: При выходе, view будет прокручен до тех пор пока не исчезнет.
+SCROLL_FLAG_SCROLL: Элемент view будет прокручиваться в направлении события прокрутки.
+SCROLL_FLAG_SNAP: В конце прокрутки, если view видим только частично, он будет докручен до его ближайшего края.
+
+todo resize animation
+todo behavior
+todo https://habrahabr.ru/post/270121/
