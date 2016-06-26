@@ -2,4 +2,9 @@
     <string name="app_name">Prototypes</string>
     <string name="intro">Sample project for testing different libraries and other stuff</string>
     <string name="provider_authority">com.cucumber007.prototypes.contentprovider</string>
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="title_activity_main2">Navigation Drawer Activity</string>
+    <string name="action_settings">Settings</string>
 </resources>

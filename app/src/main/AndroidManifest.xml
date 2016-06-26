@@ -47,8 +47,6 @@
             android:name=".activities.views.StylesActivity"
             android:theme="@style/TestStyle2">
         </activity>
-        <activity android:name=".activities.loaders.LoadersActivity">
-        </activity>
         <activity
             android:name=".activities.content_provider.ContentProviderActivity"
             android:windowSoftInputMode="stateHidden">
@@ -62,6 +60,11 @@
         <activity android:name=".activities.mvp.MvpActivity">
         </activity>
         <activity android:name=".activities.custom_view.CustomViewActivity">
+        </activity>
+        <activity
+            android:name=".activities.navigationDrawer.NavigationDrawerActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 
