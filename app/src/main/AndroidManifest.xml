@@ -68,6 +68,11 @@
         </activity>
         <activity android:name=".activities.coordinator.CoordinatorLayoutActivity">
         </activity>
+        <activity android:name=".activities.graphics.BlurActivity">
+        </activity>
+        <activity android:name=".activities.graphics.AfterBlurActivity"
+            android:theme="@style/Theme.Transparent">
+        </activity>
     </application>
 
 </manifest>

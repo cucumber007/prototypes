@@ -10,6 +10,7 @@ import com.cucumber007.prototypes.activities.content_provider.ContentProviderAct
 import com.cucumber007.prototypes.activities.coordinator.CoordinatorLayoutActivity;
 import com.cucumber007.prototypes.activities.custom_view.CustomViewActivity;
 import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActivity;
+import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
 import com.cucumber007.prototypes.activities.mvc.MvcActivity;
@@ -56,6 +57,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Custom Views", CustomViewActivity.class));
         items.add(new MenuItem("Navigation Drawer", NavigationDrawerActivity.class));
         items.add(new MenuItem("Coordinator Layout", CoordinatorLayoutActivity.class));
+        items.add(new MenuItem("Blur", BlurActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
