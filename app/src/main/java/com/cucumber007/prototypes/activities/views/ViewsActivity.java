@@ -2,8 +2,10 @@ package com.cucumber007.prototypes.activities.views;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.TypedValue;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -19,6 +21,7 @@ import butterknife.OnClick;
 public class ViewsActivity extends Activity {
 
     @Bind(R.id.imageView) ImageView imageView;
+    @Bind(R.id.imageView13) ImageView imageView13;
     @Bind(R.id.textView7) TextView textView7;
 
     ViewTreeObserver.OnGlobalLayoutListener listener;
@@ -36,16 +39,25 @@ public class ViewsActivity extends Activity {
 
         listener = () -> {
             RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams)textView7.getLayoutParams();
-            lp.width = (int) textView7.getLayout().getLineMax(1);
+            float max = 0;
+            for (int i = 0; i < textView7.getLineCount(); i++) {
+                float line = textView7.getLayout().getLineMax(i);
+                if(line > max) max = line;
+            }
+            lp.width = (int)Math.ceil(max);
             lp.setMargins((int)((frame.getWidth()-lp.width)/2.),0,0,lp.bottomMargin);
             lp.addRule(RelativeLayout.ALIGN_RIGHT, RelativeLayout.TRUE);
             textView7.setLayoutParams(lp);
             frame.getViewTreeObserver().removeOnGlobalLayoutListener(listener);
-            frame.requestLayout();
-            frame.invalidate();
-            Log.d("cutag", "ok");
+            //frame.requestLayout();
+            //frame.invalidate();
         };
         frame.getViewTreeObserver().addOnGlobalLayoutListener(listener);
+
+        RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(getResources(), BitmapFactory.decodeResource(getResources(),
+                R.drawable.tutorial_1));
+        drawable.setCornerRadius(100);
+        imageView13.setImageDrawable(drawable);
 
     }
 
