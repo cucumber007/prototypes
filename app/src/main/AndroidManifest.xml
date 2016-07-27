@@ -25,26 +25,26 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.recycler.RecyclerActivity">
+        <activity android:name=".activities._ui.recycler.RecyclerActivity">
         </activity>
-        <activity android:name=".activities.butterknife.ButterknifeActivity">
+        <activity android:name=".activities._libraries.butterknife.ButterknifeActivity">
         </activity>
-        <activity android:name=".activities.mvc.MvcActivity">
+        <activity android:name=".activities._architecture.mvc.MvcActivity">
         </activity>
-        <activity android:name=".activities.rxjava.RxJavaActivity">
+        <activity android:name=".activities._libraries.rxjava.RxJavaActivity">
         </activity>
         <activity android:name=".activities.lambda.LambdaActivity">
         </activity>
-        <activity android:name=".activities.retrofit.RetrofitActivity">
+        <activity android:name=".activities._libraries.retrofit.RetrofitActivity">
         </activity>
-        <activity android:name=".activities.views.ViewsActivity">
+        <activity android:name=".activities._ui.views.ViewsActivity">
         </activity>
-        <activity android:name=".activities.xml_drawables.XmlDrawableActivity">
+        <activity android:name=".activities._ui.xml_drawables.XmlDrawableActivity">
         </activity>
         <activity android:name=".activities.files_and_loader.FilesAndLoaderActivity">
         </activity>
         <activity
-            android:name=".activities.views.StylesActivity"
+            android:name=".activities._ui.views.StylesActivity"
             android:theme="@style/TestStyle2">
         </activity>
         <activity
@@ -57,21 +57,28 @@
         </activity>
         <activity android:name=".activities.sandbox.TestActivity">
         </activity>
-        <activity android:name=".activities.mvp.MvpActivity">
+        <activity android:name=".activities._architecture.mvp.MvpActivity">
         </activity>
-        <activity android:name=".activities.custom_view.CustomViewActivity">
+        <activity android:name=".activities._ui.custom_view.CustomViewActivity">
         </activity>
         <activity
-            android:name=".activities.navigationDrawer.NavigationDrawerActivity"
+            android:name=".activities._ui.navigationDrawer.NavigationDrawerActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".activities.coordinator.CoordinatorLayoutActivity">
+        <activity android:name=".activities._ui.coordinator.CoordinatorLayoutActivity">
         </activity>
         <activity android:name=".activities.graphics.BlurActivity">
         </activity>
-        <activity android:name=".activities.graphics.AfterBlurActivity"
+        <activity
+            android:name=".activities.graphics.AfterBlurActivity"
             android:theme="@style/Theme.Transparent">
+        </activity>
+        <activity
+            android:name=".activities.orientation.OrientationActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden">
+        </activity>
+        <activity android:name=".activities._ui.viewpager.ViewPagerActivity">
         </activity>
     </application>
 

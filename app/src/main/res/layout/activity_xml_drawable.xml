@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cucumber007.prototypes.activities.xml_drawables.XmlDrawableActivity">
+    tools:context=".activities._ui.xml_drawables.XmlDrawableActivity">
 
     <ImageView
         android:layout_width="70dp"

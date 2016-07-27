@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cucumber007.prototypes.activities.views.ViewsActivity">
+    tools:context=".activities._ui.views.ViewsActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
-            <com.cucumber007.prototypes.activities.views.MultilineAlignTextView
+            <com.cucumber007.prototypes.activities._ui.views.MultilineAlignTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Test text field for mul isssuee ololo lol azazza gahale izaaa"

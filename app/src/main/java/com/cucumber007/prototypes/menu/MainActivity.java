@@ -5,23 +5,25 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.activities.butterknife.ButterknifeActivity;
+import com.cucumber007.prototypes.activities._libraries.butterknife.ButterknifeActivity;
+import com.cucumber007.prototypes.activities._ui.viewpager.ViewPagerActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
-import com.cucumber007.prototypes.activities.coordinator.CoordinatorLayoutActivity;
-import com.cucumber007.prototypes.activities.custom_view.CustomViewActivity;
+import com.cucumber007.prototypes.activities._ui.coordinator.CoordinatorLayoutActivity;
+import com.cucumber007.prototypes.activities._ui.custom_view.CustomViewActivity;
 import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActivity;
 import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
-import com.cucumber007.prototypes.activities.mvc.MvcActivity;
-import com.cucumber007.prototypes.activities.mvp.MvpActivity;
-import com.cucumber007.prototypes.activities.navigationDrawer.NavigationDrawerActivity;
-import com.cucumber007.prototypes.activities.recycler.RecyclerActivity;
-import com.cucumber007.prototypes.activities.retrofit.RetrofitActivity;
-import com.cucumber007.prototypes.activities.rxjava.RxJavaActivity;
+import com.cucumber007.prototypes.activities._architecture.mvc.MvcActivity;
+import com.cucumber007.prototypes.activities._architecture.mvp.MvpActivity;
+import com.cucumber007.prototypes.activities._ui.navigationDrawer.NavigationDrawerActivity;
+import com.cucumber007.prototypes.activities._ui.recycler.RecyclerActivity;
+import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitActivity;
+import com.cucumber007.prototypes.activities._libraries.rxjava.RxJavaActivity;
+import com.cucumber007.prototypes.activities.orientation.OrientationActivity;
 import com.cucumber007.prototypes.activities.sandbox.SandboxActivity;
-import com.cucumber007.prototypes.activities.views.ViewsActivity;
-import com.cucumber007.prototypes.activities.xml_drawables.XmlDrawableActivity;
+import com.cucumber007.prototypes.activities._ui.views.ViewsActivity;
+import com.cucumber007.prototypes.activities._ui.xml_drawables.XmlDrawableActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        //todo sort
         List<MenuItem> items = new ArrayList<>();
         items.add(new MenuItem("RecyclerView", RecyclerActivity.class));
         items.add(new MenuItem("ButterKnife", ButterknifeActivity.class));
@@ -58,6 +61,8 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Navigation Drawer", NavigationDrawerActivity.class));
         items.add(new MenuItem("Coordinator Layout", CoordinatorLayoutActivity.class));
         items.add(new MenuItem("Blur", BlurActivity.class));
+        items.add(new MenuItem("Orientation", OrientationActivity.class));
+        items.add(new MenuItem("ViewPager", ViewPagerActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 

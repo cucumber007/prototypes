@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cucumber007.prototypes.activities.custom_view.CustomViewActivity">
+    tools:context=".activities._ui.custom_view.CustomViewActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         android:text="Tap image 3 times"
         android:id="@+id/textView6"/>
 
-    <com.cucumber007.prototypes.activities.custom_view.CustomToggleView
+    <com.cucumber007.prototypes.activities._ui.custom_view.CustomToggleView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView9"
