@@ -31,7 +31,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         //called when recycler need VH (data) to represent item
 
         View v = LayoutInflater.from(context)
-                .inflate(R.layout.item_list, parent, false);
+                .inflate(R.layout.item_menu_list, parent, false);
 
         return new ViewHolder(v);
     }

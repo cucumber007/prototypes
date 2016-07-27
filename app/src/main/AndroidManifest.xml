@@ -6,6 +6,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -79,6 +84,49 @@
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden">
         </activity>
         <activity android:name=".activities._ui.viewpager.ViewPagerActivity">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.BasicActivity"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.LoginActivity"
+            android:label="@string/title_activity_login">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".activities._ui.activity_templates.ItemListActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cucumber007.prototypes.activities._ui.activity_templates.ItemListActivity"/>
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity
+            android:name=".activities._ui.activity_templates.TabbedActivity"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 

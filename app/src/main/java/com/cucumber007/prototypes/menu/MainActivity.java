@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities._libraries.butterknife.ButterknifeActivity;
+import com.cucumber007.prototypes.activities._ui.activity_templates.BasicActivity;
 import com.cucumber007.prototypes.activities._ui.viewpager.ViewPagerActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
 import com.cucumber007.prototypes.activities._ui.coordinator.CoordinatorLayoutActivity;
@@ -63,6 +64,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Blur", BlurActivity.class));
         items.add(new MenuItem("Orientation", OrientationActivity.class));
         items.add(new MenuItem("ViewPager", ViewPagerActivity.class));
+        items.add(new MenuItem("Android Studio templates", BasicActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
