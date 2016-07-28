@@ -128,6 +128,8 @@
             android:label="@string/title_activity_tabbed"
             android:theme="@style/AppTheme">
         </activity>
+        <activity android:name=".activities._ui.views.GridViewActivity">
+        </activity>
     </application>
 
 </manifest>

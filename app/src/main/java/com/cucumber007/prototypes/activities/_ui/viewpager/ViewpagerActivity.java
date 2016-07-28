@@ -17,7 +17,8 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     //todo endless pager
     //todo pager cache > 3
-    //fragment pager
+    //todo fragment pager
+    //todo pagertabstrip
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

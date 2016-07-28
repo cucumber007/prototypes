@@ -65,4 +65,9 @@ public class ViewsActivity extends Activity {
     void click() {
         startActivity(new Intent(this, StylesActivity.class));
     }
+
+    @OnClick(R.id.button13)
+    void click1() {
+        startActivity(new Intent(this, GridViewActivity.class));
+    }
 }
