@@ -2,10 +2,13 @@ package com.cucumber007.prototypes.activities._ui.views;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v7.graphics.Palette;
 import android.util.TypedValue;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -26,6 +29,8 @@ public class ViewsActivity extends Activity {
 
     ViewTreeObserver.OnGlobalLayoutListener listener;
     @Bind(R.id.frame) RelativeLayout frame;
+    @Bind(R.id.imageView14) ImageView imageView14;
+    @Bind(R.id.imageView15) ImageView imageView15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +43,14 @@ public class ViewsActivity extends Activity {
         imageView.getLayoutParams().width = size;
 
         listener = () -> {
-            RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams)textView7.getLayoutParams();
+            RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) textView7.getLayoutParams();
             float max = 0;
             for (int i = 0; i < textView7.getLineCount(); i++) {
                 float line = textView7.getLayout().getLineMax(i);
-                if(line > max) max = line;
+                if (line > max) max = line;
             }
-            lp.width = (int)Math.ceil(max);
-            lp.setMargins((int)((frame.getWidth()-lp.width)/2.),0,0,lp.bottomMargin);
+            lp.width = (int) Math.ceil(max);
+            lp.setMargins((int) ((frame.getWidth() - lp.width) / 2.), 0, 0, lp.bottomMargin);
             lp.addRule(RelativeLayout.ALIGN_RIGHT, RelativeLayout.TRUE);
             textView7.setLayoutParams(lp);
             frame.getViewTreeObserver().removeOnGlobalLayoutListener(listener);
@@ -58,6 +63,22 @@ public class ViewsActivity extends Activity {
                 R.drawable.tutorial_1));
         drawable.setCornerRadius(100);
         imageView13.setImageDrawable(drawable);
+
+        Bitmap myBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tutorial_1);
+        if (myBitmap != null && !myBitmap.isRecycled()) {
+            Palette.from(myBitmap).generate(palette -> {
+                int def = 0x000000;
+                int vibrant = palette.getVibrantColor(def);
+                int vibrantLight = palette.getLightVibrantColor(def);
+                int vibrantDark = palette.getDarkVibrantColor(def);
+                int muted = palette.getMutedColor(def);
+                int mutedLight = palette.getLightMutedColor(def);
+                int mutedDark = palette.getDarkMutedColor(def);
+                imageView.setImageDrawable(new ColorDrawable(vibrant));
+                imageView14.setImageDrawable(new ColorDrawable(vibrantDark));
+                imageView15.setImageDrawable(new ColorDrawable(muted));
+            });
+        }
 
     }
 

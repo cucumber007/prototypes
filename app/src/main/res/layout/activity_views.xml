@@ -58,13 +58,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativeLayout"
-        >
+        android:background="@color/white">
 
         <ImageView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/imageView"
             android:src="@color/red"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView14"
+            android:src="@color/red"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView15"
+            android:src="@color/red"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView14"
+            android:layout_toEndOf="@+id/imageView14"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -94,6 +112,7 @@
             android:layout_alignParentStart="true"
             android:background="@color/green"
             android:scaleType="fitXY"/>
+
     </RelativeLayout>
 
 </RelativeLayout>
