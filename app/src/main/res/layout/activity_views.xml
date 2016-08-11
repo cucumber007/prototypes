@@ -46,7 +46,7 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="30dp"
                 android:maxLines="4"
-                android:background="@color/white"
+                android:background="?android:selectableItemBackground"
                 android:textColor="@color/black"
                 android:includeFontPadding="false"
                 />
@@ -112,6 +112,15 @@
             android:layout_alignParentStart="true"
             android:background="@color/green"
             android:scaleType="fitXY"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/compat"
+            android:layout_above="@+id/imageView13"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_launcher"/>
 
     </RelativeLayout>
 

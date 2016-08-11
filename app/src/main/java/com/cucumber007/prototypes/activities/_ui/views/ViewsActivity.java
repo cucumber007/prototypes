@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.graphics.Palette;
@@ -31,6 +33,7 @@ public class ViewsActivity extends Activity {
     @Bind(R.id.frame) RelativeLayout frame;
     @Bind(R.id.imageView14) ImageView imageView14;
     @Bind(R.id.imageView15) ImageView imageView15;
+    @Bind(R.id.compat) ImageView compat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +83,10 @@ public class ViewsActivity extends Activity {
             });
         }
 
+        Drawable normalDrawable = getResources().getDrawable(R.mipmap.ic_launcher);
+        Drawable wrapDrawable = DrawableCompat.wrap(normalDrawable);
+        DrawableCompat.setTint(wrapDrawable, getResources().getColor(R.color.blue));
+        compat.setImageDrawable(wrapDrawable);
     }
 
     @OnClick(R.id.button8)

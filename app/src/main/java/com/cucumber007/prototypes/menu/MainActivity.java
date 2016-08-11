@@ -2,7 +2,9 @@ package com.cucumber007.prototypes.menu;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities._architecture.mvc.MvcActivity;
@@ -36,6 +38,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends Activity {
 
     @Bind(R.id.listView) ListView listView;
+    private boolean doubleBackToExitPressedOnce = true;
 
 
     @Override
@@ -70,5 +73,16 @@ public class MainActivity extends Activity {
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Click Back again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 }
