@@ -27,6 +27,7 @@ android {
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
