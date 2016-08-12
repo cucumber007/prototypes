@@ -16,6 +16,18 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+
+    productFlavors {
+        standart {
+            applicationId "com.cucumber007.prototypes"
+        }
+        nexus {
+            applicationId "com.cucumber007.prototypes"
+            targetSdkVersion 23
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
