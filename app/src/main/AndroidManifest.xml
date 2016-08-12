@@ -134,6 +134,8 @@
         </activity>
         <activity android:name=".activities._libraries.reactive_location.ReactiveLocationActivity">
         </activity>
+        <activity android:name=".activities._ui.tabs.TabsActivity">
+        </activity>
     </application>
 
 </manifest>

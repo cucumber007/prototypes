@@ -18,6 +18,7 @@ import com.cucumber007.prototypes.activities._ui.coordinator.CoordinatorLayoutAc
 import com.cucumber007.prototypes.activities._ui.custom_view.CustomViewActivity;
 import com.cucumber007.prototypes.activities._ui.navigationDrawer.NavigationDrawerActivity;
 import com.cucumber007.prototypes.activities._ui.recycler.RecyclerActivity;
+import com.cucumber007.prototypes.activities._ui.tabs.TabsActivity;
 import com.cucumber007.prototypes.activities._ui.viewpager.ViewPagerActivity;
 import com.cucumber007.prototypes.activities._ui.views.ViewsActivity;
 import com.cucumber007.prototypes.activities._ui.xml_drawables.XmlDrawableActivity;
@@ -48,6 +49,7 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
 
         //todo sort
+        //todo hierarchy
         List<MenuItem> items = new ArrayList<>();
         items.add(new MenuItem("RecyclerView", RecyclerActivity.class));
         items.add(new MenuItem("ButterKnife", ButterknifeActivity.class));
@@ -70,6 +72,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("ViewPager", ViewPagerActivity.class));
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));
         items.add(new MenuItem("Location", ReactiveLocationActivity.class));
+        items.add(new MenuItem("Tabs", TabsActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
