@@ -42,12 +42,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/nexusDebug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexusDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexusDebug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/nexus/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/nexus/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/nexus/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/nexus/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/nexus/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/nexus/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testNexusDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testNexusDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testNexusDebug/assets" type="java-test-resource" />
@@ -56,6 +50,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testNexusDebug/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testNexusDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testNexusDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/nexus/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/nexus/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/nexus/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/nexus/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/nexus/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/nexus/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexus/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexus/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexus/assets" type="java-resource" />
@@ -64,14 +64,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/nexus/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexus/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/nexus/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/jni" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestNexus/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestNexus/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestNexus/assets" type="java-test-resource" />
@@ -80,6 +72,14 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestNexus/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestNexus/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestNexus/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testNexus/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />

@@ -136,6 +136,8 @@
         </activity>
         <activity android:name=".activities._ui.tabs.TabsActivity">
         </activity>
+        <activity android:name=".activities.loaders.LoadersActivity">
+        </activity>
     </application>
 
 </manifest>
