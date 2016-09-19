@@ -24,6 +24,7 @@ import com.cucumber007.prototypes.activities._ui.views.ViewsActivity;
 import com.cucumber007.prototypes.activities._ui.xml_drawables.XmlDrawableActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
 import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActivity;
+import com.cucumber007.prototypes.activities.fragments_sandbox.FragmentSandboxActivity;
 import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.lambda.LambdaActivity;
@@ -73,6 +74,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));
         items.add(new MenuItem("Location", ReactiveLocationActivity.class));
         items.add(new MenuItem("Tabs", TabsActivity.class));
+        items.add(new MenuItem("Fragments", FragmentSandboxActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 

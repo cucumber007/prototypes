@@ -138,6 +138,8 @@
         </activity>
         <activity android:name=".activities.loaders.LoadersActivity">
         </activity>
+        <activity android:name=".activities.fragments_sandbox.FragmentSandboxActivity">
+        </activity>
     </application>
 
 </manifest>
