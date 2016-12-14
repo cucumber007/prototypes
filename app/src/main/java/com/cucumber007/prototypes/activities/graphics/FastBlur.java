@@ -13,8 +13,8 @@ public final class FastBlur {
     private static final Paint PAINT = new Paint();
 
     private static final float SCALE_FACTOR = 2;
-    private static final float RADIUS = 10;
-    private static final int RADIUS_BIG = 40;
+    private static final float RADIUS = 4;
+    private static final int RADIUS_BIG = 4;
 
     static {
         PAINT.setFlags(Paint.FILTER_BITMAP_FLAG);
