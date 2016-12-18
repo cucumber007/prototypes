@@ -8,7 +8,7 @@ public class DpUtils {
 
     //todo test
     public static float dpToPx(float dp, Context context) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics());
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }
 
     public static float pxToDp(float px, Context context) {

@@ -2,6 +2,7 @@ package com.cucumber007.prototypes.activities._ui.recycler;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -80,6 +81,11 @@ public class RecyclerActivity extends Activity {
         }
         recycler.setLayoutManager(manager);
 
+    }
+
+    @OnClick(R.id.array_button)
+    void click2() {
+        startActivity(new Intent(this, ArrayRecyclerActivity.class));
     }
 
 }

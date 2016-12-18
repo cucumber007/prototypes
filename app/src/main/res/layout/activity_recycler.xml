@@ -24,6 +24,12 @@
             android:layout_height="wrap_content"
             android:text="Change LM"
             android:id="@+id/lm_button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Array Adapter"
+            android:id="@+id/array_button"/>
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
