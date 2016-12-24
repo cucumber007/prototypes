@@ -1,6 +1,8 @@
-package com.cucumber007.prototypes.utils;
+package com.cucumber007.prototypes.reusables;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 
 public class LogUtil {
@@ -67,5 +69,22 @@ public class LogUtil {
     public static void logcat(String tag, String message) {
         Log.d(tag, message);
     }
+
+    public static void makeToast(Context context, String text) {
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
+    }
+
+    public static void makeToast(String text) {
+        makeToast(ContextApplication.getContext(), text);
+    }
+
+    public static void makeToast(Context context, int stringId) {
+        Toast.makeText(ContextApplication.getContext(), ContextApplication.getContext().getResources().getString(stringId), Toast.LENGTH_SHORT).show();
+    }
+
+    public static void makeToast(int stringId) {
+        makeToast(ContextApplication.getContext(), stringId);
+    }
+
 
 }

@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.utils.LogUtil;
+import com.cucumber007.prototypes.reusables.LogUtil;
 import com.google.android.gms.location.LocationRequest;
 
 import java.util.List;
