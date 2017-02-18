@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/history"
+        icon="@mipmap/ic_launcher"
+        title="1" />
+    <tab
+        id="@+id/offers"
+        icon="@mipmap/ic_launcher"
+        title="2" />
+</tabs>

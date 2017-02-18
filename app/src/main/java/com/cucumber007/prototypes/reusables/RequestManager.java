@@ -147,7 +147,7 @@ public class RequestManager {
         PreferenceManager.getDefaultSharedPreferences(context).edit().remove(KEY_COOKIE).commit();
     }
 
-    private String responseToText(Response resp) {
+    public static String responseToText(Response resp) {
         try {
             return resp.body() != null ? resp.body().toString() : resp.errorBody().string();
         } catch (IOException e) {
