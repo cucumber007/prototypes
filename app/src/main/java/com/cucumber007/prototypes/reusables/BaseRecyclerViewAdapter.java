@@ -37,4 +37,8 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
     public T getItem(int position) {
         return items.get(position);
     }
+
+    public Context getContext() {
+        return context;
+    }
 }
