@@ -38,6 +38,11 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
         return items.get(position);
     }
 
+    public void setItemsAndUpdate(List<T> items) {
+        this.items = items;
+        notifyDataSetChanged();
+    }
+
     public Context getContext() {
         return context;
     }
