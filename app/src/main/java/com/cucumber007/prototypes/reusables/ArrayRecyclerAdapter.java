@@ -69,6 +69,11 @@ public class ArrayRecyclerAdapter<T> extends RecyclerView.Adapter<ArrayRecyclerA
         return items.get(position);
     }
 
+    public void setItemsAndUpdate(List<T> items) {
+        this.items = items;
+        notifyDataSetChanged();
+    }
+
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
