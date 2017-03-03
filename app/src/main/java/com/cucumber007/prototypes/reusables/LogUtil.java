@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.List;
+
 
 public class LogUtil {
 
@@ -63,6 +65,22 @@ public class LogUtil {
         }
     }
 
+
+    public static void logListDebug(String name, List<Object> list) {
+        String log = name + "\n";
+        for (int i = 0; i < list.size(); i++) {
+            log += list.get(i) + "\n";
+        }
+        logcat(log);
+    }
+
+    public static void logListDebug(List<Object> list) {
+        String log = "";
+        for (int i = 0; i < list.size(); i++) {
+            log += list.get(i) + "\n";
+        }
+        logcat(log);
+    }
 
     public static void logcat(String message) {
         Log.d(TAG, message);
