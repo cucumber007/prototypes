@@ -34,33 +34,35 @@ public class LogUtil {
         logcat(throwable.getMessage());
     }
 
-    public static void logDebug(Boolean bool) {
-        logDebug(""+bool);
-    }
-
-    public static void logDebug(String... strings) {
-        logDebug(' ', strings);
-    }
-
-    public static void logDebug(Integer... integers) {
-        logDebug(' ', integers);
-    }
-
-    public static void logDebug(Character delim, String... strings) {
+    @SafeVarargs
+    public static <T> void logDebug(Character delim, T... vars) {
         String log = "";
-        for (int i = 0; i < strings.length; i++) {
-            log += strings[i] + delim;
+        for (int i = 0; i < vars.length; i++) {
+            log += vars[i].toString() + delim;
         }
         logcat(log);
     }
 
-    public static void logDebug(Character delim, Integer... integers) {
-        String log = "";
-        for (int i = 0; i < integers.length; i++) {
-            log += integers[i] + "" + delim;
+    @SafeVarargs
+    public static <T> void logDebug(String title, T... vars) {
+        String log = title+ " : ";
+        for (int i = 0; i < vars.length; i++) {
+            log += vars[i].toString() + " ";
         }
         logcat(log);
     }
+
+    @SafeVarargs
+    public static <T> void logDebug(boolean condition, String title, T... vars) {
+        if (condition) {
+            String log = title + " : ";
+            for (int i = 0; i < vars.length; i++) {
+                log += vars[i].toString() + " ";
+            }
+            logcat(log);
+        }
+    }
+
 
     public static void logcat(String message) {
         Log.d(TAG, message);
