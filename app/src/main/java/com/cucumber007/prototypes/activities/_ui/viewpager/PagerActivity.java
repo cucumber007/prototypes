@@ -10,7 +10,7 @@ import com.cucumber007.prototypes.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class ViewPagerActivity extends AppCompatActivity {
+public class PagerActivity extends AppCompatActivity {
 
     @Bind(R.id.tutorial_pager) ViewPager tutorialPager;
     @Bind(R.id.title) TextView title;
