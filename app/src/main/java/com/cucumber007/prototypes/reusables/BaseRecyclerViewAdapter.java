@@ -30,9 +30,6 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
     @Override
     public void onBindViewHolder(VH holder, int position) {
-        if (itemClickListener != null) holder.itemView.setOnClickListener(
-                view -> itemClickListener.onItemClick(position, holder.itemView, getItem(position)));
-        else holder.itemView.setOnClickListener(null);
         bindViewHolder(holder, getItem(position), position);
     }
 
@@ -50,6 +47,10 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
     public Context getContext() {
         return context;
+    }
+
+    public OnItemClickListener<T> getItemClickListener() {
+        return itemClickListener;
     }
 
     public void setItemClickListener(OnItemClickListener itemClickListener) {
