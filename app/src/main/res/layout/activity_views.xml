@@ -15,10 +15,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/frame">
 
-        <TextView
+        <com.cucumber007.prototypes.reusables.FontTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test text field for mul isssuee ololo lol azazza gahale izaaa"
+            font="ProximaNovaRegular.otf"
             android:id="@+id/textView7"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"

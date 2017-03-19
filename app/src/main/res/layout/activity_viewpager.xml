@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activities._ui.viewpager.ViewPagerActivity"
+    tools:context=".activities._ui.viewpager.PagerActivity"
     android:background="@color/white">
 
     <android.support.v4.view.ViewPager

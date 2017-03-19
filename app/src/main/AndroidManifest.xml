@@ -85,7 +85,7 @@
             android:name=".activities.orientation.OrientationActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden">
         </activity>
-        <activity android:name=".activities._ui.viewpager.ViewPagerActivity">
+        <activity android:name=".activities._ui.viewpager.PagerActivity">
         </activity>
         <activity
             android:name=".activities._ui.activity_templates.BasicActivity"

@@ -19,7 +19,7 @@ import com.cucumber007.prototypes.activities._ui.custom_view.CustomViewActivity;
 import com.cucumber007.prototypes.activities._ui.navigationDrawer.NavigationDrawerActivity;
 import com.cucumber007.prototypes.activities._ui.recycler.RecyclerActivity;
 import com.cucumber007.prototypes.activities._ui.tabs.TabsActivity;
-import com.cucumber007.prototypes.activities._ui.viewpager.ViewPagerActivity;
+import com.cucumber007.prototypes.activities._ui.viewpager.PagerActivity;
 import com.cucumber007.prototypes.activities._ui.views.ViewsActivity;
 import com.cucumber007.prototypes.activities._ui.xml_drawables.XmlDrawableActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Coordinator Layout", CoordinatorLayoutActivity.class));
         items.add(new MenuItem("Blur", BlurActivity.class));
         items.add(new MenuItem("Orientation", OrientationActivity.class));
-        items.add(new MenuItem("ViewPager", ViewPagerActivity.class));
+        items.add(new MenuItem("ViewPager", PagerActivity.class));
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));
         items.add(new MenuItem("Location", ReactiveLocationActivity.class));
         items.add(new MenuItem("Tabs", TabsActivity.class));

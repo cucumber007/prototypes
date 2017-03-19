@@ -14,6 +14,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
     private Context context;
     private List<T> items;
     private int itemLayout;
+    private OnItemClickListener<T> itemClickListener;
 
     public BaseRecyclerViewAdapter(Context context, List<T> items, @LayoutRes int itemLayout) {
         this.context = context;
@@ -27,7 +28,13 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
         return createViewHolder(v);
     }
 
+    @Override
+    public void onBindViewHolder(VH holder, int position) {
+        bindViewHolder(holder, getItem(position), position);
+    }
+
     abstract VH createViewHolder(View view);
+    abstract void bindViewHolder(VH holder, T item, int position);
 
     public List<T> getItems() {
         return items;
@@ -45,4 +52,17 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
     public Context getContext() {
         return context;
     }
+
+    public OnItemClickListener<T> getItemClickListener() {
+        return itemClickListener;
+    }
+
+    public void setItemClickListener(OnItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
+    public interface OnItemClickListener<T>{
+        void onItemClick(int position, View view, T item);
+    }
+
 }
