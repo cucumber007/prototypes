@@ -29,6 +29,10 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
     abstract VH createViewHolder(View view);
 
+    public List<T> getItems() {
+        return items;
+    }
+
     @Override
     public int getItemCount() {
         return items.size();
