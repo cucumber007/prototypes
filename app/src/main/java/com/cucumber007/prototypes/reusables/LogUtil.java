@@ -106,5 +106,16 @@ public class LogUtil {
         makeToast(ContextApplication.getContext(), stringId);
     }
 
+    public static void makeToastWithDebug(String text, String debugText) {
+        if(!BuildConfig.DEBUG_MODE) makeToast(text);
+        else makeToast(debugText);
+    }
+
+    public static void makeToastWithDebug(int stringId, String debugText) {
+        if(!BuildConfig.DEBUG_MODE) makeToast(stringId);
+        else makeToast(debugText);
+    }
+
+
 
 }

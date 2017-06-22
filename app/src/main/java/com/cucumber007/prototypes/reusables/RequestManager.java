@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitService;
 
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
@@ -92,7 +93,8 @@ public class RequestManager {
                         //UserModel.getInstance().logout();
                         break;
                     default:
-                        LogUtil.logDebug("SERVER: " + httpException.message() + " // " + t.getMessage() + " " + httpException.response().errorBody().string());
+                        LogUtil.logDebug("SERVER: " + httpException.message() + " // "+t.getMessage() + " " + httpException.response().errorBody().string());
+                        LogUtil.makeToastWithDebug("Unknown server error", "SERVER: " + httpException.message() + " // "+t.getMessage() + " " + httpException.response().errorBody().string());
                         break;
                 }
 
@@ -111,7 +113,7 @@ public class RequestManager {
     }
 
     public static boolean isNetworkError(Throwable t) {
-        return t instanceof SocketTimeoutException || t instanceof UnknownHostException;
+        return t instanceof SocketTimeoutException || t instanceof UnknownHostException || t instanceof ConnectException || (t instanceof RuntimeException && t.getMessage().contains("Looper.prepare()")) ;
     }
 
     public static RetrofitService getService() {
