@@ -7,7 +7,7 @@ android {
     }
 
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.cucumber007.prototypes"
@@ -29,9 +29,33 @@ android {
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
+        debug {
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+            buildConfigField "Boolean", "TEST_MODE", "false"
+            buildConfigField "Boolean", "FABRIC_LOGS", "false"
+            buildConfigField "Boolean", "LOGCAT_LOGS", "true"
+        }
+        debugTest {
+            /*lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }*/
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+            buildConfigField "Boolean", "TEST_MODE", "true"
+            buildConfigField "Boolean", "FABRIC_LOGS", "true"
+            buildConfigField "Boolean", "LOGCAT_LOGS", "true"
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.cucumber007
+        }
+        release {
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+            buildConfigField "Boolean", "TEST_MODE", "false"
+            buildConfigField "Boolean", "FABRIC_LOGS", "true"
+            buildConfigField "Boolean", "LOGCAT_LOGS", "false"
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.cucumber007
         }
     }
 }
