@@ -2,7 +2,7 @@ package com.cucumber007.prototypes.activities._architecture.mvc;
 
 import android.content.Context;
 
-import com.cucumber007.prototypes.MyApplication;
+import com.cucumber007.prototypes.ContextApplication;
 
 import java.util.Observer;
 
@@ -14,8 +14,8 @@ public class DataController {
     private IDatabaseModel database;
 
     private DataController() {
-        context = MyApplication.getContext();
-        database = MyApplication.getDatabaseModel();
+        context = ContextApplication.getContext();
+        database = ContextApplication.getDatabaseModel();
     }
 
 

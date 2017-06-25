@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cucumber007.prototypes.MyApplication;
+import com.cucumber007.prototypes.ContextApplication;
 import com.cucumber007.prototypes.R;
 
 import java.util.Observable;
@@ -52,7 +52,7 @@ public class MvcActivity extends Activity {
         DataController.getInstance().saveDataAsync(editText.getText().toString(), new IDatabaseModel.IDatabaseCallback() {
             @Override
             public void onFinish() {
-                Toast.makeText(MyApplication.getContext(), "Data saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContextApplication.getContext(), "Data saved", Toast.LENGTH_SHORT).show();
             }
         });
     }

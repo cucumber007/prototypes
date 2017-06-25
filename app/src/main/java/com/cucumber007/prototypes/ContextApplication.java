@@ -6,7 +6,7 @@ import android.content.Context;
 import com.cucumber007.prototypes.activities._architecture.mvc.IDatabaseModel;
 import com.cucumber007.prototypes.activities._architecture.mvc.SharedPrefsModel;
 
-public class MyApplication extends Application{
+public class ContextApplication extends Application{
 
     private static Context context;
 
