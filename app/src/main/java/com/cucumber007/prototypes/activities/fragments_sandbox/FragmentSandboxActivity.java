@@ -10,14 +10,14 @@ import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
 import com.roughike.bottombar.BottomBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class FragmentSandboxActivity extends AppCompatActivity {
 
-    @Bind(R.id.root) FrameLayout root;
-    @Bind(R.id.bottomBar) BottomBar bottomBar;
+    @BindView(R.id.root) FrameLayout root;
+    @BindView(R.id.bottomBar) BottomBar bottomBar;
     private Fragment currentFragment;
     private Fragment fragment1 = new TestParentFragment();
     private Fragment fragment2 = new TestParentFragment();

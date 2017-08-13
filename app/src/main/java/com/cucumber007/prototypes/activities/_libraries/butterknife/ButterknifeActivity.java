@@ -11,11 +11,12 @@ import com.cucumber007.prototypes.R;
 
 import java.util.List;
 
-import butterknife.Bind;
 import butterknife.BindColor;
 import butterknife.BindDimen;
 import butterknife.BindDrawable;
 import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -26,7 +27,7 @@ public class ButterknifeActivity extends Activity {
     @BindColor(R.color.red) int red; // int or ColorStateList field
     @BindDimen(R.dimen.test) int spacer;
 
-    @Bind(R.id.button) Button button;
+    @BindView(R.id.button) Button button;
 
 
     @Override
@@ -42,8 +43,7 @@ public class ButterknifeActivity extends Activity {
         ButterKnife.apply(buttons, View.ALPHA, 0.4f);
     }
 
-    @Bind({ R.id.button, R.id.button2, R.id.button3 })
-    List<Button> buttons;
+    @BindViews({ R.id.button, R.id.button2, R.id.button3 }) List<Button> buttons;
 
     static final ButterKnife.Action<Button> textAction = new ButterKnife.Action<Button>() {
         @Override public void apply(Button view, int index) {

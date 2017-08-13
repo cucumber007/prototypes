@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TestParentFragment extends Fragment {
 
-    @Bind(R.id.list_pager) ViewPager listPager;
+    @BindView(R.id.list_pager) ViewPager listPager;
 
     private Fragment fragment1 = new TestChildFragment();
     private Fragment fragment2 = new TestChildFragment();
@@ -48,7 +48,6 @@ public class TestParentFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
 

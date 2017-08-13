@@ -16,7 +16,7 @@ import com.google.android.gms.location.LocationRequest;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
@@ -27,8 +27,8 @@ import rx.schedulers.Schedulers;
 
 public class ReactiveLocationActivity extends AppCompatActivity {
 
-    @Bind(R.id.textView8) TextView textView8;
-    @Bind(R.id.textView9) TextView textView9;
+    @BindView(R.id.textView8) TextView textView8;
+    @BindView(R.id.textView9) TextView textView9;
 
     private Context context = this;
     private Subscription subscription;

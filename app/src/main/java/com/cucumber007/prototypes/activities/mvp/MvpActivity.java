@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -14,7 +14,7 @@ public class MvpActivity extends Activity implements TestPresenter.TestView {
 
     //if list, one presenter for all items (MessagePresenter(messageId))
 
-    @Bind(R.id.textView5) TextView textView5;
+    @BindView(R.id.textView5) TextView textView5;
 
     private TestPresenter presenter;
 

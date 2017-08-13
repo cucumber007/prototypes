@@ -12,19 +12,19 @@ import com.cucumber007.prototypes.R;
 
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 
 public class XmlDrawableActivity extends Activity {
 
-    @Bind(R.id.imageView2) ImageView imageView2;
-    @Bind(R.id.imageView4) ImageView imageView4;
-    @Bind(R.id.imageView3) ImageView imageView3;
-    @Bind(R.id.imageView5) ImageView imageView5;
-    @Bind(R.id.imageView6) ImageView imageView6;
-    @Bind(R.id.imageView7) ImageView imageView7;
+    @BindView(R.id.imageView2) ImageView imageView2;
+    @BindView(R.id.imageView4) ImageView imageView4;
+    @BindView(R.id.imageView3) ImageView imageView3;
+    @BindView(R.id.imageView5) ImageView imageView5;
+    @BindView(R.id.imageView6) ImageView imageView6;
+    @BindView(R.id.imageView7) ImageView imageView7;
 
     private boolean transition = false;
 

@@ -6,13 +6,13 @@ import android.support.v7.widget.Toolbar;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CoordinatorLayoutActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

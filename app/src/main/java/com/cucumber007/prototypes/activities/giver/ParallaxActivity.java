@@ -18,7 +18,7 @@ import android.view.SurfaceView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ParallaxActivity extends AppCompatActivity {
@@ -35,7 +35,7 @@ public class ParallaxActivity extends AppCompatActivity {
     private float[] ds = new float[] {0,0};
     private Bitmap background;
 
-    @Bind(R.id.surfaceView2) SurfaceView surfaceView;
+    @BindView(R.id.surfaceView2) SurfaceView surfaceView;
 
 
     @Override

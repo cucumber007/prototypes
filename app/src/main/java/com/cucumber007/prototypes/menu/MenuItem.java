@@ -4,6 +4,7 @@ public class MenuItem {
 
     private String name;
     private Class activity;
+    private boolean divider = false;
 
 
     public MenuItem(String name, Class activity) {
@@ -11,6 +12,13 @@ public class MenuItem {
         this.activity = activity;
     }
 
+    public MenuItem() {
+        divider = true;
+    }
+
+    public boolean isDivider() {
+        return divider;
+    }
 
     public String getName() {
         return name;

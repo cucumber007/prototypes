@@ -9,13 +9,13 @@ import com.cucumber007.prototypes.R;
 
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.Observable;
 
 public class RxJavaActivity extends Activity {
 
-    @Bind(R.id.outputText) TextView outputText;
+    @BindView(R.id.outputText) TextView outputText;
 
 
     @Override

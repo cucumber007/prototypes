@@ -6,12 +6,12 @@ import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class StylesActivity extends Activity {
 
-    @Bind(R.id.textView3) TextView textView3;
+    @BindView(R.id.textView3) TextView textView3;
 
 
     @Override

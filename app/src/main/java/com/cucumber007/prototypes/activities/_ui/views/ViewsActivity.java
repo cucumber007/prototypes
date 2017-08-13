@@ -19,21 +19,21 @@ import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ViewsActivity extends Activity {
 
-    @Bind(R.id.imageView) ImageView imageView;
-    @Bind(R.id.imageView13) ImageView imageView13;
-    @Bind(R.id.textView7) TextView textView7;
+    @BindView(R.id.imageView) ImageView imageView;
+    @BindView(R.id.imageView13) ImageView imageView13;
+    @BindView(R.id.textView7) TextView textView7;
 
     ViewTreeObserver.OnGlobalLayoutListener listener;
-    @Bind(R.id.frame) RelativeLayout frame;
-    @Bind(R.id.imageView14) ImageView imageView14;
-    @Bind(R.id.imageView15) ImageView imageView15;
-    @Bind(R.id.compat) ImageView compat;
+    @BindView(R.id.frame) RelativeLayout frame;
+    @BindView(R.id.imageView14) ImageView imageView14;
+    @BindView(R.id.imageView15) ImageView imageView15;
+    @BindView(R.id.compat) ImageView compat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

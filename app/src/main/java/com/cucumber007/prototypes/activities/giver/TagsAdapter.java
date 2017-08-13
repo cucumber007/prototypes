@@ -13,7 +13,7 @@ import com.cucumber007.prototypes.reusables.logging.LogUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -85,8 +85,8 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.TagViewHolder>
 
     public class TagViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.text) TextView text;
-        @Bind(R.id.root) View root;
+        @BindView(R.id.text) TextView text;
+        @BindView(R.id.root) View root;
 
         public TagViewHolder(View itemView) {
             super(itemView);

@@ -12,15 +12,15 @@ import android.view.ViewGroup;
 import com.astuetz.PagerSlidingTabStrip;
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public abstract class AbstractTabsFragment extends AbstractTitledFragment {
 
 
-    @Bind(R.id.list_pager) ViewPager listPager;
-    @Bind(R.id.tabs) PagerSlidingTabStrip tabs;
+    @BindView(R.id.list_pager) ViewPager listPager;
+    @BindView(R.id.tabs) PagerSlidingTabStrip tabs;
     //todo to prototypes
 
     @Override
@@ -59,6 +59,5 @@ public abstract class AbstractTabsFragment extends AbstractTitledFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

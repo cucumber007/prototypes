@@ -14,7 +14,7 @@ import com.cucumber007.prototypes.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
@@ -54,8 +54,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     //VH to View = 1 to 1
     //VH != data, VH = link to view
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.text) TextView text;
-        @Bind(R.id.animate_text) TextView animateText;
+        @BindView(R.id.text) TextView text;
+        @BindView(R.id.animate_text) TextView animateText;
 
         public ViewHolder(View v) {
             super(v);

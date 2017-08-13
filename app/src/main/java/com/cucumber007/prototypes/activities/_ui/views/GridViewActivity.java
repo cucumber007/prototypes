@@ -7,12 +7,12 @@ import android.widget.GridView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class GridViewActivity extends AppCompatActivity {
 
-    @Bind(R.id.gridView) GridView gridView;
+    @BindView(R.id.gridView) GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

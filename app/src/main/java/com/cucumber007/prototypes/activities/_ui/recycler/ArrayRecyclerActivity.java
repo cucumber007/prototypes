@@ -9,12 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.reusables.recycler.ArrayRecyclerAdapter;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ArrayRecyclerActivity extends AppCompatActivity {
 
-    @Bind(R.id.recycler) RecyclerView recycler;
+    @BindView(R.id.recycler) RecyclerView recycler;
     private Context context = this;
 
     @Override

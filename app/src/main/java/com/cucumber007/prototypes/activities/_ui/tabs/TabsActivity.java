@@ -7,12 +7,12 @@ import android.widget.RelativeLayout;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TabsActivity extends AppCompatActivity {
 
-    @Bind(R.id.root) RelativeLayout root;
+    @BindView(R.id.root) RelativeLayout root;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

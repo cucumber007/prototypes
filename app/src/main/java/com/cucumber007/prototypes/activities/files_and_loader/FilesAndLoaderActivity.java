@@ -25,7 +25,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
@@ -36,8 +36,8 @@ public class FilesAndLoaderActivity extends Activity {
 
     //todo why the fuck we need to create a whole loader to get path from uri???
     private static final int REQUEST_CODE_PICTURE = 1;
-    @Bind(R.id.imageView7) ImageView imageView7;
-    @Bind(R.id.imageView8) ImageView imageView8;
+    @BindView(R.id.imageView7) ImageView imageView7;
+    @BindView(R.id.imageView8) ImageView imageView8;
 
     private Context context = this;
 

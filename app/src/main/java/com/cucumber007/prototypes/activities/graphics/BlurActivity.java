@@ -11,16 +11,16 @@ import android.widget.RelativeLayout;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class BlurActivity extends AppCompatActivity {
 
-    @Bind(R.id.imageView10) ImageView imageView10;
-    @Bind(R.id.imageView11) ImageView imageView11;
-    @Bind(R.id.root) RelativeLayout root;
-    @Bind(R.id.cover) FrameLayout cover;
+    @BindView(R.id.imageView10) ImageView imageView10;
+    @BindView(R.id.imageView11) ImageView imageView11;
+    @BindView(R.id.root) RelativeLayout root;
+    @BindView(R.id.cover) FrameLayout cover;
 
     long time;
 

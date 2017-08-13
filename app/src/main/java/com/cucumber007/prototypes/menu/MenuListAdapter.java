@@ -12,7 +12,7 @@ import com.cucumber007.prototypes.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MenuListAdapter extends BaseAdapter {
@@ -39,13 +39,12 @@ public class MenuListAdapter extends BaseAdapter {
         } else {
             vh = ((ViewHolder) convertView.getTag());
         }
-        vh.text.setText(getItem(position).getName());
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(context, getItem(position).getActivityClass()));
-            }
-        });
+
+        if(!getItem(position).isDivider()) {
+            vh.text.setText(getItem(position).getName());
+            convertView.setOnClickListener(v -> context.startActivity(new Intent(context, getItem(position).getActivityClass())));
+        } else
+            vh.text.setText("---------------------------------------------------------------");
 
         return convertView;
     }
@@ -70,7 +69,7 @@ public class MenuListAdapter extends BaseAdapter {
 
 
     static class ViewHolder {
-        @Bind(R.id.text) TextView text;
+        @BindView(R.id.text) TextView text;
 
 
         ViewHolder(View view) {

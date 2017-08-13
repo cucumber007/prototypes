@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class PagerActivity extends AppCompatActivity {
 
-    @Bind(R.id.tutorial_pager) ViewPager tutorialPager;
-    @Bind(R.id.title) TextView title;
+    @BindView(R.id.tutorial_pager) ViewPager tutorialPager;
+    @BindView(R.id.title) TextView title;
 
     //todo endless pager
     //todo pager cache > 3

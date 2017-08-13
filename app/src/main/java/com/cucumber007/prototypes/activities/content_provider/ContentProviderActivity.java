@@ -12,14 +12,14 @@ import android.widget.ListView;
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.database.TestTable;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ContentProviderActivity extends Activity {
 
-    @Bind(R.id.listView2) ListView listView2;
-    @Bind(R.id.editText2) EditText editText2;
+    @BindView(R.id.listView2) ListView listView2;
+    @BindView(R.id.editText2) EditText editText2;
 
     private ContentResolver contentResolver;
 

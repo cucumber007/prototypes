@@ -23,7 +23,7 @@ public class GalleryRecyclerAdapter  {
     }
 
     public class GalleryImageHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.image) ImageView image;
+        @BindView(R.id.image) ImageView image;
 
         public GalleryImageHolder(View itemView) {
             super(itemView);

@@ -13,7 +13,7 @@ import com.cucumber007.prototypes.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -23,7 +23,7 @@ public class RecyclerActivity extends Activity {
     //todo more layout managers
     //todo custom libraries
 
-    @Bind(R.id.recycler) RecyclerView recycler;
+    @BindView(R.id.recycler) RecyclerView recycler;
 
     private Context context = this;
     private boolean direction = true;

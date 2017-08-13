@@ -1,29 +1,10 @@
 package com.cucumber007.prototypes.activities.giver;
 
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.location.Location;
+public class OffersMapPresenter {
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.cucumber007.prototypes.activities.giver.objects.Offer;
-import com.cucumber007.prototypes.reusables.listeners.LoadingListener;
-import com.google.android.gms.maps.model.LatLng;
+    /*private boolean addressMode = false;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static com.cucumber007.prototypes.activities.giver.BaseLocationModel.EQUATOR;
-
-
-public class OffersMapPresenter implements LoadingListener {
-
-    private boolean addressMode = false;
-
-    /*@Inject*/ AbstractOffersModel offersModel;
     private Activity activity;
     private OffersMapView mapView;
     private LatLng address;
@@ -53,7 +34,7 @@ public class OffersMapPresenter implements LoadingListener {
                     mapView.moveToLocation(location);
 
                     onStartLoading();
-                    offersModel.getOffersForMapObservable(location, calcRadius(/*MapActivity.DEFAULT_ZOOM*/1)).subscribe(offersWrapper -> {
+                    offersModel.getOffersForMapObservable(location, calcRadius(MapActivity.DEFAULT_ZOOM)).subscribe(offersWrapper -> {
 
                         for(Offer offer : offersWrapper.getOffers()) {
 
@@ -70,7 +51,7 @@ public class OffersMapPresenter implements LoadingListener {
                 }
             });
         } else {
-            mapView.moveToLocation(LocationModel.locationFromLatLng(address), /*MapActivity.ADDRESS_ZOOM*/2);
+            mapView.moveToLocation(LocationModel.locationFromLatLng(address), MapActivity.ADDRESS_ZOOM);
         }
     }
 
@@ -123,5 +104,5 @@ public class OffersMapPresenter implements LoadingListener {
 
     public interface OffersCallback {
         void onLoad(List<Offer> offers);
-    }
+    }*/
 }

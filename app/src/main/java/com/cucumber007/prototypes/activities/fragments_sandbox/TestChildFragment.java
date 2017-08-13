@@ -10,13 +10,13 @@ import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TestChildFragment extends Fragment {
 
 
-    @Bind(R.id.text) TextView text;
+    @BindView(R.id.text) TextView text;
 
     private Context context;
 
@@ -35,6 +35,5 @@ public class TestChildFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

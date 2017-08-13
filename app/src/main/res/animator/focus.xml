@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:shareInterpolator="false" >
+
+    <objectAnimator
+        android:valueFrom="1.0"
+        android:valueTo="0.8"
+        android:propertyName="scaleX"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="200" />
+
+    <objectAnimator
+        android:valueFrom="1.0"
+        android:valueTo="0.8"
+        android:propertyName="scaleY"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="200" />
+
+    <objectAnimator
+        android:valueFrom="0.8"
+        android:valueTo="2.2"
+        android:propertyName="scaleX"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="200"
+        android:startOffset="200"
+        />
+
+    <objectAnimator
+        android:valueFrom="0.8"
+        android:valueTo="2.2"
+        android:propertyName="scaleY"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="200"
+        android:startOffset="200"/>
+
+    <objectAnimator
+        android:valueFrom="2.2"
+        android:valueTo="1.8"
+        android:propertyName="scaleX"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="200"
+        android:startOffset="400"/>
+
+    <objectAnimator
+        android:valueFrom="2.2"
+        android:valueTo="1.8"
+        android:propertyName="scaleY"
+        android:interpolator="@android:interpolator/linear"
+        android:duration="200"
+        android:startOffset="400"/>
+
+    <!--<scale
+        android:duration="100"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="0.8"
+        android:toYScale="0.8" />
+
+    <scale
+        android:duration="100"
+        android:fromXScale="0.8"
+        android:fromYScale="0.8"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:startOffset="100"
+        android:toXScale="2.2"
+        android:toYScale="2.2" />
+
+    <scale
+        android:duration="200"
+        android:fromXScale="2.2"
+        android:fromYScale="2.2"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:startOffset="100"
+        android:toXScale="2.0"
+        android:toYScale="2.0" />-->
+
+</set>
