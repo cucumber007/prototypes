@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.recycler;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -15,67 +15,52 @@ import java.util.List;
 import butterknife.ButterKnife;
 
 
-public class ArrayRecyclerAdapter<T> extends RecyclerView.Adapter<ArrayRecyclerAdapter.TextViewHolder> {
+public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRecyclerAdapter.TextViewHolder> {
 
-    private final Context context;
-    private List<T> items;
-    private int itemLayout = -1;
     private int textViewId = -1;
     private OnItemClickListener onItemClickListener;
 
     public ArrayRecyclerAdapter(Context context, T[] items) {
-        this.context = context;
-        this.items = Arrays.asList(items);
+        super(context, Arrays.asList(items), -1);
     }
 
     public ArrayRecyclerAdapter(Context context, List<T> items) {
-        this.context = context;
-        this.items = items;
+        super(context, items, -1);
     }
 
     public ArrayRecyclerAdapter(Context context, List<T> items, @LayoutRes int itemLayout, int textViewId) {
-        this.context = context;
-        this.items = items;
-        this.itemLayout = itemLayout;
+        super(context, items, itemLayout);
         this.textViewId = textViewId;
     }
 
     @Override
+    TextViewHolder createViewHolder(View view) {
+        return null;
+    }
+
+    @Override
+    void bindViewHolder(ArrayRecyclerAdapter.TextViewHolder holder, T item, int position) {
+        holder.getTextView().setText(item.toString());
+    }
+
+    @Override
     public TextViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if(itemLayout != -1) {
-            View v = LayoutInflater.from(context)
-                    .inflate(itemLayout, parent, false);
+        if(getItemLayout() != -1) {
+            View v = LayoutInflater.from(getContext())
+                    .inflate(getItemLayout(), parent, false);
             return new TextViewHolder(v);
         } else {
-            TextView textView = new TextView(context);
-            int padding = (int)DpUtils.dpToPx(15, context);
+            TextView textView = new TextView(getContext());
+            int padding = (int)DpUtils.dpToPx(15, getContext());
             textView.setPadding(padding, padding, padding, padding);
             textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             return new TextViewHolder(textView, true);
         }
     }
 
-    @Override
-    public void onBindViewHolder(ArrayRecyclerAdapter.TextViewHolder holder, int position) {
-        holder.getTextView().setText(getItem(position).toString());
-    }
-
-    @Override
-    public int getItemCount() {
-        return items.size();
-    }
-
-    public T getItem(int position) {
-        return items.get(position);
-    }
-
     public void setItemsAndUpdate(List<T> items) {
-        this.items = items;
+        setItems(items);
         notifyDataSetChanged();
-    }
-
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
     }
 
     public class TextViewHolder extends RecyclerView.ViewHolder {

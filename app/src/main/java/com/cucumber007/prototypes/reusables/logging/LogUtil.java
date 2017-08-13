@@ -1,8 +1,10 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.logging;
 
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.cucumber007.prototypes.reusables.ContextApplication;
 
 import java.util.List;
 

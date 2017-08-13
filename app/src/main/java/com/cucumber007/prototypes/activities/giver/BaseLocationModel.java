@@ -9,7 +9,7 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.cucumber007.prototypes.reusables.ContextApplication;
-import com.cucumber007.prototypes.reusables.LogUtil;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;

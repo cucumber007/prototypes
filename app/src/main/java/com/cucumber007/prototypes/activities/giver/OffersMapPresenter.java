@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.cucumber007.prototypes.activities.giver.objects.Offer;
-import com.cucumber007.prototypes.reusables.LoadingListener;
+import com.cucumber007.prototypes.reusables.listeners.LoadingListener;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.HashMap;
@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 import static com.cucumber007.prototypes.activities.giver.BaseLocationModel.EQUATOR;
-import static com.cucumber007.prototypes.activities.giver.BaseLocationModel.calcRadius;
 
 
 public class OffersMapPresenter implements LoadingListener {

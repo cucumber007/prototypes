@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.recycler;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -35,6 +35,14 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
     abstract VH createViewHolder(View view);
     abstract void bindViewHolder(VH holder, T item, int position);
+
+    public int getItemLayout() {
+        return itemLayout;
+    }
+
+    public void setItems(List<T> items) {
+        this.items = items;
+    }
 
     public List<T> getItems() {
         return items;

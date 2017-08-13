@@ -1,10 +1,11 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.network;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitService;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 import java.io.IOException;
 import java.net.ConnectException;

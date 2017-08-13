@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.text.format.DateFormat;
 
-import com.cucumber007.prototypes.ContextApplication;
+import com.cucumber007.prototypes.reusables.ContextApplication;
 import com.google.gson.annotations.SerializedName;
 
 import org.threeten.bp.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.utils;
+package com.cucumber007.prototypes.reusables.camera;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;

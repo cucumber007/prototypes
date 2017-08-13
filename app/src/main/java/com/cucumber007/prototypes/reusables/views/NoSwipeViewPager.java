@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.views;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

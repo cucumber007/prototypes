@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.widget.Toast;
 
-import com.cucumber007.prototypes.ContextApplication;
+import com.cucumber007.prototypes.reusables.ContextApplication;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.PendingResult;

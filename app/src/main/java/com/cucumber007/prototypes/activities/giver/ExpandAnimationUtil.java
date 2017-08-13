@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import com.cucumber007.prototypes.reusables.LogUtil;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 public class ExpandAnimationUtil {
 

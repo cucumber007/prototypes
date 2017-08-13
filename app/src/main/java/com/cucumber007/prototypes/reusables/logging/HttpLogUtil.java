@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.logging;
 
 import okhttp3.logging.HttpLoggingInterceptor;
 

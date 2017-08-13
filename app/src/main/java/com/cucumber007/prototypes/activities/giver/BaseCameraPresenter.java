@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.cucumber007.prototypes.reusables.LoadingListener;
-import com.cucumber007.prototypes.reusables.LogUtil;
+import com.cucumber007.prototypes.reusables.listeners.LoadingListener;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;

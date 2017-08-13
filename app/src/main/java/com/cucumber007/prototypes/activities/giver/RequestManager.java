@@ -9,11 +9,11 @@ import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
 
 import com.cucumber007.prototypes.BuildConfig;
-import com.cucumber007.prototypes.ContextApplication;
 import com.cucumber007.prototypes.activities._ui.activity_templates.LoginActivity;
-import com.cucumber007.prototypes.reusables.HttpLogUtil;
-import com.cucumber007.prototypes.reusables.LogUtil;
-import com.cucumber007.prototypes.reusables.RetrofitService;
+import com.cucumber007.prototypes.reusables.logging.HttpLogUtil;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
+import com.cucumber007.prototypes.reusables.network.RetrofitService;
+import com.cucumber007.prototypes.reusables.ContextApplication;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.reusables.ArrayRecyclerAdapter;
+import com.cucumber007.prototypes.reusables.recycler.ArrayRecyclerAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

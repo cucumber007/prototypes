@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.format.DateFormat;
 
-import com.cucumber007.prototypes.ContextApplication;
+import com.cucumber007.prototypes.reusables.ContextApplication;
 
 import org.threeten.bp.LocalTime;
 import org.threeten.bp.ZoneId;

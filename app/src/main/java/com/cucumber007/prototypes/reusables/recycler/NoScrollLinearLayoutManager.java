@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.reusables;
+package com.cucumber007.prototypes.reusables.recycler;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.reusables.LogUtil;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
 import com.roughike.bottombar.BottomBar;
 
 import butterknife.Bind;

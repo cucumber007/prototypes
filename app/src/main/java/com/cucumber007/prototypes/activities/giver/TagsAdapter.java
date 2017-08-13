@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.reusables.LogUtil;
+import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;

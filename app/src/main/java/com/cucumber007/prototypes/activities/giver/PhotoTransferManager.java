@@ -4,7 +4,7 @@ package com.cucumber007.prototypes.activities.giver;
 import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 
-import com.cucumber007.prototypes.ContextApplication;
+import com.cucumber007.prototypes.reusables.ContextApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

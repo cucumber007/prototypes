@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities._architecture.mvp;
+package com.cucumber007.prototypes.activities.mvp;
 
 import android.app.Activity;
 import android.os.Bundle;

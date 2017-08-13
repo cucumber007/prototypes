@@ -7,8 +7,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.activities._architecture.mvc.MvcActivity;
-import com.cucumber007.prototypes.activities._architecture.mvp.MvpActivity;
+import com.cucumber007.prototypes.activities.mvp.MvpActivity;
 import com.cucumber007.prototypes.activities._libraries.butterknife.ButterknifeActivity;
 import com.cucumber007.prototypes.activities._libraries.reactive_location.ReactiveLocationActivity;
 import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitActivity;
@@ -54,7 +53,6 @@ public class MainActivity extends Activity {
         List<MenuItem> items = new ArrayList<>();
         items.add(new MenuItem("RecyclerView", RecyclerActivity.class));
         items.add(new MenuItem("ButterKnife", ButterknifeActivity.class));
-        items.add(new MenuItem("MVC", MvcActivity.class));
         items.add(new MenuItem("Lambda", LambdaActivity.class));
         items.add(new MenuItem("RxJava", RxJavaActivity.class));
         items.add(new MenuItem("Retrofit", RetrofitActivity.class));

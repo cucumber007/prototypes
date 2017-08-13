@@ -25,7 +25,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities.giver.objects.Checkin;
 import com.cucumber007.prototypes.activities.giver.objects.Offer;
-import com.cucumber007.prototypes.reusables.LoadingListener;
+import com.cucumber007.prototypes.reusables.listeners.LoadingListener;
 
 import java.util.Timer;
 import java.util.TimerTask;
