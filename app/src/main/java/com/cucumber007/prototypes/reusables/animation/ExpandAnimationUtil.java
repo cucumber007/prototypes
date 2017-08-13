@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.reusables.animation;
 
 
 import android.animation.Animator;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
+import com.cucumber007.prototypes.reusables.listeners.AbstractSimpleAnimatorListener;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 public class ExpandAnimationUtil {

@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

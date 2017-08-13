@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.activities.giver.blur;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

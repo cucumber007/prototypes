@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.reusables.recycler;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

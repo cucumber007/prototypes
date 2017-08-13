@@ -1,8 +1,9 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.reusables.listeners;
 
 import android.app.Activity;
 import android.content.IntentSender;
 
+import com.cucumber007.prototypes.activities.giver.LocationModel;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
 import com.google.android.gms.common.api.Status;
 

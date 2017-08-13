@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.activities.giver.blur;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

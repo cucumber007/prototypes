@@ -1,8 +1,10 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.reusables.animation;
 
 
 import android.animation.Animator;
 import android.view.View;
+
+import com.cucumber007.prototypes.reusables.listeners.AbstractSimpleAnimatorListener;
 
 public class FadeAnimationUtil {
 

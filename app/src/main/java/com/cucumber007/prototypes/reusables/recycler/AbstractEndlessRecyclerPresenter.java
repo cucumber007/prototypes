@@ -2,8 +2,6 @@ package com.cucumber007.prototypes.reusables.recycler;
 
 import android.support.v7.widget.RecyclerView;
 
-import com.cucumber007.prototypes.activities.giver.RecyclerEndlessScrollListener;
-
 public abstract class AbstractEndlessRecyclerPresenter {
 
     private RecyclerView recyclerView;
