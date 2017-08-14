@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1044713664637",
+    "project_id": "cucumber007id2"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044713664637:android:68bd8b542316583c",
+        "android_client_info": {
+          "package_name": "com.cucumber007.prototypes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044713664637-67tmlk0dr4e0i44io2erufj2v5vump6k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cucumber007.prototypes",
+            "certificate_hash": "8624c1b9baa8644fbb309377ed32f2321b47ce5b"
+          }
+        },
+        {
+          "client_id": "1044713664637-uoubjgh0k8p8kbiet61fufaoqps12p65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGfDN6bYZ_OdhFZhemLHTMLtJcLeapPtc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

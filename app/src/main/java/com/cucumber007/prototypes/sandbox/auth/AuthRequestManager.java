@@ -1,12 +1,10 @@
-package com.cucumber007.prototypes.reusables.network;
+package com.cucumber007.prototypes.sandbox.auth;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitService;
 import com.cucumber007.prototypes.reusables.ContextApplication;
-import com.cucumber007.prototypes.reusables.logging.HttpLogUtil;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 import java.io.IOException;
@@ -25,25 +23,25 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class RequestManager {
+public class AuthRequestManager {
 
-    public static final String SERVER_URL = "http://aaa/";
+    public static final String SERVER_URL = "http://192.168.2.101:8000/";
     public static final String TEST_SERVER_URL = "http://aaa/";
     private boolean testServer = false;
 
-    private static RequestManager instance = new RequestManager();
+    private static AuthRequestManager instance = new AuthRequestManager();
 
     private static Context context;
-    private static RetrofitService service;
+    private static AuthRetrofitService service;
     private static String cookie;
 
     public static final String KEY_COOKIE = "cookie";
 
-    private RequestManager() {
+    private AuthRequestManager() {
         context = ContextApplication.getContext();
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.interceptors().add(HttpLogUtil.getHttpInterceptor());
+        //httpClient.interceptors().add(HttpLogUtil.getHttpInterceptor());
 
         httpClient.interceptors().add((chain) -> {
             try {
@@ -68,7 +66,7 @@ public class RequestManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
-        service = retrofit.create(RetrofitService.class);
+        service = retrofit.create(AuthRetrofitService.class);
 
         loadAndKeepCookie();
     }
@@ -119,12 +117,12 @@ public class RequestManager {
         return t instanceof SocketTimeoutException || t instanceof UnknownHostException || t instanceof ConnectException || (t instanceof RuntimeException && t.getMessage().contains("Looper.prepare()")) ;
     }
 
-    public static RetrofitService getService() {
+    public static AuthRetrofitService getService() {
         return service;
     }
 
     public static void setCookie(String cookie) {
-        RequestManager.cookie = cookie;
+        AuthRequestManager.cookie = cookie;
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
         editor.putString(KEY_COOKIE, cookie);
         editor.apply();

@@ -95,8 +95,8 @@ public class CameraPresenter extends BaseCameraPresenter {
         super.rotate(orientation);
         float size = 5;//getContext().getResources().getDimension(R.dimen.camera_control_size);
         float flashSize = 5;//getContext().getResources().getDimension(R.dimen.camera_flash_size);
-        float from = com.cucumber007.prototypes.activities.giver.RotationDetector.getRangeMiddleMirror(getCurrentOrientation());
-        float to = com.cucumber007.prototypes.activities.giver.RotationDetector.getRangeMiddleMirror(orientation);
+        float from = RotationDetector.getRangeMiddleMirror(getCurrentOrientation());
+        float to = RotationDetector.getRangeMiddleMirror(orientation);
 
         /*Animation animation = new RotateAnimation(
                 from > 180 ? from - 360 : from,
@@ -127,12 +127,12 @@ public class CameraPresenter extends BaseCameraPresenter {
                 //cameraFlashButton.setVisibility(View.GONE);
             }*/
 
-        cameraModeButton.animate().rotation(com.cucumber007.prototypes.activities.giver.RotationDetector.getRangeMiddleMirror(orientation));
-        cameraFlashButton.animate().rotation(com.cucumber007.prototypes.activities.giver.RotationDetector.getRangeMiddleMirror(orientation));
+        cameraModeButton.animate().rotation(RotationDetector.getRangeMiddleMirror(orientation));
+        cameraFlashButton.animate().rotation(RotationDetector.getRangeMiddleMirror(orientation));
 
         //cameraTimerButton.startAnimation(animation);
 
-        timeText.setRotation(com.cucumber007.prototypes.activities.giver.RotationDetector.getRangeMiddleMirror(orientation));
+        timeText.setRotation(RotationDetector.getRangeMiddleMirror(orientation));
     }
 
     @Override

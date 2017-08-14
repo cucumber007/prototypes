@@ -40,7 +40,7 @@ public class BaseCameraPresenter {
     private boolean flashLightEnabled = false;
     private int cameraOrientation;
     private boolean cameraReady = false;
-    private com.cucumber007.prototypes.activities.giver.RotationDetector rotationDetector;
+    private RotationDetector rotationDetector;
 
 
     public BaseCameraPresenter(Activity activity, SurfaceView preview, LoadingListener loadingListener
@@ -66,7 +66,7 @@ public class BaseCameraPresenter {
         surfaceHolder.addCallback(callback);
         preview.setVisibility(View.VISIBLE);
 
-        rotationDetector = new com.cucumber007.prototypes.activities.giver.RotationDetector(context, this::rotate);
+        rotationDetector = new RotationDetector(context, this::rotate);
     }
 
     public void resume() {
