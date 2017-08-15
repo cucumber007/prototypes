@@ -37,7 +37,8 @@ public class AuthActivity extends AppCompatActivity {
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
-                .requestServerAuthCode(clientId)
+                .requestProfile()
+                .requestIdToken(clientId)
                 .build();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -58,6 +59,12 @@ public class AuthActivity extends AppCompatActivity {
         loginByGoogle();
     }
 
+    @OnClick(R.id.logout_google)
+    public void onClick() {
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                status -> LogUtil.makeToast(status.getStatusMessage()));
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -65,8 +72,8 @@ public class AuthActivity extends AppCompatActivity {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
-                if (account.getServerAuthCode() != null)
-                    AuthRequestManager.getService().login(new LoginParams(account.getServerAuthCode(), LoginParams.SocialType.GOOGLE))
+                if (account.getIdToken() != null)
+                    AuthRequestManager.getService().login(new LoginParams(account.getIdToken(), LoginParams.SocialType.GOOGLE))
                             .compose(AuthRequestManager.applySchedulersAndHandleErrors())
                             .subscribe(user -> {
                                 LogUtil.makeToast("Login success");
@@ -78,5 +85,4 @@ public class AuthActivity extends AppCompatActivity {
             }
         }
     }
-
 }

@@ -8,7 +8,7 @@ import rx.Observable;
 
 public interface AuthRetrofitService {
 
-    @POST("login/google")
+    @POST("login/google-oauth2/")
     Observable<Response<Object>> login(@Body Object loginParams);
 
 

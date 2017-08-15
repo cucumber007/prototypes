@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.cucumber007.prototypes.reusables.ContextApplication;
+import com.cucumber007.prototypes.reusables.logging.HttpLogUtil;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class AuthRequestManager {
         context = ContextApplication.getContext();
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        //httpClient.interceptors().add(HttpLogUtil.getHttpInterceptor());
+        httpClient.interceptors().add(HttpLogUtil.getHttpInterceptor());
 
         httpClient.interceptors().add((chain) -> {
             try {
