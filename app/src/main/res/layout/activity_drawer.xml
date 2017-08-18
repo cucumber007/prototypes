@@ -12,7 +12,7 @@
 
 
     <include
-        layout="@layout/activity_drawer"
+        layout="@layout/activity_drawer_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
@@ -36,43 +36,43 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/drawer_ads"
+            android:id="@+id/drawer_tab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="20dp"
             android:padding="20dp"
-            android:text="__Обьявления__"
+            android:text="Tab1"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/drawer_close"/>
 
         <TextView
-            android:id="@+id/drawer_chat"
+            android:id="@+id/drawer_tab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="20dp"
             android:padding="20dp"
-            android:text="__Чат__"
+            android:text="Tab2"
             android:textColor="@color/black"
             android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="@+id/drawer_ads"
-            app:layout_constraintTop_toBottomOf="@+id/drawer_ads"/>
+            app:layout_constraintLeft_toLeftOf="@+id/drawer_tab1"
+            app:layout_constraintTop_toBottomOf="@+id/drawer_tab1"/>
 
         <TextView
-            android:id="@+id/drawer_settings"
+            android:id="@+id/drawer_tab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="20dp"
             android:padding="20dp"
-            android:text="__Настройки__"
+            android:text="Tab3"
             android:textColor="@color/black"
             android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="@+id/drawer_chat"
-            app:layout_constraintTop_toBottomOf="@+id/drawer_chat"/>
+            app:layout_constraintLeft_toLeftOf="@+id/drawer_tab2"
+            app:layout_constraintTop_toBottomOf="@+id/drawer_tab2"/>
 
     </android.support.constraint.ConstraintLayout>
 

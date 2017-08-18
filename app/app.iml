@@ -41,13 +41,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/standartDebug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/standartDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/standartDebug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/standart/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/standart/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/standart/debug" isTestSource="true" generated="true" />
@@ -55,6 +48,13 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/standart/debug" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/standart/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/standart/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testStandartDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/standart/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/standart/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/standart/assets" type="java-resource" />
@@ -136,24 +136,22 @@
       <excludeFolder url="file://$MODULE_DIR$/build/retrolambda" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="palette-v7-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="android-reactive-location-0.9" level="project" />
     <orderEntry type="library" exported="" name="play-services-base-9.0.2" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
-    <orderEntry type="library" exported="" name="bottom-bar-2.0.2" level="project" />
-    <orderEntry type="library" exported="" name="animated-vector-drawable-23.4.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-23.4.0" level="project" />
-    <orderEntry type="library" exported="" name="recyclerview-v7-23.4.0" level="project" />
+    <orderEntry type="library" exported="" name="design-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="transition-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="bottom-bar-2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="library-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="expandable-layout-1.6.0" level="project" />
-    <orderEntry type="library" exported="" name="support-vector-drawable-23.4.0" level="project" />
+    <orderEntry type="library" exported="" name="palette-v7-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-23.4.0" level="project" />
+    <orderEntry type="library" exported="" name="support-core-utils-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-fragment-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-common-9.0.2" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-25.1.0" level="project" />
-    <orderEntry type="library" exported="" name="design-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-base-9.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-9.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-maps-9.0.2" level="project" />
@@ -167,14 +165,21 @@
     <orderEntry type="library" exported="" name="rxandroid-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="okio-1.11.0" level="project" />
-    <orderEntry type="library" exported="" name="support-compat-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="threetenbp-1.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-compat-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-9.0.2" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-25.3.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.5.0" level="project" />
+    <orderEntry type="library" exported="" name="support-media-compat-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="logging-interceptor-3.5.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-location-9.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="butterknife-8.5.1" level="project" />
+    <orderEntry type="library" exported="" name="recyclerview-v7-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="animated-vector-drawable-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-vector-drawable-25.3.0" level="project" />
   </component>
 </module>

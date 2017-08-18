@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_1"
+        icon="@drawable/ic_camera_shot"
+        title="Tab1" />
+    <tab
+        id="@+id/tab_2"
+        icon="@drawable/ic_camera_shot"
+        title="Tab2" />
+    <tab
+        id="@+id/tab_3"
+        icon="@drawable/ic_camera_shot"
+        title="Tab3" />
+</tabs>

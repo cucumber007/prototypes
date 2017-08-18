@@ -46,7 +46,6 @@ public class RequestManager {
         httpClient.interceptors().add(HttpLogUtil.getHttpInterceptor());
 
         httpClient.interceptors().add((chain) -> {
-            try {
                 Request original = chain.request();
 
                 if (cookie == null) cookie = "";
@@ -55,13 +54,6 @@ public class RequestManager {
                         .method(original.method(), original.body());
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
-            } catch (Exception e) {
-                if(isNetworkError(e)) {
-                    LogUtil.makeToast("Connection failed");
-                    return null;
-                }
-                throw e;
-            }
         });
 
         Retrofit retrofit = new Retrofit.Builder()
