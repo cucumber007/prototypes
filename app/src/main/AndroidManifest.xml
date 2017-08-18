@@ -141,7 +141,13 @@
             android:name=".sandbox.camera.CameraActivity"
             android:exported="true">
         </activity>
-        <activity android:name=".sandbox.auth.AuthActivity" android:exported="true">
+        <activity
+            android:name=".sandbox.auth.AuthActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".sandbox.tabs.TabsActivity">
+        </activity>
+        <activity android:name=".sandbox.tabs.DrawerActivity">
         </activity>
     </application>
 

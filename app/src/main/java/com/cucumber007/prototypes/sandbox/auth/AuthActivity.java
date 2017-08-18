@@ -12,7 +12,9 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Scope;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,8 +38,11 @@ public class AuthActivity extends AppCompatActivity {
         String clientId = getString(R.string.google_api_client_id);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestId()
                 .requestEmail()
+                .requestScopes(new Scope(Scopes.EMAIL), new Scope(Scopes.PLUS_LOGIN), new Scope(Scopes.PLUS_ME), new Scope(Scopes.PROFILE))
                 .requestProfile()
+                .requestServerAuthCode(clientId)
                 .requestIdToken(clientId)
                 .build();
 
@@ -72,13 +77,14 @@ public class AuthActivity extends AppCompatActivity {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
-                if (account.getIdToken() != null)
-                    AuthRequestManager.getService().login(new LoginParams(account.getIdToken(), LoginParams.SocialType.GOOGLE))
+                if (account.getServerAuthCode() != null) {
+                    LogUtil.logDebug(account.getServerAuthCode());
+                    AuthRequestManager.getService().login(new LoginParams(account.getServerAuthCode(), LoginParams.SocialType.GOOGLE))
                             .compose(AuthRequestManager.applySchedulersAndHandleErrors())
                             .subscribe(user -> {
                                 LogUtil.makeToast("Login success");
-
                             });
+                }
                 else LogUtil.makeToast("Token null");
             } else {
                 LogUtil.makeToast("Google login failed " + result.getStatus().toString());

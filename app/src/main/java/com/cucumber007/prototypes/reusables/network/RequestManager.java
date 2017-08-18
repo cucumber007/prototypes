@@ -55,7 +55,7 @@ public class RequestManager {
                         .method(original.method(), original.body());
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
-            } catch (SocketTimeoutException e) {
+            } catch (ConnectException | SocketTimeoutException e) {
                 LogUtil.makeToast("Connection failed");
                 e.printStackTrace();
                 return null;
