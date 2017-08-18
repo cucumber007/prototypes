@@ -55,10 +55,12 @@ public class RequestManager {
                         .method(original.method(), original.body());
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
-            } catch (ConnectException | SocketTimeoutException e) {
-                LogUtil.makeToast("Connection failed");
-                e.printStackTrace();
-                return null;
+            } catch (Exception e) {
+                if(isNetworkError(e)) {
+                    LogUtil.makeToast("Connection failed");
+                    return null;
+                }
+                throw e;
             }
         });
 
