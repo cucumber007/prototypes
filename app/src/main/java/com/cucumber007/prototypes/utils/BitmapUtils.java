@@ -8,6 +8,8 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import java.io.ByteArrayOutputStream;
+
 public class BitmapUtils {
 
     public static Bitmap getRoundedCornerBitmap(int containerWidth, int containerHeight, Bitmap bitmap, int radius) {
@@ -51,5 +53,17 @@ public class BitmapUtils {
 
         return output;
     }
+
+    public static byte[] bitmapToBytes(Bitmap bitmap) {
+        return bitmapToBytes(bitmap, Bitmap.CompressFormat.JPEG, 90);
+    }
+
+    public static byte[] bitmapToBytes(Bitmap bitmap, Bitmap.CompressFormat compressFormat, int quality) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(compressFormat, quality, stream);
+        return stream.toByteArray();
+    }
+
+
 
 }
