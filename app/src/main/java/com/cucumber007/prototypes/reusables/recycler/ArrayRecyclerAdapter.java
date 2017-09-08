@@ -39,7 +39,7 @@ public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRec
     }
 
     @Override
-    void bindViewHolder(ArrayRecyclerAdapter.TextViewHolder holder, T item, int position) {
+    public void bindViewHolder(ArrayRecyclerAdapter.TextViewHolder holder, T item, int position) {
         holder.getTextView().setText(item.toString());
     }
 
