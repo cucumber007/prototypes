@@ -27,6 +27,7 @@ import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.mvp.MvpActivity;
 import com.cucumber007.prototypes.activities.orientation.OrientationActivity;
+import com.cucumber007.prototypes.sandbox.auth.AuthActivity;
 import com.cucumber007.prototypes.sandbox.camera.CameraActivity;
 
 import java.util.ArrayList;
@@ -75,6 +76,8 @@ public class MainActivity extends Activity {
         items.add(new MenuItem());
         items.add(new MenuItem("MVP", MvpActivity.class));
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));
+        items.add(new MenuItem());
+        items.add(new MenuItem("Google Auth", AuthActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
