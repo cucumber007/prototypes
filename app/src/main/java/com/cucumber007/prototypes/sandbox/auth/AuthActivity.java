@@ -1,13 +1,16 @@
 package com.cucumber007.prototypes.sandbox.auth;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
-import com.cucumber007.prototypes.reusables.objects.LoginParams;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -25,6 +28,8 @@ public class AuthActivity extends AppCompatActivity {
     @BindView(R.id.login_google) Button loginGoogle;
 
     private GoogleApiClient mGoogleApiClient;
+    private String authCode = "NO DATA";
+    private String token = "NO DATA";
 
     private static final int RC_SIGN_IN = 7002;
 
@@ -77,18 +82,34 @@ public class AuthActivity extends AppCompatActivity {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
-                if (account.getServerAuthCode() != null) {
+                token = account.getIdToken();
+                authCode = account.getServerAuthCode();
+                LogUtil.makeToast("Login success");
+                /*if (account.getServerAuthCode() != null) {
                     LogUtil.logDebug(account.getServerAuthCode());
                     AuthRequestManager.getService().login(new LoginParams(account.getServerAuthCode(), LoginParams.SocialType.GOOGLE))
                             .compose(AuthRequestManager.applySchedulersAndHandleErrors())
                             .subscribe(user -> {
                                 LogUtil.makeToast("Login success");
                             });
-                }
-                else LogUtil.makeToast("Token null");
+                } else LogUtil.makeToast("Token null");*/
             } else {
                 LogUtil.makeToast("Google login failed " + result.getStatus().toString());
             }
+        }
+    }
+
+    @OnClick({R.id.copy_token, R.id.b_copy_code})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.copy_token:
+                LogUtil.makeToast("Copied : "+token);
+                ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("token", token));
+                break;
+            case R.id.b_copy_code:
+                LogUtil.makeToast("Copied : "+authCode);
+                ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("auth code", authCode));
+                break;
         }
     }
 }
