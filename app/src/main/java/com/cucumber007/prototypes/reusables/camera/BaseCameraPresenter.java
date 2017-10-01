@@ -4,8 +4,12 @@ package com.cucumber007.prototypes.reusables.camera;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.hardware.Camera;
+import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -14,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.reusables.listeners.LoadingListener;
 import com.cucumber007.prototypes.reusables.logging.LogUtil;
 
@@ -103,12 +108,12 @@ public class BaseCameraPresenter {
         try {
             camera = Camera.open(getCameraIndex());
         } catch (RuntimeException e) {
-            Toast.makeText(context, "Camera error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.camera_error), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
             try {
                 camera = Camera.open(Camera.CameraInfo.CAMERA_FACING_BACK);
             } catch (Exception e1) {
-                Toast.makeText(context, "Camera error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getResources().getString(R.string.camera_error), Toast.LENGTH_SHORT).show();
                 e1.printStackTrace();
             }
         }
@@ -187,7 +192,7 @@ public class BaseCameraPresenter {
             startPreview();
 
         } catch (IOException | RuntimeException e) {
-            Toast.makeText(context, "Camera error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getResources().getString(R.string.camera_error), Toast.LENGTH_SHORT).show();
             LogUtil.logError(e);
         }
     }
@@ -243,7 +248,7 @@ public class BaseCameraPresenter {
     public void makePhoto(Camera.PictureCallback callback) {
         try {
             if (camera == null) {
-                Toast.makeText(context, "Camera error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getResources().getString(R.string.camera_error), Toast.LENGTH_SHORT).show();
                 return;
             }
             camera.getParameters().setFocusAreas(null);
@@ -259,6 +264,68 @@ public class BaseCameraPresenter {
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
+    }
+
+    public void makePhoto(BitmapCallback callback) {
+        makePhoto((data, camera) -> {
+
+            new AsyncTask<Void, Void, Void>() {
+
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    getLoadingListener().onStartLoading();
+                }
+
+                @Override
+                protected Void doInBackground(Void... params) {
+                    Bitmap bitmap = prepareBitmap(data);
+                    getContext().runOnUiThread(() -> callback.onPictureTaken(bitmap));
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(Void aVoid) {
+                    super.onPostExecute(aVoid);
+                    getLoadingListener().onStopLoading();
+                }
+            }.execute();
+        });
+    }
+
+    private Bitmap prepareBitmap(byte[] data) {
+        //despite GC, possible Out of memory error
+        System.gc();
+        Bitmap photo = BitmapFactory.decodeByteArray(data, 0, data.length); //mid
+
+        //workaround against stretching
+        if (getCurrentAspect() == 1)
+            photo = Bitmap.createScaledBitmap(photo, photo.getWidth(), photo.getWidth(), false);
+
+        boolean frontalCamera = getCameraIndex() == Camera.CameraInfo.CAMERA_FACING_FRONT;
+        int coef = 0;
+        if(getCurrentOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) coef = 0;
+        else if(getCurrentOrientation() == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) coef = frontalCamera ? 90 : -90;
+        else if(getCurrentOrientation() == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) coef = frontalCamera ? 180 : 180;
+        else if(getCurrentOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) coef = frontalCamera ? -90 : 90;
+        Matrix matrix = new Matrix();
+        if (!frontalCamera)
+            matrix.postRotate(getCameraOrientation() + coef);
+        else {
+            matrix.postRotate(getCameraOrientation() + 180 + coef);
+            //matrix.preScale(1, -1);
+        }
+
+        if(frontalCamera)
+            photo = Bitmap.createBitmap(photo, getCameraOrientation() == 90 ?
+                            photo.getWidth()-photo.getHeight()
+                            : 0, 0, photo.getHeight(),
+                    photo.getHeight(),matrix, true); //long
+        else
+            photo = Bitmap.createBitmap(photo,
+                    getCameraOrientation() == 90 ? 0 : photo.getWidth()-photo.getHeight(),
+                    0, photo.getHeight(), photo.getHeight(), matrix, true);
+        return photo;
     }
 
     protected void onStartTakingPicture() {}
@@ -372,5 +439,9 @@ public class BaseCameraPresenter {
 
     public interface PictureCallback {
         void onPictureTaken(byte[] data);
+    }
+
+    public  interface BitmapCallback {
+        void onPictureTaken(Bitmap bitmap);
     }
 }

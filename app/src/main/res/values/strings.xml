@@ -187,4 +187,9 @@ Fusce et condimentum felis. Pellentesque habitant morbi tristique senectus et ne
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="google_api_client_id">1044713664637-uoubjgh0k8p8kbiet61fufaoqps12p65.apps.googleusercontent.com</string>
+
+    <string name="facebook_login_error">Facebook login error</string>
+    <string name="facebook_login_cancelled">Facebook login cancelled</string>
+    <string name="connection_error">Connection error</string>
+    <string name="camera_error">Camera error</string>
 </resources>

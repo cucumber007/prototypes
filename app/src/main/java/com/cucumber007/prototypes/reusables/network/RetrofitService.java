@@ -1,6 +1,8 @@
 package com.cucumber007.prototypes.reusables.network;
 
 
+import com.cucumber007.prototypes.reusables.models.objects.User;
+
 import okhttp3.RequestBody;
 import retrofit2.Response;
 import retrofit2.http.Body;
@@ -15,7 +17,7 @@ import rx.Observable;
 public interface RetrofitService {
 
     @POST("login")
-    Observable<Response<Object>> login(@Body Object loginParams);
+    Observable<Response<User>> login(@Body Object loginParams);
 
     @GET("offers/{id}/")
     Observable<Object> getOffers(@Query("latitude") double latitude, @Path("id") int offerId);

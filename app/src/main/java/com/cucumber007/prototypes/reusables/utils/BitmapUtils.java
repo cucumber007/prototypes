@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.utils;
+package com.cucumber007.prototypes.reusables.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

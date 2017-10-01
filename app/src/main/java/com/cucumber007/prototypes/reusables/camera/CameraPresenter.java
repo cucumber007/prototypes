@@ -348,8 +348,5 @@ public class CameraPresenter extends BaseCameraPresenter {
         void over();
     }
 
-    public  interface BitmapCallback {
-        void onPictureTaken(Bitmap bitmap);
-    }
 
 }
