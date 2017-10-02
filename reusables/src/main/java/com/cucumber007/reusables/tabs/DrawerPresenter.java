@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.sandbox.tabs;
+package com.cucumber007.reusables.tabs;
 
 
 import android.support.annotation.Nullable;

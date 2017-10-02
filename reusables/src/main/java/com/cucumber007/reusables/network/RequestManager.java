@@ -10,6 +10,7 @@ import com.cucumber007.reusables.logging.LogUtil;
 
 import java.io.IOException;
 import java.net.ConnectException;
+import java.net.NoRouteToHostException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
@@ -109,7 +110,15 @@ public class RequestManager {
     }
 
     public static boolean isNetworkError(Throwable t) {
-        return t instanceof SocketTimeoutException || t instanceof UnknownHostException || t instanceof ConnectException || (t instanceof RuntimeException && t.getMessage().contains("Looper.prepare()")) ;
+        return t instanceof SocketTimeoutException
+                ||
+                t instanceof UnknownHostException
+                ||
+                t instanceof ConnectException
+                ||
+                t instanceof NoRouteToHostException
+                ||
+                (t instanceof RuntimeException && t.getMessage().contains("Looper.prepare()"));
     }
 
     public static RetrofitService getService() {

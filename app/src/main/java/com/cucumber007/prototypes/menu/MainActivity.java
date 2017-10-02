@@ -10,7 +10,7 @@ import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities._libraries.butterknife.ButterknifeActivity;
 import com.cucumber007.prototypes.activities._libraries.reactive_location.ReactiveLocationActivity;
 import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitActivity;
-import com.cucumber007.prototypes.activities._libraries.rxjava.RxJavaActivity;
+import com.cucumber007.prototypes.sandbox.rxjava.RxJavaActivity;
 import com.cucumber007.prototypes.activities._ui.activity_templates.BasicActivity;
 import com.cucumber007.prototypes.activities._ui.coordinator.CoordinatorLayoutActivity;
 import com.cucumber007.prototypes.activities._ui.custom_view.CustomViewActivity;

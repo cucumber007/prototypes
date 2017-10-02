@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
+import com.cucumber007.reusables.tabs.DrawerPresenter;
+import com.cucumber007.reusables.tabs.TabsPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

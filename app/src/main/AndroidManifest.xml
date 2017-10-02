@@ -39,7 +39,7 @@
         </activity>
         <activity android:name=".activities._libraries.butterknife.ButterknifeActivity">
         </activity>
-        <activity android:name=".activities._libraries.rxjava.RxJavaActivity">
+        <activity android:name=".sandbox.rxjava.RxJavaActivity">
         </activity>
         <activity android:name=".activities._libraries.retrofit.RetrofitActivity">
         </activity>

@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities._libraries.rxjava;
+package com.cucumber007.prototypes.sandbox.rxjava;
 
 import android.app.Activity;
 import android.os.Bundle;

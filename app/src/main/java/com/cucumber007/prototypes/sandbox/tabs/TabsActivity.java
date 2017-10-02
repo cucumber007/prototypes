@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 
 import com.cucumber007.prototypes.R;
+import com.cucumber007.reusables.tabs.TabsPresenter;
 import com.roughike.bottombar.BottomBar;
 
 import butterknife.BindView;
