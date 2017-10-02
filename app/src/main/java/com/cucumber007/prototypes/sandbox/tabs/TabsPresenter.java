@@ -5,7 +5,7 @@ import android.animation.Animator;
 import android.util.SparseArray;
 import android.view.View;
 
-import com.cucumber007.prototypes.reusables.listeners.AbstractSimpleAnimatorListener;
+import com.cucumber007.reusables.listeners.AbstractSimpleAnimatorListener;
 
 
 public class TabsPresenter {

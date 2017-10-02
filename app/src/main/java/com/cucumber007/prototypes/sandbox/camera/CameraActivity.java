@@ -22,11 +22,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.reusables.camera.CameraPresenter;
-import com.cucumber007.prototypes.reusables.camera.PhotoTransferManager;
-import com.cucumber007.prototypes.reusables.camera.RotationDetector;
-import com.cucumber007.prototypes.reusables.listeners.AbstractSimpleAnimatorListener;
-import com.cucumber007.prototypes.reusables.listeners.LoadingListener;
+import com.cucumber007.reusables.camera.CameraPresenter;
+import com.cucumber007.reusables.camera.PhotoTransferManager;
+import com.cucumber007.reusables.camera.RotationDetector;
+import com.cucumber007.reusables.listeners.AbstractSimpleAnimatorListener;
+import com.cucumber007.reusables.listeners.LoadingListener;
 
 import java.util.List;
 
