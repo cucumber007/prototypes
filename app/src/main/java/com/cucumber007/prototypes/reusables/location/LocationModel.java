@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.giver;
+package com.cucumber007.prototypes.reusables.location;
 
 import android.app.Activity;
 import android.content.Intent;
