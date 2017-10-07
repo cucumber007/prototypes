@@ -71,6 +71,7 @@ buildscript {
 
     dependencies {
         classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+        classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
     }
 }
 
@@ -78,6 +79,7 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'com.jakewharton.hugo'
 apply plugin: 'me.tatarka.retrolambda'
 
 dependencies {
