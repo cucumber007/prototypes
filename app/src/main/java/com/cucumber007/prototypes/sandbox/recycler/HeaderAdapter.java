@@ -20,27 +20,27 @@ public class HeaderAdapter extends BaseHeaderRecyclerAdapter<String, HeaderAdapt
     }
 
     @Override
-    boolean isHeaderHolder(RecyclerView.ViewHolder holder) {
+    protected boolean isHeaderHolder(RecyclerView.ViewHolder holder) {
         return holder instanceof HeaderHolder;
     }
 
     @Override
-    ItemHolder createItemHolder(View view) {
+    protected ItemHolder createItemHolder(View view) {
         return new ItemHolder(view);
     }
 
     @Override
-    HeaderHolder createHeaderHolder(View view) {
+    protected HeaderHolder createHeaderHolder(View view) {
         return new HeaderHolder(view);
     }
 
     @Override
-    void bindItemHolder(ItemHolder holder, String item, int position) {
+    protected void bindItemHolder(ItemHolder holder, String item, int position) {
         holder.tvText.setText(item);
     }
 
     @Override
-    void bindHeaderHolder(HeaderHolder holder, int position) {
+    protected void bindHeaderHolder(HeaderHolder holder, int position) {
         holder.tvText.setText("Header");
     }
 

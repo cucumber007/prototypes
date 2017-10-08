@@ -47,11 +47,11 @@ public abstract class BaseHeaderRecyclerAdapter<T, IH extends RecyclerView.ViewH
         }
     }
 
-    abstract boolean isHeaderHolder(RecyclerView.ViewHolder holder);
-    abstract IH createItemHolder(View view);
-    abstract HH createHeaderHolder(View view);
-    abstract void bindItemHolder(IH holder, T item, int position);
-    abstract void bindHeaderHolder(HH holder, int position);
+    protected abstract boolean isHeaderHolder(RecyclerView.ViewHolder holder);
+    protected abstract IH createItemHolder(View view);
+    protected abstract HH createHeaderHolder(View view);
+    protected abstract void bindItemHolder(IH holder, T item, int position);
+    protected abstract void bindHeaderHolder(HH holder, int position);
 
     @Override
     public int getItemCount() {

@@ -1,1 +1,1 @@
-include ':app', ':reusables', ':rxjava2sandbox'
+include ':app', ':reusables', ':rxjava2sandbox', ':copypaste'
