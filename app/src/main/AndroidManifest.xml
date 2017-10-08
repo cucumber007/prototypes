@@ -157,7 +157,11 @@
             android:name=".sandbox.layout_manager.LayoutManagerActivity"
             android:exported="true">
         </activity>
-        <activity android:name=".sandbox.fragments.HiddenFragmentActivity" android:exported="true">
+        <activity
+            android:name=".sandbox.fragments.HiddenFragmentActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".sandbox.recycler.HeaderRecyclerActivity" android:exported="true">
         </activity>
     </application>
 
