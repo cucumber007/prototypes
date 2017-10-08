@@ -15,8 +15,11 @@ import butterknife.ButterKnife;
 
 public class HeaderAdapter extends BaseHeaderRecyclerAdapter<String, HeaderAdapter.ItemHolder, HeaderAdapter.HeaderHolder> {
 
+    private final Context context;
+
     public HeaderAdapter(Context context, List<String> items, int itemLayout, int headerLayout) {
         super(context, items, itemLayout, headerLayout);
+        this.context = context;
     }
 
     @Override
@@ -42,6 +45,10 @@ public class HeaderAdapter extends BaseHeaderRecyclerAdapter<String, HeaderAdapt
     @Override
     protected void bindHeaderHolder(HeaderHolder holder, int position) {
         holder.tvText.setText("Header");
+    }
+
+    public Context getContext() {
+        return context;
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder {
