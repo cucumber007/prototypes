@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!--<item name="android:windowAnimationStyle">@style/MyAnimation.Window</item>
+        <item name="android:listViewStyle">@style/Widget.AppTheme.ListView</item>
+        <item name="android:scrollViewStyle">@style/Widget.AppTheme.ScrollView</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>-->
+    </style>
+
+    <style name="ToolbarTheme21Compat" parent="AppTheme">
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/MyAnimation.Window</item>
+        <item name="android:listViewStyle">@style/Widget.AppTheme.ListView</item>
+        <item name="android:scrollViewStyle">@style/Widget.AppTheme.ScrollView</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="Theme.TransparentWithStatusbar" parent="@style/Theme.Transparent">
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="Theme.TransparentWithStatusbar21Compat" parent="Theme.TransparentWithStatusbar">
+    </style>
+
+    <style name="MyAnimation.Window" parent="@android:style/Animation.Dialog">
+        <!--<item name="android:windowEnterAnimation">@anim/activity_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_fade_out</item>-->
+    </style>
+
+    <style name="Widget.AppTheme.ListView" parent="android:Widget.ListView">
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="Widget.AppTheme.ScrollView" parent="android:Widget.ScrollView">
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="AnimationsCompat" parent="Animation.AppCompat.Dialog">
+        <!--<item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>-->
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="BottomBarText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ToolbarTheme21Compat.AppBarOverlay"
+           parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="ToolbarTheme21Compat.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+</resources>

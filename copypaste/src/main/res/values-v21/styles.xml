@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ToolbarTheme21Compat" parent="AppTheme">
+        <!--<item name="colorPrimary">@color/greenblue</item>
+        <item name="colorPrimaryDark">@color/statusbar</item>
+        <item name="android:windowFullscreen">false</item>-->
+    </style>
+
+    <style name="Theme.TransparentWithStatusbar21Compat" parent="Theme.TransparentWithStatusbar">
+        <!--<item name="colorPrimaryDark">@color/statusbar</item>-->
+    </style>
+
+    <style name="BoldTextView">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>
