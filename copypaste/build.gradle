@@ -4,6 +4,10 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
@@ -14,18 +18,37 @@ android {
 
     }
     buildTypes {
+        debug {
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+            buildConfigField "Boolean", "TEST_MODE", "false"
+            buildConfigField "Boolean", "FABRIC_LOGS", "false"
+            buildConfigField "Boolean", "LOGCAT_LOGS", "true"
+        }
         release {
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+            buildConfigField "Boolean", "TEST_MODE", "false"
+            buildConfigField "Boolean", "FABRIC_LOGS", "true"
+            buildConfigField "Boolean", "LOGCAT_LOGS", "false"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+apply plugin: 'me.tatarka.retrolambda'
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.+'
-    testCompile 'junit:junit:4.12'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':reusables')
 }
