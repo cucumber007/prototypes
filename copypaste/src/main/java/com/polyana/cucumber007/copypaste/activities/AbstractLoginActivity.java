@@ -1,4 +1,4 @@
-package com.polyana.cucumber007.copypaste;
+package com.polyana.cucumber007.copypaste.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,18 +20,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.polyana.cucumber007.copypaste.BuildConfig;
+import com.polyana.cucumber007.copypaste.R;
 
 import rx.Observable;
 
 
 public abstract class AbstractLoginActivity extends AppCompatActivity implements LoadingListener {
 
-    private static final int RC_SIGN_IN = 7002;
+    private static final int REQUEST_CODE_GOOGLE_LOGIN = 7002;
 
     protected Context context = this;
 
     private GoogleApiClient mGoogleApiClient;
-    //TwitterAuthClient twitterAuthClient;
+    //private TwitterAuthClient twitterAuthClient;
 
     protected abstract void nextActivity();
 
@@ -117,7 +119,10 @@ public abstract class AbstractLoginActivity extends AppCompatActivity implements
                 public void login(String token) {
                     onStartLoading();
                     UserModel.getInstance().getLoginObservable(
-                            new LoginParams(token))
+                            new LoginParams(token,
+                                    FacebookModel.getInstance().getProfileEmail(),
+                                    FacebookModel.getInstance().getProfileName(),
+                                    FacebookModel.getInstance().getProfileImageUrl()))
                             .onErrorResumeNext((throwable -> {
                                 RequestManager.handleError(throwable);
                                 finish();
@@ -140,7 +145,7 @@ public abstract class AbstractLoginActivity extends AppCompatActivity implements
 
     protected void loginByGoogle() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        startActivityForResult(signInIntent, REQUEST_CODE_GOOGLE_LOGIN);
     }
 
     protected void loginByEmail(String email, String password, boolean register) {
@@ -179,8 +184,9 @@ public abstract class AbstractLoginActivity extends AppCompatActivity implements
         FacebookModel.getInstance().getCallbackManager().onActivityResult(requestCode, resultCode, data);
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void googleOnResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RC_SIGN_IN) {
+        if (requestCode == REQUEST_CODE_GOOGLE_LOGIN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
@@ -190,7 +196,10 @@ public abstract class AbstractLoginActivity extends AppCompatActivity implements
                 }
                 if (account.getServerAuthCode() != null)
                     UserModel.getInstance().getLoginObservable(
-                            new LoginParams(account.getServerAuthCode(), LoginParams.SocialType.GOOGLE))
+                            new LoginParams(account.getServerAuthCode(), LoginParams.SocialType.GOOGLE,
+                                    account.getEmail(),
+                                    account.getDisplayName(),
+                                    account.getPhotoUrl().toString()))
                             .onErrorResumeNext((throwable -> {
                                 RequestManager.handleError(throwable);
                                 return Observable.never();
