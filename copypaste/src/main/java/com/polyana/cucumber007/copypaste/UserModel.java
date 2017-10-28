@@ -1,11 +1,11 @@
-package com.cucumber007.reusables.models;
+package com.polyana.cucumber007.copypaste;
 
 
 import android.preference.PreferenceManager;
 
-import com.cucumber007.reusables.ContextApplication;
+import com.cucumber007.reusables.models.FacebookModel;
 import com.cucumber007.reusables.models.objects.User;
-import com.cucumber007.reusables.network.RequestManager;
+import com.polyana.cucumber007.copypaste.network.RequestManager;
 import com.cucumber007.reusables.objects.LoginParams;
 import com.google.gson.Gson;
 
@@ -65,7 +65,7 @@ public class UserModel {
 
     public void logout() {
         PreferenceManager.getDefaultSharedPreferences(ContextApplication.getContext()).edit().remove(KEY_USER).apply();
-        FacebookModel.getInstance().logout();
+        FacebookModel.getInstance(ContextApplication.getContext()).logout();
         RequestManager.logout();
     }
 }

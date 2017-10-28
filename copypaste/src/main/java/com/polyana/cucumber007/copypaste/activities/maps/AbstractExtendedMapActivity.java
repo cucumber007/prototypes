@@ -1,11 +1,9 @@
-package com.cucumber007.reusables.maps;
+package com.polyana.cucumber007.copypaste.activities.maps;
 
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 
@@ -18,20 +16,13 @@ import com.cucumber007.reusables.R;
 import com.cucumber007.reusables.listeners.DefaultLocationListener;
 import com.cucumber007.reusables.listeners.LoadingListener;
 import com.cucumber007.reusables.location.LocationModel;
-import com.cucumber007.reusables.models.UserModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.polyana.cucumber007.copypaste.ContextApplication;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
-
-import butterknife.OnClick;
-import rx.Observable;
 
 import static com.cucumber007.reusables.location.BaseLocationModel.REQUEST_CHECK_SETTINGS;
 
@@ -54,7 +45,7 @@ public abstract class AbstractExtendedMapActivity extends AppCompatActivity impl
             this.googleMap = googleMap;
             configurator.configurate(googleMap);
 
-            LocationModel.getInstance().getLocation(this, new DefaultLocationListener(this) {
+            LocationModel.getInstance(ContextApplication.getContext()).getLocation(this, new DefaultLocationListener(this) {
                 @Override
                 public void onReceived(Location location) {
                     if (location == null) googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(KIEV, DEFAULT_ZOOM));
@@ -193,7 +184,7 @@ public abstract class AbstractExtendedMapActivity extends AppCompatActivity impl
         if(requestCode == REQUEST_CHECK_SETTINGS) {
             if (resultCode == RESULT_OK)
                 if(!locationReceived) {
-                    LocationModel.getInstance().getLocation(this, new DefaultLocationListener(this) {
+                    LocationModel.getInstance(ContextApplication.getContext()).getLocation(this, new DefaultLocationListener(this) {
                         @Override
                         public void onReceived(Location location) {
                             locationReceived = true;

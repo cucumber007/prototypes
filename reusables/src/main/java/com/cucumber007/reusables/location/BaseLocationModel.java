@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
-import com.cucumber007.reusables.ContextApplication;
 import com.cucumber007.reusables.logging.LogUtil;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -35,8 +34,9 @@ public class BaseLocationModel implements LocationListener {
 
     public static final int REQUEST_CHECK_SETTINGS = 555;
     private Subscription subscription;
+    private Context context;
 
-    public BaseLocationModel() {
+    public BaseLocationModel(Context context) {
         //todo uncomment
         /*final LocationModel inst = this;
         connectToGoogleApiClient(new GoogleApiClientCallback() {
@@ -48,10 +48,11 @@ public class BaseLocationModel implements LocationListener {
             @Override
             public void onFailed(ConnectionResult connectionResult) {}
         });*/
+        this.context = context;
     }
 
     protected void connectToGoogleApiClient(GoogleApiClientCallback clientCallback) {
-        googleApiClient = new GoogleApiClient.Builder(ContextApplication.getContext())
+        googleApiClient = new GoogleApiClient.Builder(context)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                     @Override
                     public void onConnected(@Nullable Bundle bundle) {
@@ -75,7 +76,7 @@ public class BaseLocationModel implements LocationListener {
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
                         //LogUtil.logToFabric(connectionResult.getErrorMessage());
                         if(connectionResult.getErrorCode() != ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED) {
-                            Toast.makeText(ContextApplication.getContext(), "Google API error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Google API error", Toast.LENGTH_SHORT).show();
                         }
                         clientCallback.onFailed(connectionResult);
                     }
@@ -85,9 +86,9 @@ public class BaseLocationModel implements LocationListener {
         googleApiClient.connect();
     }
 
-    private static BaseLocationModel getInstance() {
+    private static BaseLocationModel getInstance(Context context) {
         if (instance == null) {
-            instance = new BaseLocationModel();
+            instance = new BaseLocationModel(context.getApplicationContext());
             instance.getGoogleApiClient().connect();
         }
         return instance;
@@ -101,7 +102,7 @@ public class BaseLocationModel implements LocationListener {
     public Location getLocationIfPossible() {
         if (location == null) {
             try {
-                location = ((LocationManager) ContextApplication.getContext().getSystemService(Context.LOCATION_SERVICE))
+                location = ((LocationManager) context.getSystemService(Context.LOCATION_SERVICE))
                         .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
             } catch (SecurityException e) {
                 LogUtil.makeToast("No permission");
@@ -210,14 +211,18 @@ public class BaseLocationModel implements LocationListener {
     }
 
     /*public static String wrapDistance(float distance) {
-        if(distance < 1000) return Math.round(distance) + ContextApplication.getContext()
+        if(distance < 1000) return Math.round(distance) + context
                 .getResources().getString(R.string.distance_meter);
-        else return Math.round(distance*10/1000)/10+ ContextApplication.getContext()
+        else return Math.round(distance*10/1000)/10+ context
                 .getResources().getString(R.string.distance_kilometer);
     }*/
 
     public static double calcRadius(double zoom) {
         return 1/Math.pow(2, zoom+1)*EQUATOR*1000; // /2 *1.7 ~ 1
+    }
+
+    public Context getContext() {
+        return context;
     }
 
     public interface SettingsCallback {

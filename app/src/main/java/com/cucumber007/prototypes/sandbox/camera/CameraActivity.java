@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.reusables.camera.CameraPresenter;
-import com.cucumber007.reusables.camera.PhotoTransferManager;
+import com.polyana.cucumber007.copypaste.PhotoTransferManager;
 import com.cucumber007.reusables.camera.RotationDetector;
 import com.cucumber007.reusables.listeners.AbstractSimpleAnimatorListener;
 import com.cucumber007.reusables.listeners.LoadingListener;

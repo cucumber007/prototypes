@@ -1,4 +1,4 @@
-package com.cucumber007.reusables.camera;
+package com.polyana.cucumber007.copypaste;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
 
-import com.cucumber007.reusables.ContextApplication;
+import com.cucumber007.reusables.camera.PhotoUtils;
 
 public class MediaManager {
     private static MediaManager instance = new MediaManager();

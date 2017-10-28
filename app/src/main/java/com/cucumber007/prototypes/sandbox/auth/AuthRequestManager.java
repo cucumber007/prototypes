@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.cucumber007.reusables.ContextApplication;
-import com.cucumber007.reusables.logging.HttpLogUtil;
+import com.polyana.cucumber007.copypaste.ContextApplication;
+import com.polyana.cucumber007.copypaste.HttpLogUtil;
 import com.cucumber007.reusables.logging.LogUtil;
 
 import java.io.IOException;

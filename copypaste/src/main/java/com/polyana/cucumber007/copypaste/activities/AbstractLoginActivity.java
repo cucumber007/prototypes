@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.cucumber007.reusables.listeners.LoadingListener;
 import com.cucumber007.reusables.logging.LogUtil;
 import com.cucumber007.reusables.models.FacebookModel;
-import com.cucumber007.reusables.models.UserModel;
-import com.cucumber007.reusables.network.RequestManager;
+import com.polyana.cucumber007.copypaste.UserModel;
+import com.polyana.cucumber007.copypaste.network.RequestManager;
 import com.cucumber007.reusables.objects.LoginParams;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -114,15 +114,15 @@ public abstract class AbstractLoginActivity extends AppCompatActivity implements
 
         if (isConnected) {
             UserModel.getInstance().logout();
-            FacebookModel.getInstance().login(this, new FacebookModel.LoginCallback() {
+            FacebookModel.getInstance(context).login(this, new FacebookModel.LoginCallback() {
                 @Override
                 public void login(String token) {
                     onStartLoading();
                     UserModel.getInstance().getLoginObservable(
                             new LoginParams(token,
-                                    FacebookModel.getInstance().getProfileEmail(),
-                                    FacebookModel.getInstance().getProfileName(),
-                                    FacebookModel.getInstance().getProfileImageUrl()))
+                                    FacebookModel.getInstance(context).getProfileEmail(),
+                                    FacebookModel.getInstance(context).getProfileName(),
+                                    FacebookModel.getInstance(context).getProfileImageUrl()))
                             .onErrorResumeNext((throwable -> {
                                 RequestManager.handleError(throwable);
                                 finish();
@@ -181,7 +181,7 @@ public abstract class AbstractLoginActivity extends AppCompatActivity implements
     }
 
     private void facebookOnResult(int requestCode, int resultCode, Intent data) {
-        FacebookModel.getInstance().getCallbackManager().onActivityResult(requestCode, resultCode, data);
+        FacebookModel.getInstance(context).getCallbackManager().onActivityResult(requestCode, resultCode, data);
     }
 
     @SuppressWarnings("ConstantConditions")

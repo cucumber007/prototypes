@@ -1,4 +1,6 @@
-package com.cucumber007.reusables.logging;
+package com.polyana.cucumber007.copypaste;
+
+import com.cucumber007.reusables.logging.LogUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;

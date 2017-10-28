@@ -12,8 +12,6 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.ButterKnife;
-
 
 public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRecyclerAdapter.TextViewHolder> {
 
@@ -81,7 +79,7 @@ public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRec
         public TextViewHolder(View itemView) {
             super(itemView);
             this.itemView = itemView;
-            textView = ButterKnife.findById(itemView, textViewId);
+            textView = (TextView) itemView.findViewById(textViewId);
             itemView.setOnClickListener(view -> {
                 if (onItemClickListener != null)
                     onItemClickListener.onItemClick(getAdapterPosition(), itemView);

@@ -1,4 +1,4 @@
-package com.cucumber007.reusables.network;
+package com.polyana.cucumber007.copypaste.network;
 
 
 import com.cucumber007.reusables.models.objects.User;

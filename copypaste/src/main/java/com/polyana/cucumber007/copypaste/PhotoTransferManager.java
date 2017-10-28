@@ -1,10 +1,8 @@
-package com.cucumber007.reusables.camera;
+package com.polyana.cucumber007.copypaste;
 
 
 import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
-
-import com.cucumber007.reusables.ContextApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

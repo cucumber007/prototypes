@@ -1,11 +1,11 @@
 package com.cucumber007.reusables.location;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.widget.Toast;
 
-import com.cucumber007.reusables.ContextApplication;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.PendingResult;
@@ -23,11 +23,13 @@ public class LocationModel extends BaseLocationModel {
 
     public static final int REQUEST_CODE_GAPI = 888;
 
-    public LocationModel() {}
+    public LocationModel(Context context) {
+        super(context);
+    }
 
-    public static LocationModel getInstance() {
+    public static LocationModel getInstance(Context context) {
         if (instance == null) {
-            instance = new LocationModel();
+            instance = new LocationModel(context.getApplicationContext());
         }
         return instance;
     }
@@ -83,7 +85,7 @@ public class LocationModel extends BaseLocationModel {
                     @Override
                     public void onFailed(ConnectionResult connectionResult) {
                         callback.onFailed();
-                        Toast.makeText(ContextApplication.getContext(), "Google API error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Google API error", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

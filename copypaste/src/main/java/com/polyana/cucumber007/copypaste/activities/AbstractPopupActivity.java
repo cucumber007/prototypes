@@ -20,7 +20,7 @@ public class AbstractPopupActivity extends Activity {
         setContentView(R.layout.activity_abstract_popup);
         ButterKnife.bind(this);
 
-        root = findViewById(R.id.root);
+        root = (ViewGroup) findViewById(R.id.root);
     }
 
     protected void setLayout(@LayoutRes int layout) {

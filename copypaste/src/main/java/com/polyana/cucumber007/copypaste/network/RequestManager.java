@@ -1,11 +1,10 @@
-package com.cucumber007.reusables.network;
+package com.polyana.cucumber007.copypaste.network;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.cucumber007.reusables.ContextApplication;
-import com.cucumber007.reusables.logging.HttpLogUtil;
+import com.polyana.cucumber007.copypaste.HttpLogUtil;
 import com.cucumber007.reusables.logging.LogUtil;
 
 import java.io.IOException;
@@ -37,10 +36,12 @@ public class RequestManager {
     private static RetrofitService service;
     private static String cookie;
 
+    //todo save cookie - DI?
+    //todo to copypaste?
     public static final String KEY_COOKIE = "cookie";
 
     private RequestManager() {
-        context = ContextApplication.getContext();
+        //context = ContextApplication.getContext();
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.interceptors().add(HttpLogUtil.getHttpInterceptor());

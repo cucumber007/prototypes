@@ -1,9 +1,7 @@
-package com.cucumber007.reusables.objects;
+package com.polyana.cucumber007.copypaste;
 
 import android.content.Context;
 import android.text.format.DateFormat;
-
-import com.cucumber007.reusables.ContextApplication;
 
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneId;

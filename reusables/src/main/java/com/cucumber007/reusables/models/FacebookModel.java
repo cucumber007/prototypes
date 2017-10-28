@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
-import com.cucumber007.reusables.ContextApplication;
 import com.cucumber007.reusables.R;
 import com.cucumber007.reusables.logging.LogUtil;
 import com.facebook.AccessToken;
@@ -26,9 +25,9 @@ import java.util.Arrays;
 
 public class FacebookModel {
 
-    private static FacebookModel instance = new FacebookModel();
+    private static FacebookModel instance;
     private CallbackManager callbackManager;
-    private Context context = ContextApplication.getContext();
+    private Context context;
 
     private String profileImageUrl;
     private String profileName;
@@ -42,11 +41,15 @@ public class FacebookModel {
     public static final String KEY_PROFILE_NAME = "profile_name";
     public static final String KEY_PROFILE_EMAIL = "profile_email";
 
-    public FacebookModel() {
+    public FacebookModel(Context context) {
+        this.context = context;
         callbackManager = CallbackManager.Factory.create();
     }
 
-    public static FacebookModel getInstance() {
+    public static FacebookModel getInstance(Context context) {
+        if (instance == null) {
+            instance = new FacebookModel(context.getApplicationContext());
+        }
         return instance;
     }
 

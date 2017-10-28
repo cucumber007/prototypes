@@ -4,35 +4,39 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.cucumber007.reusables.ContextApplication;
-
 import java.util.List;
 
 
 public class LogUtil {
 
-    //todo inject
-    private static class BuildConfig {
-        public static boolean DEBUG_MODE = false;
+    private static boolean debugMode = false;
+    private static Context context;
+    private static CrashlyticsListener crashlyticsListener;
+
+    public static void setContext(Context context) {
+        LogUtil.context = context;
     }
 
-    private static class Crashlytics {
-        public static void logException(Throwable throwable) {};
-        public static void log(String throwable) {};
+    public static void setDebugMode(boolean debugMode) {
+        LogUtil.debugMode = debugMode;
+    }
+
+    public static void setCrashlyticsListener(CrashlyticsListener crashlyticsListener) {
+        LogUtil.crashlyticsListener = crashlyticsListener;
     }
 
     private static String TAG = "cutag";
 
     public static void logError(Throwable throwable) {
-        if(!BuildConfig.DEBUG_MODE) Crashlytics.logException(throwable);
+        if(!debugMode && crashlyticsListener != null) crashlyticsListener.logException(throwable);
         throwable.printStackTrace();
         logcat(throwable.getMessage());
     }
 
     public static void logError(Throwable throwable, String message) {
-        if (!BuildConfig.DEBUG_MODE) {
-            Crashlytics.log(message);
-            Crashlytics.logException(throwable);
+        if (!debugMode && crashlyticsListener != null) {
+            crashlyticsListener.log(message);
+            crashlyticsListener.logException(throwable);
         }
         throwable.printStackTrace();
         logcat(throwable.getMessage());
@@ -97,27 +101,32 @@ public class LogUtil {
     }
 
     public static void makeToast(String text) {
-        makeToast(ContextApplication.getContext(), text);
+        makeToast(context, text);
     }
 
     public static void makeToast(Context context, int stringId) {
-        Toast.makeText(ContextApplication.getContext(), ContextApplication.getContext().getResources().getString(stringId), Toast.LENGTH_SHORT).show();
+        if (context == null) throw new NullPointerException("Context == null. Try to use LogUtil.setContext()");
+        else Toast.makeText(context, context.getResources().getString(stringId), Toast.LENGTH_SHORT).show();
     }
 
     public static void makeToast(int stringId) {
-        makeToast(ContextApplication.getContext(), stringId);
+        makeToast(context, stringId);
     }
 
     public static void makeToastWithDebug(String text, String debugText) {
-        if(!BuildConfig.DEBUG_MODE) makeToast(text);
+        if(!debugMode) makeToast(text);
         else makeToast(debugText);
     }
 
     public static void makeToastWithDebug(int stringId, String debugText) {
-        if(!BuildConfig.DEBUG_MODE) makeToast(stringId);
+        if(!debugMode) makeToast(stringId);
         else makeToast(debugText);
     }
 
+    public interface CrashlyticsListener {
+        void logException(Throwable throwable);
+        void log(String throwable);
+    }
 
 
 }
