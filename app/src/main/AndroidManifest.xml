@@ -35,51 +35,51 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities._ui.recycler.RecyclerActivity"></activity>
-        <activity android:name=".activities._libraries.butterknife.ButterknifeActivity"></activity>
-        <activity android:name=".sandbox.rxjava.RxJavaActivity"></activity>
-        <activity android:name=".activities._libraries.retrofit.RetrofitActivity"></activity>
-        <activity android:name=".activities._ui.views.ViewsActivity"></activity>
-        <activity android:name=".activities._ui.xml_drawables.XmlDrawableActivity"></activity>
-        <activity android:name=".activities.files_and_loader.FilesAndLoaderActivity"></activity>
+        <activity android:name=".activities._ui.recycler.RecyclerActivity" />
+        <activity android:name=".activities._libraries.butterknife.ButterknifeActivity" />
+        <activity android:name=".sandbox.rxjava.RxJavaActivity" />
+        <activity android:name=".activities._libraries.retrofit.RetrofitActivity" />
+        <activity android:name=".activities._ui.views.ViewsActivity" />
+        <activity android:name=".activities._ui.xml_drawables.XmlDrawableActivity" />
+        <activity android:name=".activities.files_and_loader.FilesAndLoaderActivity" />
         <activity
             android:name=".activities._ui.views.StylesActivity"
-            android:theme="@style/TestStyle2"></activity>
+            android:theme="@style/TestStyle2" />
         <activity
             android:name=".activities.content_provider.ContentProviderActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
-        <activity android:name=".activities.java.JavaCoreActivity"></activity>
-        <activity android:name=".activities.mvp.MvpActivity"></activity>
-        <activity android:name=".activities._ui.custom_view.CustomViewActivity"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activities.java.JavaCoreActivity" />
+        <activity android:name=".activities.mvp.MvpActivity" />
+        <activity android:name=".activities._ui.custom_view.CustomViewActivity" />
         <activity
             android:name=".activities._ui.navigationDrawer.NavigationDrawerActivity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".activities._ui.coordinator.CoordinatorLayoutActivity"></activity>
-        <activity android:name=".activities.graphics.BlurActivity"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities._ui.coordinator.CoordinatorLayoutActivity" />
+        <activity android:name=".activities.graphics.BlurActivity" />
         <activity
             android:name=".activities.graphics.AfterBlurActivity"
-            android:theme="@style/Theme.Transparent"></activity>
+            android:theme="@style/Theme.Transparent" />
         <activity
             android:name=".activities.orientation.OrientationActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"></activity>
-        <activity android:name=".activities._ui.viewpager.PagerActivity"></activity>
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".activities._ui.viewpager.PagerActivity" />
         <activity
             android:name=".activities._ui.activity_templates.BasicActivity"
             android:label="@string/title_activity_basic"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activities._ui.activity_templates.FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".activities._ui.activity_templates.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".activities._ui.activity_templates.ItemListActivity"
             android:label="@string/title_item_list"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activities._ui.activity_templates.ItemDetailActivity"
             android:label="@string/title_item_detail"
@@ -92,49 +92,55 @@
         <activity
             android:name=".activities._ui.activity_templates.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activities._ui.activity_templates.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".activities._ui.activity_templates.TabbedActivity"
             android:label="@string/title_activity_tabbed"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".activities._ui.views.GridViewActivity"></activity>
-        <activity android:name=".activities._libraries.reactive_location.ReactiveLocationActivity"></activity>
-        <activity android:name=".activities._ui.tabs.TabsActivity"></activity>
-        <activity android:name=".activities.loaders.LoadersActivity"></activity>
-        <activity android:name=".activities.fragments_sandbox.FragmentSandboxActivity"></activity>
-        <activity android:name=".activities._ui.recycler.ArrayRecyclerActivity"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities._ui.views.GridViewActivity" />
+        <activity android:name=".activities._libraries.reactive_location.ReactiveLocationActivity" />
+        <activity android:name=".activities._ui.tabs.TabsActivity" />
+        <activity android:name=".activities.loaders.LoadersActivity" />
+        <activity android:name=".activities.fragments_sandbox.FragmentSandboxActivity" />
+        <activity android:name=".activities._ui.recycler.ArrayRecyclerActivity" />
         <activity
             android:name=".sandbox.camera.CameraActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.auth.AuthActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.tabs.TabsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.tabs.DrawerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.layout_manager.LayoutManagerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.fragments.HiddenFragmentActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.recycler.HeaderRecyclerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.multithreading.MultithreadingActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".sandbox.activities.FloatingActivity"
             android:exported="true"
-            android:theme="@style/Theme.Transparent"></activity>
-        <activity android:name=".sandbox.room.RoomActivity"></activity>
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".sandbox.room.RoomActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sandbox.room.UserActivity"
+            android:exported="true" />
+        <activity android:name=".sandbox.callbacks_vs_activity_state.CallbacksActivity"></activity>
     </application>
 
 </manifest>

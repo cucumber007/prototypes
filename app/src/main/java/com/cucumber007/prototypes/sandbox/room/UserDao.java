@@ -7,6 +7,7 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.TypeConverters;
+import android.arch.persistence.room.Update;
 import android.database.Cursor;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import io.reactivex.Flowable;
 @Dao
 public interface UserDao {
     @Query("SELECT * FROM user")
-    List<User> getAll();
+    Flowable<List<User>> getAll();
 
     @Query("SELECT * FROM user WHERE uid IN (:userIds)")
     List<User> loadAllByIds(int[] userIds);
@@ -24,6 +25,9 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE first_name LIKE :first AND "
             + "last_name LIKE :last LIMIT 1")
     User findByName(String first, String last);
+
+    @Query("SELECT * FROM user WHERE uid = :id")
+    LiveData<User> get(int id);
 /*
 
     @Query("SELECT * FROM user WHERE age > :minAge")
@@ -52,6 +56,8 @@ public interface UserDao {
     public List<UserPet> loadUserAndPetNames();
 */
 
+    @Update
+    void updateAll(User... users);
 
     @Insert
     void insertAll(User... users);

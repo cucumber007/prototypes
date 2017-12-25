@@ -8,11 +8,19 @@ import com.polyana.cucumber007.copypaste.ContextApplication;
 
 public class PrototypesApplication extends ContextApplication {
 
+    private static AppDatabase database;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        getDatabase();
+    }
 
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-name").build();
+    public static AppDatabase getDatabase() {
+        if (database == null) {
+            database = Room.databaseBuilder(getContext(),
+                    AppDatabase.class, "database-name").build();
+        }
+        return database;
     }
 }

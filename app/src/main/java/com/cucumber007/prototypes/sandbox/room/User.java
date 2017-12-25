@@ -9,13 +9,14 @@ import android.arch.persistence.room.PrimaryKey;
 import android.graphics.Bitmap;
 
 import java.util.Date;
+import java.util.Random;
 
 @Entity
 //primaryKeys = {"firstName", "lastName"}
 //tableName = "users"
 //indices = {@Index("name"), @Index(value = {"last_name", "address"})}
 public class User {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int uid;
 
     @ColumnInfo(name = "first_name")
@@ -40,4 +41,28 @@ public class User {
 
     @Ignore
     Bitmap picture;
+
+    public User(String firstName, String lastName, Address address, Date birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.birthday = birthday;
+    }
+
+    public static User getDefault() {
+        return new User("Name "+ new Random().nextInt(), "Surname "+ new Random().nextInt(),
+                Address.getDefault(), new Date());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address=" + address +
+                ", birthday=" + birthday +
+                ", picture=" + picture +
+                '}';
+    }
 }
