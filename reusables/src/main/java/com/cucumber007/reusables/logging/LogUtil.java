@@ -1,6 +1,9 @@
 package com.cucumber007.reusables.logging;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -25,6 +28,7 @@ public class LogUtil {
         LogUtil.crashlyticsListener = crashlyticsListener;
     }
 
+    public static final String KEY_LOG = "logutil_log";
     private static String TAG = "cutag";
 
     public static void logError(Throwable throwable) {
@@ -55,7 +59,8 @@ public class LogUtil {
     public static <T> void logDebug(String title, T... vars) {
         String log = title+ " : ";
         for (int i = 0; i < vars.length; i++) {
-            log += vars[i].toString() + " ";
+            if(vars[i] == null) log += "Null" + " ";
+            else log += vars[i].toString() + " ";
         }
         logcat(log);
     }
@@ -72,28 +77,27 @@ public class LogUtil {
     }
 
 
-    public static void logListDebug(String name, List<Object> list) {
-        String log = name + "\n";
+    public static void logList(@Nullable String name, List<Object> list) {
+        StringBuilder builder = new StringBuilder();
+        if(name != null) builder.append(name);
+        builder.append("\n");
         for (int i = 0; i < list.size(); i++) {
-            log += list.get(i) + "\n";
+            builder.append(list.get(i));
+            builder.append("\n");
         }
-        logcat(log);
+        logcat(builder.toString());
     }
 
-    public static void logListDebug(List<Object> list) {
-        String log = "";
-        for (int i = 0; i < list.size(); i++) {
-            log += list.get(i) + "\n";
-        }
-        logcat(log);
+    public static void logList(List<Object> list) {
+        logList(null, list);
     }
 
     public static void logcat(String message) {
-        Log.d(TAG, message);
+        if(debugMode) Log.d(TAG, "==== "+message);
     }
 
     public static void logcat(String tag, String message) {
-        Log.d(tag, message);
+        if(debugMode) Log.d(tag, message);
     }
 
     public static void makeToast(Context context, String text) {
@@ -126,6 +130,21 @@ public class LogUtil {
     public interface CrashlyticsListener {
         void logException(Throwable throwable);
         void log(String throwable);
+    }
+
+    public static void logToPreferences(Context context, String text) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String logLine = preferences.getString(KEY_LOG, "") + text + "\n";
+        preferences.edit().putString(KEY_LOG, logLine).apply();
+    }
+
+    public static void logToPreferences(String text) {
+        logToPreferences(context, text);
+    }
+
+    public static String getPreferencesLogs(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getString(KEY_LOG, "");
     }
 
 

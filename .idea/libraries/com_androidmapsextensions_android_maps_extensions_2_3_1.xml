@@ -1,12 +1,10 @@
 <component name="libraryTable">
   <library name="com.androidmapsextensions:android-maps-extensions-2.3.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/b128422536e15a4d6a63554d65a1027cfe0f8f4c/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/b128422536e15a4d6a63554d65a1027cfe0f8f4c/output/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-maps-extensions-2.3.1.aar/3873110c69e4db899dae2c57e03fb9bc/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-maps-extensions-2.3.1.aar/3873110c69e4db899dae2c57e03fb9bc/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.androidmapsextensions/android-maps-extensions/2.3.1/11f8796f789c40f9e7c1552f8dcb878078718d5b/android-maps-extensions-2.3.1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

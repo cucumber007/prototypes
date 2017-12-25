@@ -33,8 +33,8 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
         bindViewHolder(holder, getItem(position), position);
     }
 
-    abstract VH createViewHolder(View view);
-    abstract void bindViewHolder(VH holder, T item, int position);
+    public abstract VH createViewHolder(View view);
+    public abstract void bindViewHolder(VH holder, T item, int position);
 
     public int getItemLayout() {
         return itemLayout;
@@ -63,6 +63,16 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends RecyclerView.ViewHol
 
     public OnItemClickListener<T> getItemClickListener() {
         return itemClickListener;
+    }
+
+    public void setItemsAndUpdate(List<T> items) {
+        setItems(items);
+        notifyDataSetChanged();
+    }
+
+    public void appendItemsAndUpdate(List<T> items) {
+        this.items.addAll(items);
+        notifyDataSetChanged();
     }
 
     public void setItemClickListener(OnItemClickListener itemClickListener) {

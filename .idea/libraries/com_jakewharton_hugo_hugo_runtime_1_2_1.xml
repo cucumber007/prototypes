@@ -1,12 +1,10 @@
 <component name="libraryTable">
   <library name="com.jakewharton.hugo:hugo-runtime-1.2.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/af78e3d8e19e3d9b0f29d13db899d1716d94732e/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/af78e3d8e19e3d9b0f29d13db899d1716d94732e/output/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hugo-runtime-1.2.1.aar/4cb7a275874c9bc35841285eb57c22b4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hugo-runtime-1.2.1.aar/4cb7a275874c9bc35841285eb57c22b4/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.hugo/hugo-runtime/1.2.1/c37c7ddad466c48c267e324da88a7a0f2cb9998b/hugo-runtime-1.2.1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

@@ -32,7 +32,7 @@ public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRec
     }
 
     @Override
-    TextViewHolder createViewHolder(View view) {
+    public TextViewHolder createViewHolder(View view) {
         return null;
     }
 
@@ -54,11 +54,6 @@ public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRec
             textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             return new TextViewHolder(textView, true);
         }
-    }
-
-    public void setItemsAndUpdate(List<T> items) {
-        setItems(items);
-        notifyDataSetChanged();
     }
 
     public class TextViewHolder extends RecyclerView.ViewHolder {
@@ -88,6 +83,10 @@ public class ArrayRecyclerAdapter<T> extends BaseRecyclerViewAdapter<T, ArrayRec
 
         public TextView getTextView() {
             return textView;
+        }
+
+        public View getRoot() {
+            return itemView;
         }
     }
 

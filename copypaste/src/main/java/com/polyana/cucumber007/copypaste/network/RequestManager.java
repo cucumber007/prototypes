@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.polyana.cucumber007.copypaste.HttpLogUtil;
+import com.cucumber007.reusables.logging.HttpLogUtil;
 import com.cucumber007.reusables.logging.LogUtil;
 
 import java.io.IOException;
@@ -24,6 +24,7 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+@Deprecated
 public class RequestManager {
 
     public static final String SERVER_URL = "http://aaa/";

@@ -28,6 +28,7 @@ import com.cucumber007.prototypes.activities.mvp.MvpActivity;
 import com.cucumber007.prototypes.activities.orientation.OrientationActivity;
 import com.cucumber007.prototypes.sandbox.auth.AuthActivity;
 import com.cucumber007.prototypes.sandbox.camera.CameraActivity;
+import com.cucumber007.prototypes.sandbox.room.RoomActivity;
 import com.cucumber007.prototypes.sandbox.rxjava.RxJavaActivity;
 import com.cucumber007.reusables.logging.LogUtil;
 
@@ -74,6 +75,7 @@ public class MainActivity extends Activity {
         items.add(new MenuItem());
         items.add(new MenuItem("Files and Loader", FilesAndLoaderActivity.class));
         items.add(new MenuItem("Content Provider", ContentProviderActivity.class));
+        items.add(new MenuItem("Room", RoomActivity.class));
         items.add(new MenuItem());
         items.add(new MenuItem("MVP", MvpActivity.class));
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));

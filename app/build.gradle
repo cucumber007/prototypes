@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
+    dexOptions {
+        jumboMode = true
+    }
     signingConfigs {
         cucumber007 {
             keyAlias 'cucumber007'
@@ -13,24 +16,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.cucumber007.prototypes"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
-    productFlavors {
-        standart {
-            applicationId "com.cucumber007.prototypes"
-        }
-        nexus {
-            applicationId "com.cucumber007.prototypes"
-            targetSdkVersion 23
-        }
-    }
+
     buildTypes {
         debug {
             buildConfigField "Boolean", "DEBUG_MODE", "true"
@@ -38,11 +34,11 @@ android {
             buildConfigField "Boolean", "FABRIC_LOGS", "false"
             buildConfigField "Boolean", "LOGCAT_LOGS", "true"
         }
-        debugTest {
-            /*lintOptions {
+        /*debugTest {
+            lintOptions {
                 checkReleaseBuilds false
                 abortOnError false
-            }*/
+            }
             buildConfigField "Boolean", "DEBUG_MODE", "true"
             buildConfigField "Boolean", "TEST_MODE", "true"
             buildConfigField "Boolean", "FABRIC_LOGS", "true"
@@ -50,7 +46,7 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.cucumber007
-        }
+        }*/
         release {
             buildConfigField "Boolean", "DEBUG_MODE", "false"
             buildConfigField "Boolean", "TEST_MODE", "false"
@@ -70,28 +66,35 @@ buildscript {
     }
 
     dependencies {
-        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
         classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
     }
 }
 
 repositories {
     mavenCentral()
+    google()
 }
 
 apply plugin: 'com.jakewharton.hugo'
-apply plugin: 'me.tatarka.retrolambda'
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(path: ':reusables')
-    compile 'com.android.support:support-v4:25.3.0'
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support:recyclerview-v7:25.3.0'
-    compile 'com.android.support:design:25.3.0'
-    compile 'com.jakewharton:butterknife:8.5.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:palette-v7:25.3.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile project(':copypaste')
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:palette-v7:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+    implementation "android.arch.lifecycle:common-java8:1.0.0"
+    implementation "android.arch.persistence.room:runtime:1.0.0"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+    implementation "android.arch.paging:runtime:1.0.0-alpha4-1"
+    implementation "android.arch.persistence.room:rxjava2:1.0.0"
+
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
