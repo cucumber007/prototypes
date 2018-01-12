@@ -73,7 +73,7 @@ public class LogUtil {
             if(vars[i] == null) log += "Null" + " ";
             else log += vars[i].toString() + " ";
         }
-        logcat(log);
+        logcat(tag, log);
     }
 
     @SafeVarargs
@@ -88,7 +88,7 @@ public class LogUtil {
             for (int i = 0; i < vars.length; i++) {
                 log += vars[i].toString() + " ";
             }
-            logcat(log);
+            logcat(tag, log);
         }
     }
 
