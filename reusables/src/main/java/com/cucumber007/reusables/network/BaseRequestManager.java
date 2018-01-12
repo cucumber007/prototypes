@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 
-import com.cucumber007.reusables.logging.HttpLogUtil;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.HttpLogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import java.net.ConnectException;
 import java.net.NoRouteToHostException;

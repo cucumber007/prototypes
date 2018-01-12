@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 
 import com.cucumber007.reusables.R;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;

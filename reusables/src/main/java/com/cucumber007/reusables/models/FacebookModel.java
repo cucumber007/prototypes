@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.cucumber007.reusables.R;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;

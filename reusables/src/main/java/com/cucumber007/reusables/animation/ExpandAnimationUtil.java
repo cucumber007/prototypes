@@ -10,7 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
 import com.cucumber007.reusables.listeners.AbstractSimpleAnimatorListener;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 public class ExpandAnimationUtil {
 

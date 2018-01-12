@@ -1,4 +1,4 @@
-package com.cucumber007.reusables.logging;
+package com.cucumber007.reusables.utils.logging;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,6 +16,10 @@ public class LogUtil {
     private static Context context;
     private static CrashlyticsListener crashlyticsListener;
 
+    public static final String KEY_LOG = "logutil_log";
+
+    private static String tag = "cutag";
+
     public static void setContext(Context context) {
         LogUtil.context = context;
     }
@@ -27,9 +31,6 @@ public class LogUtil {
     public static void setCrashlyticsListener(CrashlyticsListener crashlyticsListener) {
         LogUtil.crashlyticsListener = crashlyticsListener;
     }
-
-    public static final String KEY_LOG = "logutil_log";
-    private static String TAG = "cutag";
 
     public static void logError(Throwable throwable) {
         if(!debugMode && crashlyticsListener != null) crashlyticsListener.logException(throwable);
@@ -48,15 +49,25 @@ public class LogUtil {
 
     @SafeVarargs
     public static <T> void logDebug(Character delim, T... vars) {
+        logDebugWithTag(tag, delim, vars);
+    }
+
+    @SafeVarargs
+    public static <T> void logDebugWithTag(String tag, Character delim, T... vars) {
         String log = "";
         for (int i = 0; i < vars.length; i++) {
             log += vars[i].toString() + delim;
         }
-        logcat(log);
+        logcat(tag, log);
     }
 
     @SafeVarargs
     public static <T> void logDebug(String title, T... vars) {
+        logDebugWithTag(tag, title, vars);
+    }
+
+    @SafeVarargs
+    public static <T> void logDebugWithTag(String tag, String title, T... vars) {
         String log = title+ " : ";
         for (int i = 0; i < vars.length; i++) {
             if(vars[i] == null) log += "Null" + " ";
@@ -67,6 +78,11 @@ public class LogUtil {
 
     @SafeVarargs
     public static <T> void logDebug(boolean condition, String title, T... vars) {
+        logDebugWithTag(tag, condition, title, vars);
+    }
+
+    @SafeVarargs
+    public static <T> void logDebugWithTag(String tag, boolean condition, String title, T... vars) {
         if (condition) {
             String log = title + " : ";
             for (int i = 0; i < vars.length; i++) {
@@ -75,7 +91,6 @@ public class LogUtil {
             logcat(log);
         }
     }
-
 
     public static void logList(@Nullable String name, List<Object> list) {
         StringBuilder builder = new StringBuilder();
@@ -93,7 +108,7 @@ public class LogUtil {
     }
 
     public static void logcat(String message) {
-        if(debugMode) Log.d(TAG, "==== "+message);
+        if(debugMode) Log.d(tag, "==== "+message);
     }
 
     public static void logcat(String tag, String message) {
@@ -147,5 +162,7 @@ public class LogUtil {
         return preferences.getString(KEY_LOG, "");
     }
 
-
+    public static void setTag(String tag) {
+        LogUtil.tag = tag;
+    }
 }

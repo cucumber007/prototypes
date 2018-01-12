@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import com.cucumber007.reusables.R;
 import com.cucumber007.reusables.listeners.LoadingListener;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;

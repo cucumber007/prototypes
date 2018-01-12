@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.IntentSender;
 
 import com.cucumber007.reusables.location.LocationModel;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 import com.google.android.gms.common.api.Status;
 
 import static com.cucumber007.reusables.location.BaseLocationModel.REQUEST_CHECK_SETTINGS;

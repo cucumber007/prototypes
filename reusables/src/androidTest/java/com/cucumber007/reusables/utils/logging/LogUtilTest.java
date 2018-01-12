@@ -1,4 +1,4 @@
-package com.cucumber007.reusables.logging;
+package com.cucumber007.reusables.utils.logging;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
