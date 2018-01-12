@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.cucumber007.reusables.listeners.LoadingListener;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 import com.cucumber007.reusables.models.FacebookModel;
 import com.polyana.cucumber007.copypaste.UserModel;
 import com.polyana.cucumber007.copypaste.network.RequestManager;

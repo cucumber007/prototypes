@@ -7,7 +7,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 public class MultithreadingActivity extends AppCompatActivity {
 

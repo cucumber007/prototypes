@@ -30,7 +30,7 @@ import com.cucumber007.prototypes.sandbox.auth.AuthActivity;
 import com.cucumber007.prototypes.sandbox.camera.CameraActivity;
 import com.cucumber007.prototypes.sandbox.room.RoomActivity;
 import com.cucumber007.prototypes.sandbox.rxjava.RxJavaActivity;
-import com.cucumber007.reusables.logging.LogUtil;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
