@@ -2,14 +2,14 @@
 <tabs>
     <tab
         id="@+id/tab_1"
-        icon="@drawable/ic_camera_shot"
+        icon="@drawable/icon_red"
         title="Tab1" />
     <tab
         id="@+id/tab_2"
-        icon="@drawable/ic_camera_shot"
+        icon="@drawable/icon_blue"
         title="Tab2" />
     <tab
         id="@+id/tab_3"
-        icon="@drawable/ic_camera_shot"
+        icon="@drawable/icon_green"
         title="Tab3" />
 </tabs>

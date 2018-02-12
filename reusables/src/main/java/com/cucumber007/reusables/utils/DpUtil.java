@@ -6,7 +6,6 @@ import android.util.TypedValue;
 
 public class DpUtil {
 
-    //todo test
     public static float dpToPx(float dp, Context context) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }

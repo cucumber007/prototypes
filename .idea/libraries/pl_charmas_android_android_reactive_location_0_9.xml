@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="pl.charmas.android:android-reactive-location-0.9">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-reactive-location-0.9.aar/c21d368f357a5b299a07aeb581653fef/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-reactive-location-0.9.aar/c21d368f357a5b299a07aeb581653fef/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-reactive-location-0.9.aar/557e77a0170906885ed066beb41a50e0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-reactive-location-0.9.aar/557e77a0170906885ed066beb41a50e0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

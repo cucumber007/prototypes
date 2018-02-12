@@ -3,7 +3,6 @@ package com.polyana.cucumber007.copypaste;
 
 import android.preference.PreferenceManager;
 
-import com.cucumber007.reusables.models.FacebookModel;
 import com.cucumber007.reusables.models.objects.User;
 import com.polyana.cucumber007.copypaste.network.RequestManager;
 import com.cucumber007.reusables.objects.LoginParams;
@@ -65,7 +64,8 @@ public class UserModel {
 
     public void logout() {
         PreferenceManager.getDefaultSharedPreferences(ContextApplication.getContext()).edit().remove(KEY_USER).apply();
-        FacebookModel.getInstance(ContextApplication.getContext()).logout();
+        //todo
+        //FacebookModel.getInstance(ContextApplication.getContext()).logout();
         RequestManager.logout();
     }
 }

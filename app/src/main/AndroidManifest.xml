@@ -101,16 +101,16 @@
             android:label="@string/title_activity_tabbed"
             android:theme="@style/AppTheme" />
         <activity android:name=".activities._ui.views.GridViewActivity" />
-        <activity android:name=".activities._libraries.reactive_location.ReactiveLocationActivity" />
+        <activity android:name="com.mydomain.auth_copypaste.reactive_location.ReactiveLocationActivity" />
         <activity android:name=".activities._ui.tabs.TabsActivity" />
         <activity android:name=".activities.loaders.LoadersActivity" />
         <activity android:name=".activities.fragments_sandbox.FragmentSandboxActivity" />
         <activity android:name=".activities._ui.recycler.ArrayRecyclerActivity" />
         <activity
-            android:name=".sandbox.camera.CameraActivity"
+            android:name="com.polyana.cucumber007.copypaste.demo.camera.CameraActivity"
             android:exported="true" />
         <activity
-            android:name=".sandbox.auth.AuthActivity"
+            android:name="com.mydomain.auth_copypaste.auth.AuthActivity"
             android:exported="true" />
         <activity
             android:name=".sandbox.tabs.TabsActivity"
@@ -131,7 +131,7 @@
             android:name=".sandbox.multithreading.MultithreadingActivity"
             android:exported="true" />
         <activity
-            android:name=".sandbox.activities.FloatingActivity"
+            android:name="com.polyana.cucumber007.copypaste.demo.FloatingActivity"
             android:exported="true"
             android:theme="@style/Theme.Transparent" />
         <activity
@@ -140,7 +140,8 @@
         <activity
             android:name=".sandbox.room.UserActivity"
             android:exported="true" />
-        <activity android:name=".sandbox.callbacks_vs_activity_state.CallbacksActivity"></activity>
+        <activity android:name=".sandbox.callbacks_vs_activity_state.CallbacksActivity" />
+        <activity android:name=".sandbox.paging.PagingActivity" android:exported="true"></activity>
     </application>
 
 </manifest>

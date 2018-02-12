@@ -4,7 +4,9 @@ import android.arch.persistence.room.Room;
 import android.content.Context;
 
 import com.cucumber007.prototypes.sandbox.room.AppDatabase;
-import com.polyana.cucumber007.copypaste.ContextApplication;
+import com.cucumber007.reusables.ContextApplication;
+
+import static java.security.AccessController.getContext;
 
 public class PrototypesApplication extends ContextApplication {
 

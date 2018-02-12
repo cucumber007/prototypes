@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities._libraries.butterknife.ButterknifeActivity;
-import com.cucumber007.prototypes.activities._libraries.reactive_location.ReactiveLocationActivity;
 import com.cucumber007.prototypes.activities._libraries.retrofit.RetrofitActivity;
 import com.cucumber007.prototypes.activities._ui.activity_templates.BasicActivity;
 import com.cucumber007.prototypes.activities._ui.coordinator.CoordinatorLayoutActivity;
@@ -26,8 +25,6 @@ import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
 import com.cucumber007.prototypes.activities.mvp.MvpActivity;
 import com.cucumber007.prototypes.activities.orientation.OrientationActivity;
-import com.cucumber007.prototypes.sandbox.auth.AuthActivity;
-import com.cucumber007.prototypes.sandbox.camera.CameraActivity;
 import com.cucumber007.prototypes.sandbox.room.RoomActivity;
 import com.cucumber007.prototypes.sandbox.rxjava.RxJavaActivity;
 import com.cucumber007.reusables.utils.logging.LogUtil;
@@ -70,8 +67,6 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("XML Drawables", XmlDrawableActivity.class));
         items.add(new MenuItem("Blur", BlurActivity.class));
         items.add(new MenuItem("Orientation", OrientationActivity.class));
-        items.add(new MenuItem("Location", ReactiveLocationActivity.class));
-        items.add(new MenuItem("Camera", CameraActivity.class));
         items.add(new MenuItem());
         items.add(new MenuItem("Files and Loader", FilesAndLoaderActivity.class));
         items.add(new MenuItem("Content Provider", ContentProviderActivity.class));
@@ -80,7 +75,6 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("MVP", MvpActivity.class));
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));
         items.add(new MenuItem());
-        items.add(new MenuItem("Google Auth", AuthActivity.class));
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
