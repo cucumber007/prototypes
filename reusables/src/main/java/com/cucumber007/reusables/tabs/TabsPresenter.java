@@ -1,101 +1,36 @@
 package com.cucumber007.reusables.tabs;
 
 
-import android.animation.Animator;
-import android.util.SparseArray;
+import android.content.Context;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.util.ArrayMap;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import com.cucumber007.reusables.listeners.AbstractSimpleAnimatorListener;
 
 
 public class TabsPresenter {
 
-    private SparseArray<TabContainer> tabs = new SparseArray<>();
-    private int currentLayoutId = -1;
-    private View visibleLayout;
-    private boolean isAnimating = false;
-    public static final int FADE_DURATION = 150;
+    private Context context;
+    private FragmentManager fragmentManager;
+    private int containerId;
+    private ArrayMap<Integer, AbstractTabFragment> fragmentsMap = new ArrayMap<>();
 
-    public SparseArray<TabContainer> getTabs() {
-        return tabs;
+    public TabsPresenter(AppCompatActivity context, int containerId) {
+        this.context = context;
+        fragmentManager = context.getSupportFragmentManager();
+        this.containerId = containerId;
     }
 
-    public void switchLayout(int id) {
-        if (currentLayoutId != id) {
-            currentLayoutId = id;
-            switchLayout(getLayoutByTabId(id));
-        }
+    public void addTab(Integer id, AbstractTabFragment fragment) {
+        fragmentsMap.put(id, fragment);
     }
 
-    private void switchLayout(View layout) {
-        if (!isAnimating) {
-            if (visibleLayout != null) {
-                /*if (bottomBar.getCurrentTabPosition() != currentLayoutId && currentLayoutId != SEARCH) {
-                    bottomBar.selectTabAtPosition(currentLayoutId);
-                }*/
-                if (!visibleLayout.equals(layout)) {
-                    onAnimationStarted();
-                    visibleLayout.animate().alpha(0).setDuration(FADE_DURATION).setListener(new AbstractSimpleAnimatorListener() {
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            visibleLayout.setVisibility(View.GONE);
-                            visibleLayout = layout;
-                        }
-                    });
-                    layout.setVisibility(View.VISIBLE);
-                    layout.setAlpha(0);
-                    layout.animate().alpha(1).setDuration(FADE_DURATION).setListener(new AbstractSimpleAnimatorListener() {
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            onAnimationEnded();
-                        }
-                    });
-                }
-            } else {
-                onAnimationStarted();
-                visibleLayout = layout;
-                layout.setVisibility(View.VISIBLE);
-                layout.setAlpha(0);
-                layout.animate().alpha(1).setDuration(FADE_DURATION).setListener(new AbstractSimpleAnimatorListener() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        onAnimationEnded();
-                    }
-                });
-            }
-        }
+    public void onViewClicked(Integer id) {
+        switchFragment(fragmentsMap.get(id));
     }
 
-    private void onAnimationStarted() {
-        isAnimating = true;
+    private void switchFragment(AbstractTabFragment fragment) {
+        fragmentManager.beginTransaction().replace(containerId, fragment).commit();
     }
 
-    private void onAnimationEnded() {
-        isAnimating = false;
-    }
-
-    public void addLayout(int id, View layout) {
-        tabs.append(id, new TabContainer(layout));
-    }
-
-    private View getLayoutByTabId(int id) {
-        return tabs.get(id).getLayout();
-    }
-
-    protected class TabContainer {
-
-        private View layout;
-
-        public TabContainer(View layout) {
-            this.layout = layout;
-        }
-
-        public View getLayout() {
-            return layout;
-        }
-    }
-
-    public int getCurrentLayoutId() {
-        return currentLayoutId;
-    }
 }

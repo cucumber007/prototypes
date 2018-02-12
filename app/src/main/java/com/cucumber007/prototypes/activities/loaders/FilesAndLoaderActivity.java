@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.activities.files_and_loader;
+package com.cucumber007.prototypes.activities.loaders;
 
 import android.app.Activity;
 import android.app.LoaderManager;

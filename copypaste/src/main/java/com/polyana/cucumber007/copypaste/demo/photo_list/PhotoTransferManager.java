@@ -1,8 +1,10 @@
-package com.polyana.cucumber007.copypaste;
+package com.polyana.cucumber007.copypaste.demo.photo_list;
 
 
 import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
+
+import com.polyana.cucumber007.copypaste.ContextApplication;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

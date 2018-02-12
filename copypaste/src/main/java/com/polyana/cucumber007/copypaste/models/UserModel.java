@@ -1,9 +1,10 @@
-package com.polyana.cucumber007.copypaste;
+package com.polyana.cucumber007.copypaste.models;
 
 
 import android.preference.PreferenceManager;
 
 import com.cucumber007.reusables.models.objects.User;
+import com.polyana.cucumber007.copypaste.ContextApplication;
 import com.polyana.cucumber007.copypaste.network.RequestManager;
 import com.cucumber007.reusables.objects.LoginParams;
 import com.google.gson.Gson;

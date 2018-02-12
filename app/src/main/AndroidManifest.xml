@@ -41,7 +41,7 @@
         <activity android:name=".activities._libraries.retrofit.RetrofitActivity" />
         <activity android:name=".activities._ui.views.ViewsActivity" />
         <activity android:name=".activities._ui.xml_drawables.XmlDrawableActivity" />
-        <activity android:name=".activities.files_and_loader.FilesAndLoaderActivity" />
+        <activity android:name=".activities.loaders.FilesAndLoaderActivity" />
         <activity
             android:name=".activities._ui.views.StylesActivity"
             android:theme="@style/TestStyle2" />
@@ -113,10 +113,10 @@
             android:name="com.mydomain.auth_copypaste.auth.AuthActivity"
             android:exported="true" />
         <activity
-            android:name=".sandbox.tabs.TabsActivity"
+            android:name="com.polyana.cucumber007.copypaste.demo.tabs.TabsActivity"
             android:exported="true" />
         <activity
-            android:name=".sandbox.tabs.DrawerActivity"
+            android:name="com.polyana.cucumber007.copypaste.demo.tabs.DrawerActivity"
             android:exported="true" />
         <activity
             android:name=".sandbox.layout_manager.LayoutManagerActivity"

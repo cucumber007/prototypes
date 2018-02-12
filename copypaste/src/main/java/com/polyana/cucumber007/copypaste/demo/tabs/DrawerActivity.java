@@ -1,19 +1,22 @@
-package com.cucumber007.prototypes.sandbox.tabs;
+package com.polyana.cucumber007.copypaste.demo.tabs;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.view.View;
 import android.widget.TextView;
 
-import com.cucumber007.prototypes.R;
 import com.cucumber007.reusables.tabs.DrawerPresenter;
 import com.cucumber007.reusables.tabs.TabsPresenter;
+import com.polyana.cucumber007.copypaste.R;
+import com.polyana.cucumber007.copypaste.sample.SampleFragment;
+
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,14 +24,14 @@ import butterknife.ButterKnife;
 public class DrawerActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.tab1_layout) FrameLayout tab1Layout;
-    @BindView(R.id.tab2_layout) FrameLayout tab2Layout;
-    @BindView(R.id.tab3_layout) FrameLayout tab3Layout;
     @BindView(R.id.drawer_layout) DrawerLayout drawer;
-    @BindView(R.id.drawer_close) ImageView drawerClose;
     @BindView(R.id.drawer_tab1) TextView drawerTab1;
     @BindView(R.id.drawer_tab2) TextView drawerTab2;
     @BindView(R.id.drawer_tab3) TextView drawerTab3;
+
+    private SampleFragment fragment1 = SampleFragment.newInstance();
+    private SampleFragment fragment2 = SampleFragment.newInstance();
+    private SampleFragment fragment3 = SampleFragment.newInstance();
 
     private DrawerPresenter<TextView> drawerPresenter;
     private TabsPresenter tabsPresenter;
@@ -44,22 +47,22 @@ public class DrawerActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        tabsPresenter = new TabsPresenter();
-        tabsPresenter.addLayout(TAB_1, tab1Layout);
-        tabsPresenter.addLayout(TAB_2, tab2Layout);
-        tabsPresenter.addLayout(TAB_3, tab3Layout);
+        tabsPresenter = new TabsPresenter(this, R.id.root);
+        tabsPresenter.addTab(drawerTab1.getId(), fragment1);
+        tabsPresenter.addTab(drawerTab2.getId(), fragment2);
+        tabsPresenter.addTab(drawerTab3.getId(), fragment3);
 
-        drawerPresenter = new DrawerPresenter<>((selectedId, selectedItem, lastSelectedId, lastSelectedItem) -> {
-            tabsPresenter.switchLayout(selectedId);
+        drawerPresenter = new DrawerPresenter<>((selectedItem, lastSelectedItem) -> {
+            tabsPresenter.onViewClicked(selectedItem.getId());
             if (lastSelectedItem != null) lastSelectedItem.setTypeface(null, Typeface.NORMAL);
             selectedItem.setTypeface(null, Typeface.BOLD);
             drawer.closeDrawer(Gravity.LEFT);
             getSupportActionBar().setTitle(selectedItem.getText());
         });
-        drawerPresenter.addItem(TAB_1, drawerTab1);
-        drawerPresenter.addItem(TAB_2, drawerTab2);
-        drawerPresenter.addItem(TAB_3, drawerTab3);
-        drawerPresenter.selectItem(TAB_1);
+        drawerPresenter.addItem(drawerTab1);
+        drawerPresenter.addItem(drawerTab2);
+        drawerPresenter.addItem(drawerTab3);
+        drawerPresenter.selectItem(drawerTab1);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.app_name, R.string.app_name);

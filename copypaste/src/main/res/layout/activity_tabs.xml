@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cucumber007.prototypes.sandbox.tabs.TabsActivity">
+    tools:context="com.cucumber007.prototypes.com.polyana.cucumber007.copypaste.demo.tabs.TabsActivity">
 
     <include
         layout="@layout/activity_drawer_content"

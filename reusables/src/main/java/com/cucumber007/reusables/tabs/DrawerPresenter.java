@@ -5,19 +5,22 @@ import android.support.annotation.Nullable;
 import android.util.SparseArray;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DrawerPresenter<T extends View> {
 
-    private SparseArray<T> items = new SparseArray<>();
+    private List<T> items = new ArrayList<>();
     private OnItemSelectedListener<T> onItemSelectedListener;
-    private int selectedId = -1;
+    private T selectedView;
 
     public DrawerPresenter(OnItemSelectedListener<T> onItemSelectedListener) {
         this.onItemSelectedListener = onItemSelectedListener;
     }
 
-    public void addItem(int id, T item) {
-        items.append(id, item);
-        item.setOnClickListener(view -> selectItem(id));
+    public void addItem(T view) {
+        items.add(view);
+        view.setOnClickListener(view1 -> selectItem((T)view1));
     }
 
     private T getDrawerItemById(int id) {
@@ -25,12 +28,12 @@ public class DrawerPresenter<T extends View> {
     }
 
 
-    public void selectItem(int id) {
-        onItemSelectedListener.onSelected(id, getDrawerItemById(id), selectedId, getDrawerItemById(selectedId));
-        selectedId = id;
+    public void selectItem(T view) {
+        onItemSelectedListener.onSelected(view, selectedView);
+        selectedView = view;
     }
 
     public interface OnItemSelectedListener<T> {
-        void onSelected(int selectedId, T selectedItem, int lastSelectedId, @Nullable T lastSelectedItem);
+        void onSelected(T selectedItem, @Nullable T lastSelectedItem);
     }
 }

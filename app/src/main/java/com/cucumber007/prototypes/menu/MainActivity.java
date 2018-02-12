@@ -19,7 +19,7 @@ import com.cucumber007.prototypes.activities._ui.viewpager.PagerActivity;
 import com.cucumber007.prototypes.activities._ui.views.ViewsActivity;
 import com.cucumber007.prototypes.activities._ui.xml_drawables.XmlDrawableActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
-import com.cucumber007.prototypes.activities.files_and_loader.FilesAndLoaderActivity;
+import com.cucumber007.prototypes.activities.loaders.FilesAndLoaderActivity;
 import com.cucumber007.prototypes.activities.fragments_sandbox.FragmentSandboxActivity;
 import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;

@@ -1,13 +1,13 @@
-package com.polyana.cucumber007.copypaste;
+package com.polyana.cucumber007.copypaste.storage;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.polyana.cucumber007.copypaste.ContextApplication;
 
 
-@SuppressLint("ApplySharedPref")
 public class BasePreferencesModel {
 
     private static SharedPreferences preferences;

@@ -1,7 +1,9 @@
-package com.polyana.cucumber007.copypaste;
+package com.polyana.cucumber007.copypaste.storage;
 
 import android.content.Context;
 import android.text.format.DateFormat;
+
+import com.polyana.cucumber007.copypaste.ContextApplication;
 
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneId;
@@ -12,12 +14,11 @@ import org.threeten.bp.format.FormatStyle;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 
-public class BaseObject  {
+public class BaseObject {
 
     private ZonedDateTime zonedDateTime;
     private String dateString;
     private Context context;
-
 
     public ZonedDateTime convertDateString(String dateString) {
         if (zonedDateTime == null) {
@@ -25,7 +26,6 @@ public class BaseObject  {
         }
         return zonedDateTime;
     }
-
 
     public String formatDate(ZonedDateTime zonedDateTime) {
         if (dateString == null) {
@@ -47,7 +47,6 @@ public class BaseObject  {
         }
         return dateString;
     }
-
 
 
 }
