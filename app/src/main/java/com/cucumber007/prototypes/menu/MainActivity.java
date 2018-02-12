@@ -23,7 +23,6 @@ import com.cucumber007.prototypes.activities.loaders.FilesAndLoaderActivity;
 import com.cucumber007.prototypes.activities.fragments_sandbox.FragmentSandboxActivity;
 import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
-import com.cucumber007.prototypes.activities.mvp.MvpActivity;
 import com.cucumber007.prototypes.activities.orientation.OrientationActivity;
 import com.cucumber007.prototypes.sandbox.room.RoomActivity;
 import com.cucumber007.prototypes.sandbox.rxjava.RxJavaActivity;
@@ -72,7 +71,6 @@ public class MainActivity extends Activity {
         items.add(new MenuItem("Content Provider", ContentProviderActivity.class));
         items.add(new MenuItem("Room", RoomActivity.class));
         items.add(new MenuItem());
-        items.add(new MenuItem("MVP", MvpActivity.class));
         items.add(new MenuItem("Android Studio templates", BasicActivity.class));
         items.add(new MenuItem());
 

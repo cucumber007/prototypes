@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.sandbox.callbacks_vs_activity_state;
+package com.cucumber007.prototypes.sandbox.callbacks_state;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
