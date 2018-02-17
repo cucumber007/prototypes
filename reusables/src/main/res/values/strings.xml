@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Reusables</string>
-
-    <string name="facebook_login_error">Facebook login error</string>
-    <string name="facebook_login_cancelled">Facebook login cancelled</string>
-    <string name="connection_error">Connection error</string>
-    <string name="camera_error">Camera error</string>
-</resources>

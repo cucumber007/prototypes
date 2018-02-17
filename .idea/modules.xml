@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/auth-copypaste/auth-copypaste.iml" filepath="$PROJECT_DIR$/auth-copypaste/auth-copypaste.iml" />
       <module fileurl="file://$PROJECT_DIR$/copypaste/copypaste.iml" filepath="$PROJECT_DIR$/copypaste/copypaste.iml" />
       <module fileurl="file://$PROJECT_DIR$/prototypes.iml" filepath="$PROJECT_DIR$/prototypes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/reusables/reusables.iml" filepath="$PROJECT_DIR$/reusables/reusables.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava2sandbox/rxjava2sandbox.iml" filepath="$PROJECT_DIR$/rxjava2sandbox/rxjava2sandbox.iml" />
     </modules>
   </component>
