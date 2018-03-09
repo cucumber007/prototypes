@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-copypaste/auth-copypaste.iml" filepath="$PROJECT_DIR$/auth-copypaste/auth-copypaste.iml" />
       <module fileurl="file://$PROJECT_DIR$/copypaste/copypaste.iml" filepath="$PROJECT_DIR$/copypaste/copypaste.iml" />
       <module fileurl="file://$PROJECT_DIR$/prototypes.iml" filepath="$PROJECT_DIR$/prototypes.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava2sandbox/rxjava2sandbox.iml" filepath="$PROJECT_DIR$/rxjava2sandbox/rxjava2sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/sandbox/sandbox.iml" />
     </modules>
   </component>
 </project>
