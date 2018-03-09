@@ -14,10 +14,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".demo.FloatingActivity" />
-        <activity android:name=".demo.photo_list.PhotoListActivity" />
-        <activity android:name=".demo.tabs.DrawerActivity" android:exported="true" />
-        <activity android:name=".demo.tabs.TabsActivity" android:exported="true" />
+        <activity android:name="._demo.FloatingActivity" />
+        <activity android:name="._demo.photo_list.PhotoListActivity" />
+        <activity android:name="._demo.tabs.DrawerActivity" android:exported="true" />
+        <activity android:name="._demo.tabs.TabsActivity" android:exported="true" />
     </application>
 
 </manifest>

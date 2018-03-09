@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/auth-copypaste" />
             <option value="$PROJECT_DIR$/copypaste" />
+            <option value="$PROJECT_DIR$/kotlin-sandbox" />
             <option value="$PROJECT_DIR$/rxjava2sandbox" />
             <option value="$PROJECT_DIR$/sandbox" />
           </set>

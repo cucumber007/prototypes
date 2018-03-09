@@ -1,4 +1,4 @@
-package com.polyana.cucumber007.copypaste.demo;
+package com.polyana.cucumber007.copypaste._demo;
 
 import android.os.Bundle;
 

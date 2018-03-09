@@ -114,4 +114,6 @@ dependencies {
     implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
 
     implementation 'android.arch.paging:runtime:1.0.0-alpha4-1'
+
+    compile 'co.trikita:anvil-sdk15:0.5.1'
 }

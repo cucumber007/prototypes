@@ -47,16 +47,18 @@ public class PagingActivity extends AppCompatActivity {
         LivePagedListBuilder<Integer, String> livePagedListBuilder = new LivePagedListBuilder<>(() -> new PositionalDataSource<String>() {
             @Override
             public void loadInitial(@NonNull LoadInitialParams params, @NonNull LoadInitialCallback callback) {
-                callback.onResult(Observable.just(Math.random()+"").repeat(params.pageSize).toList().toBlocking().first(), 0, 50);
+                callback.onResult(Observable.just(Math.random()+" Element").repeat(params.pageSize).toList().toBlocking().first(), 0, 50);
             }
 
             @Override
             public void loadRange(@NonNull LoadRangeParams params, @NonNull LoadRangeCallback callback) {
-                callback.onResult(Observable.just(Math.random()+"").repeat(params.loadSize).toList().toBlocking().first());
+                callback.onResult(Observable.just(Math.random()+"  Element").repeat(params.loadSize).toList().toBlocking().first());
             }
         }, 5);
 
-        livePagedListBuilder.build().observe(this, strings -> pagingAdapter.setList(strings));
+        livePagedListBuilder.build().observe(this, strings -> {
+            pagingAdapter.setList(strings);
+        });
 
 
     }

@@ -1,4 +1,4 @@
-package com.polyana.cucumber007.copypaste.demo.photo_list;
+package com.polyana.cucumber007.copypaste._demo.photo_list;
 
 
 import android.graphics.Bitmap;

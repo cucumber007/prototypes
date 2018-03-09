@@ -1,8 +1,7 @@
-package com.polyana.cucumber007.copypaste.demo.tabs;
+package com.polyana.cucumber007.copypaste._demo.tabs;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
 
 import com.cucumber007.reusables.tabs.TabsPresenter;
 import com.polyana.cucumber007.copypaste.R;

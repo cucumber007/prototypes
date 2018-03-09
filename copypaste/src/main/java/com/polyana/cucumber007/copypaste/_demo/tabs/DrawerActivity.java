@@ -1,22 +1,18 @@
-package com.polyana.cucumber007.copypaste.demo.tabs;
+package com.polyana.cucumber007.copypaste._demo.tabs;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.TextView;
 
 import com.cucumber007.reusables.tabs.DrawerPresenter;
 import com.cucumber007.reusables.tabs.TabsPresenter;
 import com.polyana.cucumber007.copypaste.R;
 import com.polyana.cucumber007.copypaste.sample.SampleFragment;
-
-import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

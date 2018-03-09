@@ -1,4 +1,4 @@
-package com.polyana.cucumber007.copypaste.demo.camera;
+package com.polyana.cucumber007.copypaste._demo.camera;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
@@ -22,7 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.cucumber007.reusables.camera.CameraPresenter;
-import com.polyana.cucumber007.copypaste.demo.photo_list.PhotoTransferManager;
+import com.polyana.cucumber007.copypaste._demo.photo_list.PhotoTransferManager;
 import com.cucumber007.reusables.camera.RotationDetector;
 import com.cucumber007.reusables.listeners.AbstractSimpleAnimatorListener;
 import com.cucumber007.reusables.listeners.LoadingListener;

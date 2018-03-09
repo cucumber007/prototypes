@@ -21,7 +21,8 @@ import static java.lang.Thread.sleep;
 public class RxStaticCallbacksActivity extends AppCompatActivity {
 
     @BindView(R.id.text) TextView text;
-//todo peredelat vse nahui
+    @BindView(R.id.large) TextView large;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class RxStaticCallbacksActivity extends AppCompatActivity {
         LogUtil.setDebugMode(true);
         LogUtil.logDebug("onCreate");
 
-        new AsyncTask<Void, Void, Void>() {
+        /*new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
                 try {
@@ -48,13 +49,14 @@ public class RxStaticCallbacksActivity extends AppCompatActivity {
                 LogUtil.logDebug("Task");
                 text.setText("lol");
             }
-        }.execute();
+        }.execute();*/
 
         Observable.interval(2000, TimeUnit.MILLISECONDS, Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(lng -> {
                     LogUtil.logDebug("Timer");
                     text.setText(lng+"");
+                    large.setText(LargeString.get(1000));
                 });
     }
 
