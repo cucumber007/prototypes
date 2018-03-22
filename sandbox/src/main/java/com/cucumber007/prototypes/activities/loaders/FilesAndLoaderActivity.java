@@ -34,7 +34,7 @@ import rx.schedulers.Schedulers;
 
 public class FilesAndLoaderActivity extends Activity {
 
-    //todo why the fuck we need to create a whole loader to get path from uri???
+    //todo why the fuck we need to create a whole loader to getString path from uri???
     private static final int REQUEST_CODE_PICTURE = 1;
     @BindView(R.id.imageView7) ImageView imageView7;
     @BindView(R.id.imageView8) ImageView imageView8;

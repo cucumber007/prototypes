@@ -1,0 +1,14 @@
+The case:
+Activity with AsyncTask
+The task loads large bitmap in ImageView
+Expecting OOM after few rotations.
+
+
+/*
+        retained fragment
+        singleton?
+        rx static field
+        dagger singleton
+        livedata
+        rxlifecycle
+        */

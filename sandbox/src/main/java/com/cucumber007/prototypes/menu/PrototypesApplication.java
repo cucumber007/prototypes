@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.cucumber007.prototypes.sandbox.room.AppDatabase;
 import com.cucumber007.reusables.ContextApplication;
+import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import static java.security.AccessController.getContext;
 
@@ -16,6 +17,8 @@ public class PrototypesApplication extends ContextApplication {
     public void onCreate() {
         super.onCreate();
         getDatabase();
+        LogUtil.setDebugMode(true);
+        LogUtil.setContext(getContext());
     }
 
     public static AppDatabase getDatabase() {

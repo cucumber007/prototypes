@@ -122,12 +122,12 @@
         <activity
             android:name=".sandbox.room.UserActivity"
             android:exported="true" />
-        <activity android:name=".sandbox.callbacks_state.CallbacksActivity" />
+        <activity android:name=".sandbox.state_and_callbacks.AsynctaskRotationOomCaseActivity" android:exported="true"/>
         <activity
             android:name=".sandbox.paging.PagingActivity"
             android:exported="true" />
         <activity
-            android:name=".sandbox.callbacks_state.RxStaticCallbacksActivity"
+            android:name=".sandbox.state_and_callbacks.RxStaticCallbacksActivity"
             android:exported="true" />
         <activity
             android:name=".sandbox.selectable_recycler.SelectableRecyclerActivity"

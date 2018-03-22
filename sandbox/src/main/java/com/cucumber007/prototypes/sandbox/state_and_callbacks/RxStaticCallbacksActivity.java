@@ -1,6 +1,5 @@
-package com.cucumber007.prototypes.sandbox.callbacks_state;
+package com.cucumber007.prototypes.sandbox.state_and_callbacks;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -56,7 +55,7 @@ public class RxStaticCallbacksActivity extends AppCompatActivity {
                 .subscribe(lng -> {
                     LogUtil.logDebug("Timer");
                     text.setText(lng+"");
-                    large.setText(LargeString.get(1000));
+                    large.setText(SampleDataProvider.getString(1000));
                 });
     }
 
