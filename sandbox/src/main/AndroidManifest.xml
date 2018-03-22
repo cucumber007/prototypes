@@ -122,17 +122,25 @@
         <activity
             android:name=".sandbox.room.UserActivity"
             android:exported="true" />
-        <activity android:name=".sandbox.state_and_callbacks.AsynctaskRotationOomCaseActivity" android:exported="true"/>
         <activity
-            android:name=".sandbox.paging.PagingActivity"
+            android:name=".cases.state_and_callbacks.AsynctaskRotationOomCaseActivity"
             android:exported="true" />
         <activity
-            android:name=".sandbox.state_and_callbacks.RxStaticCallbacksActivity"
+            android:name=".sandbox.google_paging.PagingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cases.state_and_callbacks.solutions.RxRotationActivity"
             android:exported="true" />
         <activity
             android:name=".sandbox.selectable_recycler.SelectableRecyclerActivity"
-            android:exported="true"></activity>
-        <activity android:name=".sandbox.anvil.AnvilActivity" android:exported="true"></activity>
+            android:exported="true" />
+        <activity
+            android:name=".sandbox.anvil.AnvilActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cases.state_and_callbacks.solutions.AsynctaskRotationActivity"
+            android:exported="true" />
+        <activity android:name=".sandbox.livedata.LivedataActivity" android:exported="true"></activity>
     </application>
 
 </manifest>

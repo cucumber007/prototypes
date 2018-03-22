@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.sandbox.state_and_callbacks;
+package com.cucumber007.prototypes.cases.state_and_callbacks;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -6,19 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.cucumber007.prototypes.R;
-import com.cucumber007.reusables.utils.logging.LogUtil;
 
-import java.util.List;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Observable;
 
 public class AsynctaskRotationOomCaseActivity extends AppCompatActivity {
 
-    /*@BindView(R.id.imageView)*/ ImageView imageView;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +20,6 @@ public class AsynctaskRotationOomCaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_callbacks);
         ButterKnife.bind(this);
         imageView = findViewById(R.id.imageView);
-
-        /*List<Bitmap> bitmaps = Observable.range(0,5)
-                .map(el -> SampleDataProvider.getBitmap(200, 200))
-                .toList().toBlocking().first();
-*/
-        //imageView.setImageBitmap(bitmaps.get(0));
 
         new AsyncTask<Void, Void, Bitmap>() {
 
@@ -52,8 +40,6 @@ public class AsynctaskRotationOomCaseActivity extends AppCompatActivity {
             }
         }.execute();
 
-
-        //Glide.with(this).load().into(imageView);
     }
 
 }

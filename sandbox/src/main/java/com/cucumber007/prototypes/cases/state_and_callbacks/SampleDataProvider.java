@@ -1,14 +1,9 @@
-package com.cucumber007.prototypes.sandbox.state_and_callbacks;
+package com.cucumber007.prototypes.cases.state_and_callbacks;
 
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-
-import com.cucumber007.prototypes.BuildConfig;
-import com.cucumber007.prototypes.R;
 
 import rx.Observable;
 

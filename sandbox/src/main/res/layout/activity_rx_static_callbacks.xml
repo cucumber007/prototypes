@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cucumber007.prototypes.sandbox.state_and_callbacks.RxStaticCallbacksActivity">
+    tools:context=".cases.state_and_callbacks.solutions.RxRotationActivity">
 
     <TextView
         android:id="@+id/large"

@@ -1,10 +1,9 @@
-package com.cucumber007.prototypes.sandbox.paging;
+package com.cucumber007.prototypes.sandbox.google_paging;
 
 import android.arch.paging.PagedListAdapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.recyclerview.extensions.DiffCallback;
-import android.support.v7.recyclerview.extensions.ListAdapterConfig;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;

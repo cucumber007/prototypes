@@ -1,12 +1,9 @@
-package com.cucumber007.prototypes.sandbox.paging;
+package com.cucumber007.prototypes.sandbox.google_paging;
 
-import android.arch.lifecycle.Observer;
 import android.arch.paging.LivePagedListBuilder;
-import android.arch.paging.PagedList;
 import android.arch.paging.PositionalDataSource;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.recyclerview.extensions.DiffCallback;
 import android.support.v7.widget.LinearLayoutManager;
