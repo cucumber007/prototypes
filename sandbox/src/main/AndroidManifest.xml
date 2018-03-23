@@ -140,7 +140,7 @@
         <activity
             android:name=".cases.state_and_callbacks.solutions.AsynctaskRotationActivity"
             android:exported="true" />
-        <activity android:name=".sandbox.livedata.LivedataActivity" android:exported="true"></activity>
+        <activity android:name=".cases.state_and_callbacks.solutions.livedata.LivedataRotationActivity" android:exported="true"></activity>
     </application>
 
 </manifest>
