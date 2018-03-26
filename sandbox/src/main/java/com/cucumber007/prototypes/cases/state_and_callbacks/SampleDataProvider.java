@@ -10,9 +10,12 @@ import rx.Observable;
 public class SampleDataProvider {
 
     public static String getString(int size) {
-        StringBuilder stringBuilder = new StringBuilder(size);
-        Observable.just('A').repeat(size).subscribe(stringBuilder::append);
-        return stringBuilder.toString();
+        byte byt = 'A';
+        byte[] bytes = new byte[size];
+        for (int i = 0; i < bytes.length; i++) {
+            bytes[i] = byt;
+        }
+        return new String(bytes);
     }
 
     public static Bitmap getBitmap(int width, int height) {
