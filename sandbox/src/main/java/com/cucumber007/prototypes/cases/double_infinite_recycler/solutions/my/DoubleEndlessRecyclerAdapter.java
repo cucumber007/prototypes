@@ -1,7 +1,8 @@
-package com.cucumber007.prototypes.cases.double_infinite_recycler.solutions;
+package com.cucumber007.prototypes.cases.double_infinite_recycler.solutions.my;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -12,12 +13,9 @@ import android.widget.TextView;
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.cases.double_infinite_recycler.DataProvider;
 import com.cucumber007.prototypes.cases.double_infinite_recycler.Payload;
-import com.cucumber007.reusables.recycler.BaseRecyclerViewAdapter;
 import com.cucumber007.reusables.utils.Callback;
 import com.cucumber007.reusables.utils.logging.LogUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -26,34 +24,55 @@ import butterknife.ButterKnife;
 public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEndlessRecyclerAdapter.StringHolder> {
 
     private Context context;
+    private RecyclerView recyclerView;
+    private LinearLayoutManager layoutManager;
     private int itemLayout;
     private DataProvider dataProvider;
     private boolean isLoading;
-    int pageLimit = 3;
-    int count;
-    //todo android collection
+    private int pageLimit = 3;
+    private int count;
     private SparseArray<List<Payload>> pageMap = new SparseArray<>();
     private Callback<String> dataListener;
 
-    public DoubleEndlessRecyclerAdapter(Context context, @LayoutRes int itemLayout, DataProvider dataProvider) {
+    public DoubleEndlessRecyclerAdapter(Context context, RecyclerView recyclerView, @LayoutRes int itemLayout, DataProvider dataProvider) {
         this.context = context;
+        this.recyclerView = recyclerView;
         this.itemLayout = itemLayout;
         this.dataProvider = dataProvider;
+        layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                final int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+                final int firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
+
+                if (!isLoading) {
+                    if (dy > 0) { // scroll down
+                        onItemScrolled(lastVisibleItemPosition);
+                    } else if (dy < 0) { // scroll top
+                        onItemScrolled(firstVisibleItemPosition);
+                    }
+                }
+            }
+        });
+
         loadNextPage(0);
     }
 
     public void bindViewHolder(StringHolder holder, Payload item, int position) {
         fillData(holder, item, position);
-        onItemRequest(position);
     }
 
     private void fillData(StringHolder holder, Payload item, int position) {
-        if(holder.getLayoutPosition() == position) holder.tvText.setText(item.getName());
+        if(holder.getLayoutPosition() == position) {
+            if (item != null) holder.tvText.setText(item.getName());
+            else holder.tvText.setText("Not loaded");
+        }
     }
 
-    private void onItemRequest(int position) {
+    private void onItemScrolled(int position) {
         int page = detectPage(position);
-        //todo async
         if(!isLoading) {
             if (page >= getMaxPage()) {
                 loadNextPage(getMaxPage() + 1);
@@ -79,11 +98,13 @@ public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEnd
         if (dataListener != null) dataListener.onReady(getData());
 
         dataProvider.getDataForPage(page, lst -> {
-            if(pageMap.size() > pageLimit) {
+            if(pageMap.size() >= pageLimit) {
                 LogUtil.logDebug("delete", getMinPage());
                 pageMap.delete(getMinPage());
             }
             onPageLoaded(page, lst);
+            //notifyItemInserted(getItemCount());
+            notifyDataSetChanged();
         });
     }
 
@@ -94,18 +115,20 @@ public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEnd
         if (dataListener != null) dataListener.onReady(getData());
 
         dataProvider.getDataForPage(page, lst -> {
-            if(pageMap.size() > pageLimit) {
+            if(pageMap.size() >= pageLimit) {
                 LogUtil.logDebug("delete", getMaxPage());
                 pageMap.delete(getMaxPage());
             }
             onPageLoaded(page, lst);
+            //notifyItemInserted(0);
+            notifyDataSetChanged();
         });
     }
 
     private void onPageLoaded(int page, List<Payload> lst) {
         count += lst.size();
+
         pageMap.put(page, lst);
-        notifyDataSetChanged();
         isLoading = false;
 
         if (dataListener != null) dataListener.onReady(getData());
@@ -113,6 +136,7 @@ public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEnd
 
     @Override
     public int getItemCount() {
+        //return pageMap.size()*dataProvider.getPageSize();
         return count;
     }
 
@@ -122,7 +146,12 @@ public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEnd
 
     public Payload getItem(int position) {
         int page = detectPage(position);
-        return pageMap.get(page).get(page == 0 ? position : position - page*dataProvider.getPageSize());
+        if(pageMap.indexOfKey(page) == -1) return null;
+        try {
+            return pageMap.get(page).get(page == 0 ? position : position - page*dataProvider.getPageSize());
+        } catch (NullPointerException e) {
+            return null;
+        }
     }
 
     public void setDataListener(Callback<String> dataListener) {
@@ -130,7 +159,8 @@ public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEnd
     }
 
     private String getData() {
-        StringBuilder stringBuilder = new StringBuilder(pageLimit*2);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getItemCount()+" :: ");
         for (int i = 0; i < pageMap.size(); i++) {
             stringBuilder.append(pageMap.keyAt(i));
             stringBuilder.append(' ');

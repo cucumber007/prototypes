@@ -18,7 +18,7 @@ public class DataProvider {
 
     public void getDataForPage(int page, Callback<List<Payload>> callback) {
         Observable.timer(TIMEOUT, TimeUnit.MILLISECONDS, Schedulers.io())
-                .flatMap(tim -> Observable.range(0, 10))
+                .flatMap(tim -> Observable.range(0, PAGE_SIZE))
                 .map(num -> "Data "+(page*PAGE_SIZE+num))
                 .map(name -> new Payload(name, SampleDataProvider.getString(10000)))
                 .toList()
