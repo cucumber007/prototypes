@@ -25,6 +25,7 @@ import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import rx.Subscription;
 
 public class AutocompleteSearchCaseActivity extends AppCompatActivity implements LoadingListener {
 
@@ -65,7 +66,7 @@ public class AutocompleteSearchCaseActivity extends AppCompatActivity implements
                         onStopLoading();
                     }
                 });
-
+        
     }
 
     @Override
