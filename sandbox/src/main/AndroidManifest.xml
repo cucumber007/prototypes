@@ -146,7 +146,10 @@
         <activity
             android:name=".cases.double_infinite_recycler.DoubleEndlessRecyclerCaseActivity"
             android:exported="true" />
-        <activity android:name=".cases.double_infinite_recycler.solutions.my.TestActivity" android:exported="true"></activity>
+        <activity
+            android:name=".cases.double_infinite_recycler.solutions.my.TestActivity"
+            android:exported="true" />
+        <activity android:name=".cases.search_autocomplete.AutocompleteSearchCaseActivity" android:exported="true"></activity>
     </application>
 
 </manifest>

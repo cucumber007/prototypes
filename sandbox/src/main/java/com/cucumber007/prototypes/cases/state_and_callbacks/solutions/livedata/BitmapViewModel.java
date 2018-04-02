@@ -3,21 +3,14 @@ package com.cucumber007.prototypes.cases.state_and_callbacks.solutions.livedata;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-import com.cucumber007.prototypes.cases.state_and_callbacks.SampleDataProvider;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import com.cucumber007.prototypes.cases.SampleDataProvider;
 
 public class BitmapViewModel extends AndroidViewModel {
 

@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.cases.double_infinite_recycler.DataProvider;
-import com.cucumber007.prototypes.cases.double_infinite_recycler.Payload;
+import com.cucumber007.prototypes.cases.Payload;
+import com.cucumber007.prototypes.cases.SampleDataProvider;
 import com.cucumber007.reusables.utils.Callback;
 import com.cucumber007.reusables.utils.logging.LogUtil;
 
@@ -27,14 +27,14 @@ public class DoubleEndlessRecyclerAdapter extends RecyclerView.Adapter<DoubleEnd
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
     private int itemLayout;
-    private DataProvider dataProvider;
+    private SampleDataProvider dataProvider;
     private boolean isLoading;
     private int pageLimit = 3;
     private int count;
     private SparseArray<List<Payload>> pageMap = new SparseArray<>();
     private Callback<String> dataListener;
 
-    public DoubleEndlessRecyclerAdapter(Context context, RecyclerView recyclerView, @LayoutRes int itemLayout, DataProvider dataProvider) {
+    public DoubleEndlessRecyclerAdapter(Context context, RecyclerView recyclerView, @LayoutRes int itemLayout, SampleDataProvider dataProvider) {
         this.context = context;
         this.recyclerView = recyclerView;
         this.itemLayout = itemLayout;

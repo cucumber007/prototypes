@@ -3,7 +3,7 @@ package com.cucumber007.prototypes.cases.double_infinite_recycler.solutions.my;
 import android.content.Context;
 import android.view.View;
 
-import com.cucumber007.prototypes.cases.double_infinite_recycler.Payload;
+import com.cucumber007.prototypes.cases.Payload;
 import com.cucumber007.reusables.recycler.BaseRecyclerViewAdapter;
 
 import java.util.List;

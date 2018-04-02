@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.cases.state_and_callbacks.SampleDataProvider;
+import com.cucumber007.prototypes.cases.SampleDataProvider;
 import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import java.lang.ref.WeakReference;

@@ -1,4 +1,4 @@
-package com.cucumber007.prototypes.cases.double_infinite_recycler;
+package com.cucumber007.prototypes.cases;
 
 public class Payload {
 

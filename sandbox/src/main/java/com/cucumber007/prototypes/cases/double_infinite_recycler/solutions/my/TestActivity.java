@@ -6,8 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.cucumber007.prototypes.R;
-import com.cucumber007.prototypes.cases.double_infinite_recycler.DataProvider;
-import com.cucumber007.prototypes.cases.double_infinite_recycler.Payload;
+import com.cucumber007.prototypes.cases.Payload;
+import com.cucumber007.prototypes.cases.SampleDataProvider;
 import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import java.util.ArrayList;
@@ -23,7 +23,6 @@ public class TestActivity extends AppCompatActivity {
     @BindView(R.id.rv) RecyclerView rv;
 
     private MyArrayList<Payload> items = new MyArrayList<>();
-    private DataProvider dataProvider = new DataProvider();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +34,10 @@ public class TestActivity extends AppCompatActivity {
         TestAdapter adapter = new TestAdapter(this, items, R.layout.item_simple);
         rv.setAdapter(adapter);
 
-        dataProvider.getDataForPage(0, lst -> {
+        SampleDataProvider.getDataForPage(0, lst -> {
             items.addAll(lst);
             adapter.notifyDataSetChanged();
-            dataProvider.getDataForPage(1, lst1 -> {
+            SampleDataProvider.getDataForPage(1, lst1 -> {
                 items.addAll(0, lst1);
                 adapter.notifyItemRangeInserted(0, lst1.size());
                 LogUtil.makeToast("inserted");
