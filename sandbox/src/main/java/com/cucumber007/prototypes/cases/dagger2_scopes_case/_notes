@@ -1,0 +1,6 @@
+We have 2 activities: DaggerFirstFeatureActivity and DaggerSecondFeatureActivity
+There should be 3 scopes - Application-level scope, Feature-level scope, Activity-level scope
+
+In case those activities have been launched one after another, they can use objects from common scope.
+The scope is created when user navigates to FirstActivity and destroyed when he leaves SecondActivity
+(or moves backward for First)

@@ -3,13 +3,14 @@ package com.cucumber007.prototypes.menu;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 
+import com.cucumber007.prototypes.cases.dagger2_scopes_case.dagger.DaggerApplication;
 import com.cucumber007.prototypes.sandbox.room.AppDatabase;
 import com.cucumber007.reusables.ContextApplication;
 import com.cucumber007.reusables.utils.logging.LogUtil;
 
 import static java.security.AccessController.getContext;
 
-public class PrototypesApplication extends ContextApplication {
+public class PrototypesApplication extends DaggerApplication {
 
     private static AppDatabase database;
 
