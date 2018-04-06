@@ -27,7 +27,7 @@ public class DaggerApplication extends ContextApplication {
     //todo inject
     public FeatureComponent getFeatureComponent() {
         if (featureComponent == null) {
-            featureComponent = appComponent.addFeatureComponent(new FeatureModule());
+            //featureComponent = appComponent.addFeatureComponent(new FeatureModule());
         }
         return featureComponent;
     }

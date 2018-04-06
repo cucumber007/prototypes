@@ -155,7 +155,10 @@
         <activity
             android:name=".sandbox.rxrelay.RxRelayActivity"
             android:exported="true" />
-        <activity android:name=".cases.dagger2_scopes_case.dagger.DaggerFirstFeatureActivity" android:exported="true"></activity>
+        <activity
+            android:name=".cases.dagger2_scopes_case.dagger.DaggerFirstFeatureActivity"
+            android:exported="true" />
+        <activity android:name=".cases.string_vs_stringbuilder.CaseStringVsStringbuilderActivity" android:exported="true"></activity>
     </application>
 
 </manifest>

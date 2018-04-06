@@ -4,5 +4,5 @@ import dagger.Component;
 
 @Component(modules = {AppModule.class})
 public interface AppComponent {
-    FeatureComponent addFeatureComponent(FeatureModule featureModule);
+    //FeatureComponent addFeatureComponent(FeatureModule featureModule);
 }
