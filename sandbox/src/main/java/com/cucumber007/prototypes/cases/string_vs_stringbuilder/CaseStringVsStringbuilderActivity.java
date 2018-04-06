@@ -25,7 +25,7 @@ public class CaseStringVsStringbuilderActivity extends AppCompatActivity {
         test(1000);
         test(5000);
         test(10000);
-        
+
 
     }
 
