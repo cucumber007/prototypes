@@ -161,7 +161,10 @@
         <activity
             android:name=".cases.string_vs_stringbuilder.CaseStringVsStringbuilderActivity"
             android:exported="true" />
-        <activity android:name=".cases.rx_vs_for.CaseRxVsForActivity" android:exported="true"></activity>
+        <activity
+            android:name=".cases.rx_vs_for.CaseRxVsForActivity"
+            android:exported="true" />
+        <activity android:name=".menu.SandboxItemActivity"></activity>
     </application>
 
 </manifest>

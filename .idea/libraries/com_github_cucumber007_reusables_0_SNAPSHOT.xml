@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.github.cucumber007:reusables-0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/reusables--SNAPSHOT.aar/ce79f201d76df76043b7e3c74b21263a/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/reusables--SNAPSHOT.aar/ce79f201d76df76043b7e3c74b21263a/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/reusables--SNAPSHOT.aar/5a409123c2ed028b76e34074916d5a63/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/reusables--SNAPSHOT.aar/5a409123c2ed028b76e34074916d5a63/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

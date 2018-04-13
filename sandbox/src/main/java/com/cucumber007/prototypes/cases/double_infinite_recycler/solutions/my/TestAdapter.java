@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.View;
 
 import com.cucumber007.prototypes.cases.Payload;
-import com.cucumber007.reusables.recycler.BaseRecyclerViewAdapter;
+import com.cucumber007.reusables.recycler.BaseRecyclerAdapter;
 
 import java.util.List;
 
-public class TestAdapter extends BaseRecyclerViewAdapter<Payload, BaseViewHolder> {
+public class TestAdapter extends BaseRecyclerAdapter<Payload, BaseViewHolder> {
 
     public TestAdapter(Context context, List<Payload> items, int itemLayout) {
         super(context, items, itemLayout);

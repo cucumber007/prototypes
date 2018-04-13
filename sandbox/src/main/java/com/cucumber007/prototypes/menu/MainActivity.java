@@ -1,10 +1,13 @@
 package com.cucumber007.prototypes.menu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.util.ArrayMap;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.activities._libraries.butterknife.ButterknifeActivity;
@@ -19,16 +22,19 @@ import com.cucumber007.prototypes.activities._ui.viewpager.PagerActivity;
 import com.cucumber007.prototypes.activities._ui.views.ViewsActivity;
 import com.cucumber007.prototypes.activities._ui.xml_drawables.XmlDrawableActivity;
 import com.cucumber007.prototypes.activities.content_provider.ContentProviderActivity;
-import com.cucumber007.prototypes.activities.loaders.FilesAndLoaderActivity;
 import com.cucumber007.prototypes.activities.fragments_sandbox.FragmentSandboxActivity;
 import com.cucumber007.prototypes.activities.graphics.BlurActivity;
 import com.cucumber007.prototypes.activities.java.JavaCoreActivity;
+import com.cucumber007.prototypes.activities.loaders.FilesAndLoaderActivity;
 import com.cucumber007.prototypes.activities.orientation.OrientationActivity;
+import com.cucumber007.prototypes.cases.Case;
+import com.cucumber007.prototypes.cases.backpressure.BackpressureCase;
 import com.cucumber007.prototypes.sandbox.room.RoomActivity;
 import com.cucumber007.prototypes.sandbox.rxjava.RxJavaActivity;
-import com.cucumber007.reusables.utils.logging.LogUtil;
+import com.cucumber007.reusables.recycler.ArrayRecyclerAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -37,7 +43,9 @@ import butterknife.ButterKnife;
 public class MainActivity extends Activity {
 
     @BindView(R.id.listView) ListView listView;
-    private boolean doubleBackToExitPressedOnce = true;
+    @BindView(R.id.rv_menu) RecyclerView rvMenu;
+
+    private SandboxItemsModel sandboxItemsModel = SandboxItemsModel.getInstance();
 
 
     @Override
@@ -45,6 +53,27 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
+        ArrayRecyclerAdapter<SandboxItem> adapter = new ArrayRecyclerAdapter<>(this, new ArrayList<>(
+                SandboxItemsModel.getInstance().getAllItems()));
+        adapter.setItemClickListener((position, view, item1) -> {
+            SandboxItem sandboxItem = (SandboxItem) item1;
+            if(sandboxItem.isFragment()) {
+                startActivity(new Intent(this, SandboxItemActivity.class)
+                    .putExtra(SandboxItemActivity.class.getName(), sandboxItem.getId()));
+            } else {
+                startActivity(new Intent(this, sandboxItem.getClazz()));
+            }
+        });
+        rvMenu.setLayoutManager(new LinearLayoutManager(this));
+        rvMenu.setAdapter(adapter);
+
+
+
+
+
+        //*********** OLD **********************
 
         //todo sort
         //todo hierarchy
@@ -76,19 +105,9 @@ public class MainActivity extends Activity {
 
         listView.setAdapter(new MenuListAdapter(this, items));
 
-        LogUtil.setContext(this);
-
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Click Back again to exit", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
-    }
+
+
 }
