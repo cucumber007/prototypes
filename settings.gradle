@@ -1,1 +1,1 @@
-include ':sandbox', ':rxjava2sandbox', ':copypaste', ':auth-copypaste', ':kotlin-sandbox'
+include ':sandbox',':rxjava2sandbox', ':copypaste', ':auth-copypaste', ':kotlin-sandbox', ':maps'

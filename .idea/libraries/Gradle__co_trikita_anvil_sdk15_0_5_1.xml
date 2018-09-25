@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: co.trikita:anvil-sdk15-0.5.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/anvil-sdk15-0.5.1.aar/94e38a31cd8525d160e22e44229e36aa/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/anvil-sdk15-0.5.1.aar/94e38a31cd8525d160e22e44229e36aa/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.trikita/anvil-sdk15/0.5.1/3bb84eb9b89e98c55e0ba5d7f27d8672d3f8de2d/anvil-sdk15-0.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
