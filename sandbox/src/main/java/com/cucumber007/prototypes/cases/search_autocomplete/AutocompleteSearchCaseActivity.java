@@ -11,21 +11,16 @@ import android.widget.ProgressBar;
 import com.cucumber007.prototypes.R;
 import com.cucumber007.prototypes.cases.SampleDataProvider;
 import com.cucumber007.reusables.listeners.LoadingListener;
-import com.cucumber007.reusables.recycler.ArrayRecyclerAdapter;
+import com.cucumber007.reusables.recycler.adapters.ArrayRecyclerAdapter;
 import com.cucumber007.reusables.utils.logging.LogUtil;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-import java.util.function.ObjLongConsumer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import rx.Subscription;
 
 public class AutocompleteSearchCaseActivity extends AppCompatActivity implements LoadingListener {
 
